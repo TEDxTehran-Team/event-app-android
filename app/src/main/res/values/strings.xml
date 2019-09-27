@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TEDxTehran</string>
+    
+    <string name="home">خانه</string>
+    <string name="speakers">سخنران‌ها</string>
+    <string name="networking">شبکه‌سازی</string>
+    <string name="gallery">گالری</string>
+    <string name="news">اخبار</string>
 </resources>
