@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_my_network"
+        android:icon="@drawable/ic_gallery"
+        android:title="@string/my_network" />
+
+
+    <item
+        android:id="@+id/item_messages"
+        android:icon="@drawable/ic_news"
+        android:title="@string/messages" />
+
+
+    <item
+        android:id="@+id/item_about_us"
+        android:icon="@drawable/ic_home"
+        android:title="@string/about_us" />
+
+</menu>

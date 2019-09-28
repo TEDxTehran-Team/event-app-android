@@ -15,5 +15,8 @@
     <style name="Title" parent="TextAppearance.AppCompat.Title">
 
     </style>
+    <style name="Subtitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+
+    </style>
 
 </resources>

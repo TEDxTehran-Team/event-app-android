@@ -8,6 +8,13 @@
     <string name="news">اخبار</string>
 
 
+    <!-- BottomSheet profile -->
+    <string name="edit_profile">ویرایش پروفایل کاربری</string>
+    <string name="my_network">شبکه من</string>
+    <string name="messages">پیام‌ها</string>
+    <string name="about_us">درباره ما</string>
+
+
 
 
     <!-- Content Description ImageView -->
