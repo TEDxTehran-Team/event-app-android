@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/item_gallery"
+        android:title="@string/gallery"
+        android:icon="@drawable/ic_gallery"/>
+
+
+    <item android:id="@+id/item_news"
+        android:title="@string/news"
+        android:icon="@drawable/ic_news"/>
+
+
     <item android:id="@+id/item_home"
         android:title="@string/home"
         android:icon="@drawable/ic_home"/>
@@ -12,15 +22,5 @@
     <item android:id="@+id/item_networking"
         android:title="@string/networking"
         android:icon="@drawable/ic_networking"/>
-
-    <item android:id="@+id/item_gallery"
-        android:title="@string/gallery"
-        android:icon="@drawable/ic_gallery"/>
-
-    <item android:id="@+id/item_news"
-        android:title="@string/news"
-        android:icon="@drawable/ic_news"/>
-
-
 
 </menu>

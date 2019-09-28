@@ -12,4 +12,8 @@
 
     </style>
 
+    <style name="Title" parent="TextAppearance.AppCompat.Title">
+
+    </style>
+
 </resources>

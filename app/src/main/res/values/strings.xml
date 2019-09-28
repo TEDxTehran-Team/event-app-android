@@ -6,4 +6,11 @@
     <string name="networking">شبکه‌سازی</string>
     <string name="gallery">گالری</string>
     <string name="news">اخبار</string>
+
+
+
+
+    <!-- Content Description ImageView -->
+
+    <string name="content_description">پروفایل کاربری</string>
 </resources>
