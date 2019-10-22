@@ -11,7 +11,7 @@
 
         <item name="android:windowLightNavigationBar">true</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="android:navigationBarColor">@color/color_white</item>
         <item name="android:navigationBarDividerColor">#DCDCDC</item>
 
     </style>

@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     tools:context=".view.activities.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -35,7 +34,8 @@
                     android:layout_marginBottom="0dp"
                     android:contentDescription="@string/content_description"
                     android:padding="8dp"
-                    android:src="@drawable/ic_qr" />
+                    android:src="@drawable/ic_qr"
+                    android:tint="@color/color_tint_toolbar_element"/>
 
 
                 <TextView
@@ -73,8 +73,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:itemBackground="@color/color_white"
-        app:itemIconTint="@color/colorAccent"
-        app:itemTextColor="@color/colorAccent"
+        app:itemIconTint="@color/color_gray"
+        app:itemTextColor="@color/color_gray"
         app:labelVisibilityMode="auto"
         android:layout_gravity="bottom"
         app:layout_constraintBottom_toBottomOf="parent"

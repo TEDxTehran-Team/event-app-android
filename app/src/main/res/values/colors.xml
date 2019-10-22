@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#FFFFFF</color>
-    <color name="colorAccent">#c90000</color>
+    <color name="colorPrimary">#c90000</color>
+    <color name="colorPrimaryDark">#9F0013</color>
+    <color name="colorAccent">#FFFFFF</color>
     <color name="color_white">#FFFFFF</color>
     <color name="color_black">#000000</color>
-    <color name="color_tint_toolbar_element">#000000</color>
+    <color name="color_tint_toolbar_element">#FFFFFF</color>
     <color name="color_divider">#EEEEEE</color>
+    <color name="color_gray">#8F8E94</color>
 </resources>
