@@ -10,11 +10,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#F44336"
             android:gravity="center"
             android:text="Speakers"
             style="@style/Title"
-            android:textColor="@color/color_white"
+            android:textColor="@color/color_gray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
