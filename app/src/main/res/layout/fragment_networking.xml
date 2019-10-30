@@ -7,10 +7,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewSpeakers"
+        <TextView
+            style="@style/Title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#FF9800"
+            android:gravity="center"
+            android:text="Networking"
+            android:textColor="@color/color_white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

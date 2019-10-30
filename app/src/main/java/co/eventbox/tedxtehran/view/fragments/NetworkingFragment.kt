@@ -11,7 +11,7 @@ import co.eventbox.tedxtehran.R
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 2019-09-26.
  */
-class NetworkingFragment : Fragment() {
+class NetworkingFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,

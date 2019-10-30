@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/latest_event_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        tools:layout="@layout/fragment_latest_event"
+        android:id="@+id/homeFragment"
+        android:name="co.eventbox.tedxtehran.view.fragments.LatestEventFragment"
+        android:label="HomeFragment" />
+</navigation>

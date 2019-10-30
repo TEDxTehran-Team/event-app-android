@@ -11,7 +11,7 @@ import co.eventbox.tedxtehran.R
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 2019-09-26.
  */
-class SpeakersFragment : Fragment() {
+class SpeakersFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +23,5 @@ class SpeakersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
     }
 }
