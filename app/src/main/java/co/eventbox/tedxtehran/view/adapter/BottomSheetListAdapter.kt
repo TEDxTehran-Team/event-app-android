@@ -23,14 +23,10 @@ class BottomSheetListAdapter(context: Context, @MenuRes menu: Int) : ArrayAdapte
 
 
     private val menu = BottomNavigationMenu(getContext())
-    private var menuClickListener: MenuItem.OnMenuItemClickListener? = null
+    var menuClickListener: MenuItem.OnMenuItemClickListener? = null
 
     init {
         MenuInflater(getContext()).inflate(menu, this.menu)
-    }
-
-    fun setOnMenuClickListener(menuClickListener: MenuItem.OnMenuItemClickListener) {
-        this.menuClickListener = menuClickListener
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -48,7 +44,7 @@ class BottomSheetListAdapter(context: Context, @MenuRes menu: Int) : ArrayAdapte
         val menuItem = menu.getItem(position)
         binding.imgIcon.setImageDrawable(menuItem.icon)
         binding.txtTitle.text = menuItem.title
-        binding.root.setOnClickListener { if (menuClickListener != null) menuClickListener!!.onMenuItemClick(menuItem) }
+        binding.root.setOnClickListener { menuClickListener?.onMenuItemClick(menuItem) }
         return binding.root
     }
 
