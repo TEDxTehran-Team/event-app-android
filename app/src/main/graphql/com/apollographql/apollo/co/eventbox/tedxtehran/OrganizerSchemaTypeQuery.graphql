@@ -1,0 +1,21 @@
+query OrganizerSchemaType {
+    organizer {
+        id
+        title
+        description
+        logo
+        mainEvent {
+            title
+            description
+            banner
+            logo
+            startDate
+            endDate
+            venue {
+                title
+                description
+                adddress
+            }
+        }
+    }
+}
