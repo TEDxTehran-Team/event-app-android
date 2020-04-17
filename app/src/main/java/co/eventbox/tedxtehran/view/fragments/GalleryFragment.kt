@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import co.eventbox.tedxtehran.R
+import co.eventbox.tedxtehran.viewModel.GalleryViewModel
 
 /**
  * Created by Farshid Roohi.
@@ -23,6 +25,9 @@ class GalleryFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val galleryViewModel = ViewModelProvider(this).get(GalleryViewModel::class.java)
+        galleryViewModel.reqeust()
 
 
     }

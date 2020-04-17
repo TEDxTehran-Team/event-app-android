@@ -1,7 +1,9 @@
 package co.eventbox.tedxtehran.view.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.viewModel.SplashViewModel
@@ -14,6 +16,8 @@ class SplashActivity : AppCompatActivity() {
 
         val splashViewModel = ViewModelProvider(this).get(SplashViewModel::class.java)
 
-        splashViewModel.test()
+        splashViewModel.test().observe(this, Observer {
+            startActivity(Intent(this@SplashActivity,MainActivity::class.java))
+        })
     }
 }

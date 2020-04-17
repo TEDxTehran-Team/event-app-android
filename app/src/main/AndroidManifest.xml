@@ -4,13 +4,16 @@
     package="co.eventbox.tedxtehran">
 
     <application
+        android:name=".utilities.App"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        android:requestLegacyExternalStorage="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        tools:targetApi="q">
 
         <activity android:name=".view.activities.SplashActivity">
             <intent-filter>

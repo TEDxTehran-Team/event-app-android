@@ -7,6 +7,7 @@ import co.eventbox.tedxtehran.network.XException
 import com.apollographql.apollo.api.Mutation
 import com.apollographql.apollo.api.Operation
 import com.apollographql.apollo.api.Query
+import com.apollographql.apollo.api.cache.http.HttpCachePolicy
 import com.apollographql.apollo.coroutines.toDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -21,9 +22,9 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
     CoroutineScope {
 
 
-    suspend fun fetch(operation: O): Either<XException?, D?> {
+    suspend fun fetch(operation: O,httpCachePolicy: HttpCachePolicy.Policy = HttpCachePolicy.CACHE_FIRST): Either<XException?, D?> {
 
-        var either: Either<XException?, D?>
+        val either: Either<XException?, D?>
 
         //fetch user token or app token identifier
         val token = ""
@@ -31,15 +32,18 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
         val apolloClientProvider = ApolloClientProvider.provide(okHttpProvider)
 
         val deferred = if (operation is Query<*, *, *>) {
-            apolloClientProvider.query(operation as Query<D, D, V>).toDeferred()
+            apolloClientProvider.query(operation as Query<D, D, V>)
+                .httpCachePolicy(httpCachePolicy)
+                .toDeferred()
         } else {
-            apolloClientProvider.mutate(operation as Mutation<D, D, V>).toDeferred()
+            apolloClientProvider.mutate(operation as Mutation<D, D, V>)
+                .toDeferred()
         }
 
-        try {
+        either = try {
             val response = deferred.await()
 
-            either = if (response.hasErrors()) {
+            if (response.hasErrors()) {
                 val error = response.errors().first().message()
                 Either.Left(XException(response.hashCode(), error))
             } else {
@@ -47,7 +51,7 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            either = Either.Left(XException(e.hashCode(), e.localizedMessage))
+            Either.Left(XException(e.hashCode(), e.localizedMessage))
         }
 
         return either
