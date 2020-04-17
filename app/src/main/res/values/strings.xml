@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">TEDxTehran</string>
-    
+
     <string name="home">خانه</string>
     <string name="speakers">سخنران‌ها</string>
     <string name="networking">شبکه‌سازی</string>
@@ -15,9 +15,8 @@
     <string name="about_us">درباره ما</string>
 
 
-
-
     <!-- Content Description ImageView -->
 
     <string name="content_description">پروفایل کاربری</string>
+    <string name="ic_launcher">ic launcher</string>
 </resources>

@@ -21,4 +21,9 @@
 
     </style>
 
+    <style name="ProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="colorAccent">@color/colorPrimary</item>
+
+    </style>
+
 </resources>
