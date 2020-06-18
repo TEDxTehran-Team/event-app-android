@@ -14,8 +14,8 @@ class GalleryViewModel : BaseViewModel() {
 
     fun reqeust(){
 
-        launch {
-            galleryRepository.request()
-        }
+//        launch {
+//            galleryRepository.request()
+//        }
     }
 }

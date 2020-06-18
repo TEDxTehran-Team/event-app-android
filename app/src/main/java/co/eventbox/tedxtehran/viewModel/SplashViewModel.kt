@@ -15,11 +15,11 @@ class SplashViewModel : BaseViewModel() {
 
     fun test():LiveData<Boolean>{
         val mutableLiveDataTest = MutableLiveData<Boolean>()
-        launch {
-         val either =    cacheRepository.request()
-            mutableLiveDataTest.postValue(true)
-
-        }
+//        launch {
+//         val either =    cacheRepository.request()
+//            mutableLiveDataTest.postValue(true)
+//
+//        }
 
         return mutableLiveDataTest
 

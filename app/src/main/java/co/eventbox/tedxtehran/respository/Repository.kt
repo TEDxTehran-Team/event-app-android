@@ -44,7 +44,7 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
             val response = deferred.await()
 
             if (response.hasErrors()) {
-                val error = response.errors().first().message()
+                val error = response.errors?.first()?.message()
                 Either.Left(XException(response.hashCode(), error))
             } else {
                 Either.Right(response.data())

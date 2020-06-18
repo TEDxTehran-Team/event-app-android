@@ -20,23 +20,22 @@ object ApolloClientProvider {
 
         // TODO :  Context Just for test
         val cacheFactory = SqlNormalizedCacheFactory(ApolloSqlHelper(App.context, "tedx_tehran_cache"))
-        val resolver: CacheKeyResolver = object : CacheKeyResolver() {
-            override fun fromFieldRecordSet(
-                field: ResponseField,
-                recordSet: MutableMap<String, Any>
-            ): CacheKey {
-                return formatCacheKey(recordSet["id"] as String?)
-            }
 
+        val resolver: CacheKeyResolver = object : CacheKeyResolver(){
             override fun fromFieldArguments(
                 field: ResponseField,
                 variables: Operation.Variables
             ): CacheKey {
                 return formatCacheKey(field.resolveArgument("id", variables) as String?)
+            }
 
+            override fun fromFieldRecordSet(
+                field: ResponseField,
+                recordSet: Map<String, Any>
+            ): CacheKey {
+                return formatCacheKey(recordSet["id"] as String?)
             }
         }
-
 
         return ApolloClient.builder().apply {
             serverUrl(APIs.END_POINT)

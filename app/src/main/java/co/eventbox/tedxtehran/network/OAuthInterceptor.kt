@@ -20,8 +20,8 @@ class OAuthInterceptor(private val token: String) : Interceptor {
             .build()
 
         val response = chain.proceed(request)
-        if (response.code() != 200) {
-            OkHttpClientProvider.errorString = response.body()?.string()
+        if (response.code != 200) {
+            OkHttpClientProvider.errorString = response.body?.string()
         }
         return response
     }
