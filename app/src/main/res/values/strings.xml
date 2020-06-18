@@ -19,4 +19,6 @@
 
     <string name="content_description">پروفایل کاربری</string>
     <string name="ic_launcher">ic launcher</string>
+    <string name="speakers_image">Speakers Image</string>
+    <string name="banner_image">Banner Image</string>
 </resources>

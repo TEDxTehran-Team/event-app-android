@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import co.eventbox.tedxtehran.R
+import co.eventbox.tedxtehran.view.adapter.SpeakerAdapter
+import kotlinx.android.synthetic.main.fragment_speakers.*
 
 /**
  * Created by Farshid Roohi.
@@ -23,5 +25,11 @@ class SpeakersFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // TODO : Need API
+        val adapter = SpeakerAdapter()
+        adapter.items = arrayListOf("Farshid","Test","Android","iOS")
+        speakersRecyclerView.adapter = adapter
+
     }
 }

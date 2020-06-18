@@ -2,4 +2,5 @@
 <resources>
 
     <dimen name="icon_padding_toolbar">8dp</dimen>
+    <dimen name="margin_banner_speakers">8dp</dimen>
 </resources>

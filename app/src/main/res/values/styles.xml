@@ -14,11 +14,12 @@
 
     <style name="Title" parent="TextAppearance.AppCompat.Title">
         <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="Subtitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
         <item name="android:textColor">@color/color_white</item>
-
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="ProgressBar" parent="Widget.AppCompat.ProgressBar">
