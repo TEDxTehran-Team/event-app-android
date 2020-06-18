@@ -76,6 +76,8 @@ dependencies {
     implementation("com.google.dagger:dagger-android-support:2.24")
     kapt("com.google.dagger:dagger-android-processor:2.24")
 
+    implementation 'ir.farshid_roohi:customAdapterRecycleView:2.0.1'
+
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

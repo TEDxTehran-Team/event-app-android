@@ -19,7 +19,12 @@
 
     <style name="Subtitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
         <item name="android:textColor">@color/color_white</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="NormalButton" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="ProgressBar" parent="Widget.AppCompat.ProgressBar">

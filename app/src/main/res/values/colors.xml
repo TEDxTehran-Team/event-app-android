@@ -8,4 +8,5 @@
     <color name="color_tint_toolbar_element">#FFFFFF</color>
     <color name="color_divider">#EEEEEE</color>
     <color name="color_gray">#8F8E94</color>
+    <color name="color_title_gray">#707070</color>
 </resources>

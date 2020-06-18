@@ -21,4 +21,7 @@
     <string name="ic_launcher">ic launcher</string>
     <string name="speakers_image">Speakers Image</string>
     <string name="banner_image">Banner Image</string>
+    <string name="description">جزئیات</string>
+    <string name="related">مرتبط ها</string>
+    <string name="try_again">تلاش مجدد</string>
 </resources>
