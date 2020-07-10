@@ -17,9 +17,19 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="TitleDark" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/color_title_dark</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 
     <style name="Subtitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
         <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="SubtitleDark" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">@color/color_subtitle_dark</item>
         <item name="android:textSize">12sp</item>
     </style>
 

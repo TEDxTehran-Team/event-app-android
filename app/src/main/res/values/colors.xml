@@ -9,6 +9,8 @@
     <color name="color_divider">#EEEEEE</color>
     <color name="color_gray">#8F8E94</color>
     <color name="color_title_gray">#707070</color>
+    <color name="color_title_dark">#010101</color>
+    <color name="color_subtitle_dark">#8F8E94</color>
 
     <color name="color_shadow_cover">#28000000</color>
 </resources>

@@ -3,6 +3,7 @@ query DashboardCache {
         title
         id
         iconUrl
+        description
     }
     allAlbum {
         id
