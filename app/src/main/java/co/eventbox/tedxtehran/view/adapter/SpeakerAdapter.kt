@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import co.eventbox.tedxtehran.R
 import kotlinx.android.synthetic.main.header_row_speakers_list.view.*

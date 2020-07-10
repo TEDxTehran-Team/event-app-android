@@ -1,6 +1,9 @@
 package co.eventbox.tedxtehran.viewModel
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import co.eventbox.tedxtehran.respository.GalleryRepository
+import com.apollographql.apollo.co.eventbox.tedxtehran.DashboardCacheQuery
 import kotlinx.coroutines.launch
 
 /**
@@ -9,13 +12,23 @@ import kotlinx.coroutines.launch
  */
 class GalleryViewModel : BaseViewModel() {
 
-    val galleryRepository = GalleryRepository()
+    private val galleryRepository = GalleryRepository()
+
+    fun albums(): LiveData<List<DashboardCacheQuery.AllAlbum>> {
+
+        val albums = MutableLiveData<List<DashboardCacheQuery.AllAlbum>>()
 
 
-    fun reqeust(){
+        launch {
+            galleryRepository.request().fold({
+                albums.postValue(null)
+            }, {
+                albums.postValue(it?.allAlbum())
+            })
 
-//        launch {
-//            galleryRepository.request()
-//        }
+
+        }
+
+        return albums
     }
 }

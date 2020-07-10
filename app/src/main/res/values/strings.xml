@@ -24,4 +24,6 @@
     <string name="description">جزئیات</string>
     <string name="related">مرتبط ها</string>
     <string name="try_again">تلاش مجدد</string>
+    <string name="description_gallery_cover">Gallery Cover</string>
+    <string name="description_img_shadow_gallery_cover">shadow Gallery Cover</string>
 </resources>

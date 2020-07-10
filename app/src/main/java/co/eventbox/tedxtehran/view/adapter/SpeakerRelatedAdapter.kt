@@ -12,7 +12,7 @@ class SpeakerRelatedAdapter : AdapterRecyclerView<String>(
     R.layout.row_speaker_related,
     R.layout.row_progress_view,
     R.layout.row_error,
-    R.id.btn_error_list) {
+    R.id.btnErrorLoadList) {
 
     override fun onBindView(
         viewHolder: ItemViewHolder,

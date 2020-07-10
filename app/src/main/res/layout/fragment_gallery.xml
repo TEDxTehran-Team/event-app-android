@@ -5,16 +5,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        style="@style/Title"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewGallery"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Gallery"
-        android:textColor="@color/color_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/ProgressBar"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerViewGallery"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerViewGallery"
+        app:layout_constraintStart_toStartOf="@+id/recyclerViewGallery"
+        app:layout_constraintTop_toTopOf="@+id/recyclerViewGallery" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

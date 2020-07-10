@@ -8,6 +8,13 @@ import co.eventbox.tedxtehran.network.APIs
  */
 
 
-fun String.toImageURL():String {
-    return "${APIs.END_POINT}/$this"
+fun String?.toImageURL():String {
+    if (this == null) {
+        return ""
+    }
+    if (this.contains("media")){
+        return "${APIs.END_POINT}/$this"
+    }
+    return "${APIs.END_POINT}/media/$this"
+
 }
