@@ -38,7 +38,7 @@ object ApolloClientProvider {
         }
 
         return ApolloClient.builder().apply {
-            serverUrl(APIs.END_POINT)
+            serverUrl(APIs.END_POINT_GRAPH_QL)
             normalizedCache(cacheFactory, resolver)
             okHttpClient(okHttpClient)
         }.build()

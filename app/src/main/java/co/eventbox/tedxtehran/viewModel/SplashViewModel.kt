@@ -2,7 +2,7 @@ package co.eventbox.tedxtehran.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import co.eventbox.tedxtehran.respository.CacheDataRepository
+//import co.eventbox.tedxtehran.respository.CacheDataRepository
 import kotlinx.coroutines.launch
 
 /**
@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
  */
 class SplashViewModel : BaseViewModel() {
 
-    private val cacheRepository = CacheDataRepository()
+//    private val cacheRepository = CacheDataRepository()
 
     fun test():LiveData<Boolean>{
         val mutableLiveDataTest = MutableLiveData<Boolean>()

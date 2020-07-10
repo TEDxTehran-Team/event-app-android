@@ -5,5 +5,8 @@ package co.eventbox.tedxtehran.network
  * TEDxTehran | Copyrights 4/17/20.
  */
 object APIs {
-    const val END_POINT = "https://tedxtehran.idearun.co/graphql/"
+     const val END_POINT: String = "https://tedxtehran.idearun.co"
+
+    const val END_POINT_GRAPH_QL = "${END_POINT}/graphql/"
+
 }

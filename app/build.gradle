@@ -22,9 +22,6 @@ android {
         }
     }
 
-    dataBinding {
-        enabled = true
-    }
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
@@ -65,9 +62,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.6.2"
 
     // Apollo Client
-    implementation "com.apollographql.apollo:apollo-runtime:2.0.1"
-    implementation "com.apollographql.apollo:apollo-android-support:2.0.1"
-    implementation "com.apollographql.apollo:apollo-coroutines-support:2.0.1"
+    implementation "com.apollographql.apollo:apollo-runtime:2.2.2"
+    implementation "com.apollographql.apollo:apollo-android-support:2.2.2"
+    implementation "com.apollographql.apollo:apollo-coroutines-support:2.2.2"
 
 
     // Dagger2

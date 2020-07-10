@@ -13,9 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import co.eventbox.tedxtehran.R
-import co.eventbox.tedxtehran.view.adapter.BottomSheetListAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.android.synthetic.main.bottom_sheet_profile.*
 
 /**
  * Created by Farshid Roohi.
@@ -33,7 +31,7 @@ class ProfileBottomSheet : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        listItemMenu.adapter = BottomSheetListAdapter(context!!, R.menu.bottom_sheet_profile_list)
+//        listItemMenu.adapter = BottomSheetListAdapter(context!!, R.menu.bottom_sheet_profile_list)
 
     }
 

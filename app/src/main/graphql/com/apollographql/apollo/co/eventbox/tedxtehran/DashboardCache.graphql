@@ -1,0 +1,18 @@
+query DashboardCache {
+    allNews {
+        title
+        id
+        iconUrl
+    }
+    allAlbum {
+        id
+        title
+        cover
+    }
+    allEvent {
+        id
+        title
+        bannerUrl
+        logoUrl
+    }
+}
