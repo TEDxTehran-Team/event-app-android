@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.row_gallery.view.*
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 7/10/20.
  */
-class GalleryAdapter : AdapterRecyclerView<DashboardCacheQuery.AllAlbum>(
+class GalleryAdapter : AdapterRecyclerView<DashboardCacheQuery.AlbumByOrganizer>(
     R.layout.row_gallery,
     R.layout.row_loading,
     R.layout.row_error,
@@ -23,7 +23,7 @@ class GalleryAdapter : AdapterRecyclerView<DashboardCacheQuery.AllAlbum>(
         viewHolder: ItemViewHolder,
         position: Int,
         context: Context,
-        element: DashboardCacheQuery.AllAlbum?
+        element: DashboardCacheQuery.AlbumByOrganizer?
     ) {
         val itemView = viewHolder.itemView
 

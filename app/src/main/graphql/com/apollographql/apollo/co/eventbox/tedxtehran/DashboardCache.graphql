@@ -1,19 +1,30 @@
-query DashboardCache {
-    allNews {
+query DashboardCache($organizer: Int!) {
+    newsByOrganizer(organizer: $organizer) {
         title
         id
         iconUrl
         description
     }
-    allAlbum {
+    albumByOrganizer(organizer: $organizer) {
         id
         title
         cover
     }
-    allEvent {
+    eventByOrganizer(organization: $organizer) {
         id
         title
         bannerUrl
         logoUrl
+    }
+    speakersByOrganizer(organizer: $organizer) {
+        title
+        imageUrl
+        speakers {
+            title
+            section {
+                imageUrl
+                title
+            }
+        }
     }
 }

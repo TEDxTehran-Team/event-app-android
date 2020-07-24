@@ -14,16 +14,16 @@ class NewsViewModel : BaseViewModel() {
 
     private val galleryRepository = GalleryRepository()
 
-    fun news(): LiveData<List<DashboardCacheQuery.AllNew>> {
+    fun news(): LiveData<List<DashboardCacheQuery.NewsByOrganizer>> {
 
-        val albums = MutableLiveData<List<DashboardCacheQuery.AllNew>>()
+        val albums = MutableLiveData<List<DashboardCacheQuery.NewsByOrganizer>>()
 
 
         launch {
             galleryRepository.request().fold({
                 albums.postValue(null)
             }, {
-                albums.postValue(it?.allNews())
+                albums.postValue(it?.newsByOrganizer())
             })
 
 

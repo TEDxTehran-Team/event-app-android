@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.row_news.view.*
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 7/10/20.
  */
-class NewsAdapter : AdapterRecyclerView<DashboardCacheQuery.AllNew>(
+class NewsAdapter : AdapterRecyclerView<DashboardCacheQuery.NewsByOrganizer>(
     R.layout.row_news,
     R.layout.row_loading,
     R.layout.row_error,
@@ -24,7 +24,7 @@ class NewsAdapter : AdapterRecyclerView<DashboardCacheQuery.AllNew>(
         viewHolder: ItemViewHolder,
         position: Int,
         context: Context,
-        element: DashboardCacheQuery.AllNew?
+        element: DashboardCacheQuery.NewsByOrganizer?
     ) {
         val itemView = viewHolder.itemView
 

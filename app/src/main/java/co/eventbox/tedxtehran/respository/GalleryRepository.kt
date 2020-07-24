@@ -2,7 +2,6 @@ package co.eventbox.tedxtehran.respository
 
 import co.eventbox.tedxtehran.network.Either
 import co.eventbox.tedxtehran.network.XException
-import com.apollographql.apollo.api.Operation
 import com.apollographql.apollo.api.cache.http.HttpCachePolicy
 import com.apollographql.apollo.co.eventbox.tedxtehran.DashboardCacheQuery
 
@@ -12,10 +11,12 @@ import com.apollographql.apollo.co.eventbox.tedxtehran.DashboardCacheQuery
  * TEDxTehran | Copyrights 4/17/20.
  */
 class GalleryRepository :
-    Repository<DashboardCacheQuery.Data, Operation.Variables, DashboardCacheQuery>() {
+    Repository<DashboardCacheQuery.Data, DashboardCacheQuery.Variables, DashboardCacheQuery>() {
 
     suspend fun request(): Either<XException?, DashboardCacheQuery.Data?> {
-        return fetch(DashboardCacheQuery.builder().build(), HttpCachePolicy.CACHE_FIRST)
+        val operation = DashboardCacheQuery.builder().organizer(1).build()
+
+        return fetch(operation, HttpCachePolicy.CACHE_FIRST)
     }
 
 

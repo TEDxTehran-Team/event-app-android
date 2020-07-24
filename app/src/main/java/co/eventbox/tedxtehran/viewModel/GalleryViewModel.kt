@@ -14,16 +14,16 @@ class GalleryViewModel : BaseViewModel() {
 
     private val galleryRepository = GalleryRepository()
 
-    fun albums(): LiveData<List<DashboardCacheQuery.AllAlbum>> {
+    fun albums(): LiveData<List<DashboardCacheQuery.AlbumByOrganizer>> {
 
-        val albums = MutableLiveData<List<DashboardCacheQuery.AllAlbum>>()
+        val albums = MutableLiveData<List<DashboardCacheQuery.AlbumByOrganizer>>()
 
 
         launch {
             galleryRepository.request().fold({
                 albums.postValue(null)
             }, {
-                albums.postValue(it?.allAlbum())
+                albums.postValue(it?.albumByOrganizer())
             })
 
 
