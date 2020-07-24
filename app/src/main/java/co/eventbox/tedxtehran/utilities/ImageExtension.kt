@@ -19,6 +19,7 @@ fun ImageView.load(url: String?) {
 }
 
 fun ImageView.loadRadius(url: String?,radius:Int = R.dimen.image_gallery_radius) {
+
     Glide.with(this)
         .load(url)
         .transform(CenterCrop(), RoundedCorners(this.context.resources.getDimensionPixelOffset(radius)))

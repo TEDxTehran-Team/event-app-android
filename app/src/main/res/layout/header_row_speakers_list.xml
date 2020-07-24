@@ -8,7 +8,6 @@
         android:id="@+id/imgBanner"
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:background="#661122"
         android:layout_margin="@dimen/margin_banner_speakers"
         android:contentDescription="@string/banner_image" />
 </LinearLayout>

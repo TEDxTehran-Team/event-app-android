@@ -15,6 +15,8 @@ class SplashViewModel : BaseViewModel() {
     private val cacheRepository = CacheDataRepository()
 
     fun test(): LiveData<Boolean> {
+        this.cacheRepository.clearCache()
+
         val mutableLiveDataTest = MutableLiveData<Boolean>()
         launch {
             val either = cacheRepository.request()

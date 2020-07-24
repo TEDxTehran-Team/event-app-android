@@ -22,14 +22,25 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
     CoroutineScope {
 
 
-    suspend fun fetch(operation: O,httpCachePolicy: HttpCachePolicy.Policy = HttpCachePolicy.CACHE_FIRST): Either<XException?, D?> {
+    //fetch user token or app token identifier
+    private val token = ""
+    private val okHttpProvider = OkHttpClientProvider.provide(token)
+    private val apolloClientProvider = ApolloClientProvider.provide(okHttpProvider)
+
+    fun clearCache(){
+        this.apolloClientProvider.clearNormalizedCache()
+    }
+
+    suspend fun fetch(
+        operation: O,
+        httpCachePolicy: HttpCachePolicy.Policy = HttpCachePolicy.CACHE_FIRST
+    ): Either<XException?, D?> {
 
         val either: Either<XException?, D?>
 
-        //fetch user token or app token identifier
-        val token = ""
-        val okHttpProvider = OkHttpClientProvider.provide(token)
-        val apolloClientProvider = ApolloClientProvider.provide(okHttpProvider)
+        if (httpCachePolicy == HttpCachePolicy.NETWORK_ONLY) {
+            apolloClientProvider.clearNormalizedCache()
+        }
 
         val deferred = if (operation is Query<*, *, *>) {
             apolloClientProvider.query(operation as Query<D, D, V>)

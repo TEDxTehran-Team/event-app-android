@@ -1,65 +1,35 @@
 package co.eventbox.tedxtehran.view.adapter
 
-import android.graphics.Color
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import android.content.Context
 import co.eventbox.tedxtehran.R
-import kotlinx.android.synthetic.main.header_row_speakers_list.view.*
-import kotlinx.android.synthetic.main.row_speaker.view.*
+import co.eventbox.tedxtehran.utilities.loadRadius
+import co.eventbox.tedxtehran.utilities.toImageURL
+import com.apollographql.apollo.co.eventbox.tedxtehran.DashboardCacheQuery
+import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
+import kotlinx.android.synthetic.main.row_gallery.view.*
 
 /**
  * Created by Farshid Roohi.
- * TEDxTehran | Copyrights 6/18/20.
+ * TEDxTehran | Copyrights 7/10/20.
  */
+class SpeakerAdapter : AdapterRecyclerView<DashboardCacheQuery.Speaker>(
+    R.layout.row_speaker,
+    R.layout.row_loading,
+    R.layout.row_error,
+    R.id.btnErrorLoadList
+) {
 
-class SpeakerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    override fun onBindView(
+        viewHolder: ItemViewHolder,
+        position: Int,
+        context: Context,
+        element: DashboardCacheQuery.Speaker?
+    ) {
+        val itemView = viewHolder.itemView
 
-    private val ITEM_VIEW_TYPE_HEADER = 0
-    private val ITEM_VIEW_TYPE_ROW = 1
-
-    var items: ArrayList<String> = ArrayList()
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-
-        val inflater = LayoutInflater.from(parent.context)
-        if (viewType == ITEM_VIEW_TYPE_HEADER) {
-            val view = inflater.inflate(R.layout.header_row_speakers_list, parent, false)
-            return HeaderViewHolder(view)
-        }
-
-        val view = inflater.inflate(R.layout.row_speaker, parent, false)
-        return RowViewHolder(view)
+        itemView.imgCover.loadRadius(element?.section()?.imageUrl()?.toImageURL())
+        itemView.txtTitle.text = element?.title()
 
     }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
-
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val itemView = holder.itemView
-        when (holder) {
-            is RowViewHolder -> {
-
-                itemView.txtTitle.text = items[position]
-            }
-            is HeaderViewHolder -> {
-                itemView.imgBanner.setBackgroundColor(Color.BLUE)
-            }
-        }
-    }
-
-
-    override fun getItemViewType(position: Int): Int {
-        if (position == 0) {
-            return ITEM_VIEW_TYPE_HEADER
-        }
-        return ITEM_VIEW_TYPE_ROW
-    }
-
-
-    class RowViewHolder(view: View) : RecyclerView.ViewHolder(view)
-    class HeaderViewHolder(view: View) : RecyclerView.ViewHolder(view)
 }

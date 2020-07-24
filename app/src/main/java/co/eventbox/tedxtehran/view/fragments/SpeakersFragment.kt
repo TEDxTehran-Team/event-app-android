@@ -1,12 +1,16 @@
 package co.eventbox.tedxtehran.view.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import co.eventbox.tedxtehran.R
-import co.eventbox.tedxtehran.view.adapter.SpeakerAdapter
+import co.eventbox.tedxtehran.utilities.gone
+import co.eventbox.tedxtehran.view.adapter.SpeakerParentAdapter
+import co.eventbox.tedxtehran.viewModel.SpeakersViewModel
 import kotlinx.android.synthetic.main.fragment_speakers.*
 
 /**
@@ -26,10 +30,24 @@ class SpeakersFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO : Need API
-        val adapter = SpeakerAdapter()
-        adapter.items = arrayListOf("Farshid","Test","Android","iOS")
-        speakersRecyclerView.adapter = adapter
+        val viewModel = ViewModelProvider(this).get(SpeakersViewModel::class.java)
+        val adapter = SpeakerParentAdapter()
+
+        recyclerViewSpeakers.adapter = adapter
+
+        viewModel.speackers().observe(viewLifecycleOwner, Observer {
+
+            progressBar.gone()
+            it.fold({
+                Log.d("TAG", "Exception : ${it?.errorMessage}")
+            }, { data ->
+                if (data?.speakersByOrganizer() != null) {
+                    adapter.items = data.speakersByOrganizer()!!
+                    adapter.notifyDataSetChanged()
+                }
+            })
+        })
+
 
     }
 }
