@@ -1,6 +1,5 @@
 package co.eventbox.tedxtehran.view.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +21,7 @@ class SpeakerParentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val ITEM_VIEW_TYPE_HEADER = 0
     private val ITEM_VIEW_TYPE_ROW = 1
 
-    var items: List<DashboardCacheQuery.SpeakersByOrganizer> = ArrayList()
+    var items: List<DashboardCacheQuery.TalksWithEvent> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
@@ -47,26 +46,25 @@ class SpeakerParentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         when (holder) {
             is RowViewHolder -> {
                 val item = items[position]
-                itemView.txtTitle.text = item.title()
-Log.d("TAG","speaker count : ${item.speakers().size}")
-//                val adapterSpeakers = SpeakerAdapter()
-//                itemView.recyclerViewChild.adapter = adapterSpeakers
-//
-//                adapterSpeakers.loadedState(item.speakers())
+                itemView.txtTitle.text = item.event()?.title()
+                val adapterSpeakers = SpeakerAdapter()
+                itemView.recyclerViewChild.adapter = adapterSpeakers
+
+                adapterSpeakers.loadedState(item.talks())
 
             }
             is HeaderViewHolder -> {
                 val item = items[position]
-                itemView.imgBanner.loadRadius(item.imageUrl()?.toImageURL())
+                itemView.imgBanner.loadRadius(item.event()?.bannerUrl()?.toImageURL())
             }
         }
     }
 
 
     override fun getItemViewType(position: Int): Int {
-        if (position == 0) {
-            return ITEM_VIEW_TYPE_HEADER
-        }
+//        if (position == 0) {
+//            return ITEM_VIEW_TYPE_HEADER
+//        }
         return ITEM_VIEW_TYPE_ROW
     }
 

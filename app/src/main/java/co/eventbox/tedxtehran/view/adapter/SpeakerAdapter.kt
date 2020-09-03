@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.row_gallery.view.*
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 7/10/20.
  */
-class SpeakerAdapter : AdapterRecyclerView<DashboardCacheQuery.Speaker>(
+class SpeakerAdapter : AdapterRecyclerView<DashboardCacheQuery.Talk>(
     R.layout.row_speaker,
     R.layout.row_loading,
     R.layout.row_error,
@@ -23,11 +23,11 @@ class SpeakerAdapter : AdapterRecyclerView<DashboardCacheQuery.Speaker>(
         viewHolder: ItemViewHolder,
         position: Int,
         context: Context,
-        element: DashboardCacheQuery.Speaker?
+        element: DashboardCacheQuery.Talk?
     ) {
         val itemView = viewHolder.itemView
 
-        itemView.imgCover.loadRadius(element?.section()?.imageUrl()?.toImageURL())
+        itemView.imgCover.loadRadius(element?.section()?.image()?.toImageURL())
         itemView.txtTitle.text = element?.title()
 
     }

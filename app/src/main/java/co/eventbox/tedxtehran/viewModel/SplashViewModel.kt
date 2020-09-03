@@ -1,5 +1,6 @@
 package co.eventbox.tedxtehran.viewModel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import co.eventbox.tedxtehran.respository.CacheDataRepository
@@ -16,15 +17,17 @@ class SplashViewModel : BaseViewModel() {
 
     fun test(): LiveData<Boolean> {
         this.cacheRepository.clearCache()
-
+        Log.d("TAG_AG","test start")
         val mutableLiveDataTest = MutableLiveData<Boolean>()
         launch {
             val either = cacheRepository.request()
 
             either.fold({
+                Log.d("TAG_AG","faild")
                 mutableLiveDataTest.postValue(false)
             },{
                 mutableLiveDataTest.postValue(it != null)
+                Log.d("TAG_AG","success : ${it != null}" )
             })
         }
 

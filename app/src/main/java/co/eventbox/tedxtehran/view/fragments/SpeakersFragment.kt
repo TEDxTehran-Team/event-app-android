@@ -41,8 +41,8 @@ class SpeakersFragment : BaseFragment() {
             it.fold({
                 Log.d("TAG", "Exception : ${it?.errorMessage}")
             }, { data ->
-                if (data?.speakersByOrganizer() != null) {
-                    adapter.items = data.speakersByOrganizer()!!
+                if (data?.talksWithEvent() != null) {
+                    adapter.items = data.talksWithEvent()!!
                     adapter.notifyDataSetChanged()
                 }
             })
