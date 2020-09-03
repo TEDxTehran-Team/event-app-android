@@ -2,6 +2,7 @@ package co.eventbox.tedxtehran.respository
 
 import co.eventbox.tedxtehran.network.Either
 import co.eventbox.tedxtehran.network.XException
+import com.apollographql.apollo.api.Operation
 import com.apollographql.apollo.co.eventbox.tedxtehran.DashboardCacheQuery
 
 /**
