@@ -1,4 +1,4 @@
-query DashboardCache {
+query DashboardCache($organizer:Int!) {
     talksWithEvent {
         talks {
             title
@@ -12,7 +12,7 @@ query DashboardCache {
             bannerUrl
         }
     }
-    newsByOrganizer(organizer: 1) {
+    newsByOrganizer(organizer: $organizer) {
         title
         description
         iconUrl

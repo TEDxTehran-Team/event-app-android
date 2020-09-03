@@ -7,6 +7,7 @@ import co.eventbox.tedxtehran.utilities.toImageURL
 import com.apollographql.apollo.co.eventbox.tedxtehran.DashboardCacheQuery
 import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
 import kotlinx.android.synthetic.main.row_gallery.view.*
+import kotlinx.android.synthetic.main.row_speaker.view.*
 
 /**
  * Created by Farshid Roohi.
@@ -27,8 +28,8 @@ class SpeakerAdapter : AdapterRecyclerView<DashboardCacheQuery.Talk>(
     ) {
         val itemView = viewHolder.itemView
 
-        itemView.imgCover.loadRadius(element?.section()?.image()?.toImageURL())
-        itemView.txtTitle.text = element?.title()
+        itemView.img_speaker.loadRadius(element?.section()?.image()?.toImageURL())
+//        itemView.txtTitle.text = element?.title()
 
     }
 

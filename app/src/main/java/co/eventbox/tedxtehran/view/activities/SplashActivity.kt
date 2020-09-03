@@ -18,7 +18,7 @@ class SplashActivity : AppCompatActivity() {
 
         val splashViewModel = ViewModelProvider(this).get(SplashViewModel::class.java)
 
-        splashViewModel.test().observe(this, Observer {
+        splashViewModel.cacheData().observe(this, Observer {
             startActivity(Intent(this@SplashActivity,MainActivity::class.java))
         })
     }

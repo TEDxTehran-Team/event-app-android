@@ -1,5 +1,6 @@
 package co.eventbox.tedxtehran.respository
 
+import android.util.Log
 import co.eventbox.tedxtehran.network.ApolloClientProvider
 import co.eventbox.tedxtehran.network.Either
 import co.eventbox.tedxtehran.network.OkHttpClientProvider
