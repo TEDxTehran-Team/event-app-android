@@ -3,6 +3,7 @@ package co.eventbox.tedxtehran.view.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.loadRadius
@@ -49,7 +50,11 @@ class SpeakerParentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 itemView.txtTitle.text = item.event()?.title()
                 val adapterSpeakers = SpeakerAdapter()
                 itemView.recyclerViewChild.adapter = adapterSpeakers
-
+                itemView.recyclerViewChild.layoutManager = LinearLayoutManager(
+                    holder.itemView.context,
+                    LinearLayoutManager.HORIZONTAL,
+                    true
+                )
                 adapterSpeakers.loadedState(item.talks())
 
             }

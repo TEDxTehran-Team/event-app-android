@@ -3,6 +3,9 @@ query DashboardCache($organizer:Int!) {
         talks {
             title
             id
+            speakers {
+                imageUrl
+            }
             section {
                 image
             }

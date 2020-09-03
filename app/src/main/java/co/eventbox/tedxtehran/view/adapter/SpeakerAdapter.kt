@@ -1,6 +1,7 @@
 package co.eventbox.tedxtehran.view.adapter
 
 import android.content.Context
+import android.util.Log
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.loadRadius
 import co.eventbox.tedxtehran.utilities.toImageURL
@@ -28,8 +29,7 @@ class SpeakerAdapter : AdapterRecyclerView<DashboardCacheQuery.Talk>(
     ) {
         val itemView = viewHolder.itemView
 
-        itemView.img_speaker.loadRadius(element?.section()?.image()?.toImageURL())
-//        itemView.txtTitle.text = element?.title()
+        itemView.img_speaker.loadRadius(element?.speakers()?.first()?.imageUrl()?.toImageURL())
 
     }
 
