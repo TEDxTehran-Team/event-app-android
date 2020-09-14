@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -7,15 +8,18 @@
 
 
     <RelativeLayout
+        android:id="@+id/layoutPlay"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="200dp"
+        android:background="?android:attr/selectableItemBackground">
 
         <ImageView
             android:id="@+id/imgBanner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimary"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/talk_banner" />
 
 
         <ProgressBar
@@ -23,6 +27,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/imgPlay"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_play_circle_outline"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:contentDescription="@string/get_play_video" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#31FFFFFF"
+            tools:ignore="ContentDescription" />
 
     </RelativeLayout>
 

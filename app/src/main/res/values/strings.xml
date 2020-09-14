@@ -27,4 +27,6 @@
     <string name="description_gallery_cover">Gallery Cover</string>
     <string name="description_img_shadow_gallery_cover">shadow Gallery Cover</string>
     <string name="description_img_news_logo">News Logo</string>
+    <string name="get_play_video">Get Play Video</string>
+    <string name="talk_banner">Talk Banner</string>
 </resources>

@@ -1,5 +1,7 @@
 package co.eventbox.tedxtehran.view.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -51,6 +53,7 @@ class SpeakersDetailsFragment : BaseFragment() ,ListOnClickListener{
 
             this.progressBar.gone()
             this.layoutRoot.visible()
+            this.imgPlay.visible()
 
 
             either.fold({
@@ -68,6 +71,12 @@ class SpeakersDetailsFragment : BaseFragment() ,ListOnClickListener{
                 this.txtDescription.text = talk?.description()
 
                 adapter.loadedState(it?.suggestedTalk()!!)
+
+                this.layoutPlay.setOnClickListener {
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.data = Uri.parse(talk?.videoLink())
+                    startActivity(intent)
+                }
             })
         })
 
