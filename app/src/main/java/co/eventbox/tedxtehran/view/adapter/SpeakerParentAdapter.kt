@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import co.eventbox.tedxtehran.ListOnClickListener
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.loadRadius
 import co.eventbox.tedxtehran.utilities.toImageURL
@@ -17,7 +18,7 @@ import kotlinx.android.synthetic.main.row_speaker_parent.view.*
  * TEDxTehran | Copyrights 6/18/20.
  */
 
-class SpeakerParentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class SpeakerParentAdapter(var listener: ListOnClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val ITEM_VIEW_TYPE_HEADER = 0
     private val ITEM_VIEW_TYPE_ROW = 1
@@ -48,7 +49,7 @@ class SpeakerParentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             is RowViewHolder -> {
                 val item = items[position]
                 itemView.txtTitle.text = item.event()?.title()
-                val adapterSpeakers = SpeakerAdapter()
+                val adapterSpeakers = SpeakerAdapter(this.listener)
                 itemView.recyclerViewChild.adapter = adapterSpeakers
                 itemView.recyclerViewChild.layoutManager = LinearLayoutManager(
                     holder.itemView.context,
@@ -60,7 +61,7 @@ class SpeakerParentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             }
             is HeaderViewHolder -> {
                 val item = items[position]
-                itemView.imgBanner.loadRadius(item.event()?.bannerUrl()?.toImageURL())
+//                itemView.imgBanner.loadRadius(item.event()?.bannerUrl()?.toImageURL())
             }
         }
     }

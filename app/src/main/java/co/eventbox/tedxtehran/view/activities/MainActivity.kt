@@ -21,8 +21,7 @@ class MainActivity : BaseActivity() {
             R.navigation.speakers_navigation,
             R.navigation.gallery_navigation,
             R.navigation.latest_event_navigation,
-            R.navigation.news_navigation,
-            R.navigation.networking_navigation
+            R.navigation.news_navigation
         )
 
         bottomNavigation.setupWithNavController(
@@ -31,11 +30,5 @@ class MainActivity : BaseActivity() {
             R.id.fragment_container,
             intent
         )
-
-
-        imgProfile.setOnClickListener {
-            val bottomSheetProfile = ProfileBottomSheet()
-            bottomSheetProfile.show(supportFragmentManager, ProfileBottomSheet::javaClass.name)
-        }
     }
 }

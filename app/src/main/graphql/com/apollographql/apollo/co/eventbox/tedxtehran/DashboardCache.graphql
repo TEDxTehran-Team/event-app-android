@@ -1,10 +1,10 @@
 query DashboardCache($organizer:Int!) {
     talksWithEvent {
         talks {
-            title
             id
+            title
             speakers {
-                imageUrl
+                title
             }
             section {
                 image
@@ -12,7 +12,6 @@ query DashboardCache($organizer:Int!) {
         }
         event {
             title
-            bannerUrl
         }
     }
     newsByOrganizer(organizer: $organizer) {

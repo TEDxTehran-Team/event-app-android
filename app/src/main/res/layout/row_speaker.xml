@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="wrap_content"
-    android:layout_height="match_parent">
+    android:id="@+id/layoutRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
 
 
     <ImageView
@@ -10,5 +13,22 @@
         android:layout_height="60dp"
         android:layout_margin="4dp"
         android:contentDescription="@string/speakers_image" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        style="@style/TitleDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:singleLine="true"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/txtSpeakersName"
+        style="@style/SubtitleDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="3dp" />
 
 </LinearLayout>

@@ -23,6 +23,7 @@
         android:padding="16dp">
 
         <TextView
+            android:id="@+id/txtTitle"
             style="@style/Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,6 +31,7 @@
             android:textColor="@color/color_title_gray" />
 
         <TextView
+            android:id="@+id/txtSpeakersName"
             style="@style/Subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

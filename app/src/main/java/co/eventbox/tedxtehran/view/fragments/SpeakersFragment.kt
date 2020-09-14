@@ -5,8 +5,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import co.eventbox.tedxtehran.ListOnClickListener
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.gone
 import co.eventbox.tedxtehran.view.adapter.SpeakerParentAdapter
@@ -17,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_speakers.*
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 2019-09-26.
  */
-class SpeakersFragment : BaseFragment() {
+class SpeakersFragment : BaseFragment(),ListOnClickListener {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,11 +30,15 @@ class SpeakersFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_speakers, container, false)
     }
 
+    lateinit var viewModel:SpeakersViewModel
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewModel = ViewModelProvider(this).get(SpeakersViewModel::class.java)
-        val adapter = SpeakerParentAdapter()
+        this.viewModel = ViewModelProvider(this).get(SpeakersViewModel::class.java)
+        val adapter = SpeakerParentAdapter(this)
+
+
 
         recyclerViewSpeakers.adapter = adapter
 
@@ -49,5 +56,10 @@ class SpeakersFragment : BaseFragment() {
         })
 
 
+    }
+
+    override fun onSelected(position: Int,id:String) {
+        findNavController().navigate(R.id.action_speakersFragment_to_speakersDetailsFragment,
+            bundleOf("speaker_id" to id))
     }
 }

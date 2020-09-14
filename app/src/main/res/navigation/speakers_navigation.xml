@@ -9,5 +9,22 @@
         tools:layout="@layout/fragment_speakers"
         android:id="@+id/speakersFragment"
         android:name="co.eventbox.tedxtehran.view.fragments.SpeakersFragment"
-        android:label="SpeakersFragment" />
+        android:label="SpeakersFragment" >
+        <action
+            android:id="@+id/action_speakersFragment_to_speakersDetailsFragment"
+            app:destination="@id/speakersDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+
+
+    <fragment
+        tools:layout="@layout/fragment_speaker_details"
+        android:id="@+id/speakersDetailsFragment"
+        android:name="co.eventbox.tedxtehran.view.fragments.SpeakersDetailsFragment"
+        android:label="SpeakersDetailsFragment" >
+        <argument
+            android:name="speaker_id"
+            app:argType="string" />
+    </fragment>
 </navigation>

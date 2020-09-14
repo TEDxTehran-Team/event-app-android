@@ -12,6 +12,7 @@ import co.eventbox.tedxtehran.R
  */
 class SpeakersDetailsFragment : BaseFragment() {
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,5 +23,7 @@ class SpeakersDetailsFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val id =  arguments?.get("speaker_id") as String
     }
 }

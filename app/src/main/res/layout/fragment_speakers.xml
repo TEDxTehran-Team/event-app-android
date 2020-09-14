@@ -16,9 +16,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:theme="@style/ProgressBar"
-        app:layout_constraintBottom_toBottomOf="@+id/recyclerViewNews"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerViewNews"
-        app:layout_constraintStart_toStartOf="@+id/recyclerViewNews"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerViewSpeakers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/recyclerViewSpeakers" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
