@@ -25,6 +25,9 @@
         android:label="SpeakersDetailsFragment" >
         <argument
             android:name="speaker_id"
-            app:argType="string" />
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_speakersDetailsFragment_self"
+            app:destination="@id/speakersDetailsFragment" />
     </fragment>
 </navigation>

@@ -58,7 +58,7 @@ class SpeakersFragment : BaseFragment(),ListOnClickListener {
 
     }
 
-    override fun onSelected(position: Int,id:String) {
+    override fun onSelected(position: Int,id:Int) {
         findNavController().navigate(R.id.action_speakersFragment_to_speakersDetailsFragment,
             bundleOf("speaker_id" to id))
     }

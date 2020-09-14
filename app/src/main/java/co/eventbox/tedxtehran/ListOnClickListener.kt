@@ -5,5 +5,5 @@ package co.eventbox.tedxtehran
  * TEDxTehran | Copyrights 9/14/20.
  */
 interface ListOnClickListener {
-     fun onSelected(position:Int,id:String)
+     fun onSelected(position:Int,id:Int)
 }

@@ -42,7 +42,7 @@ class SpeakerAdapter(var listener:ListOnClickListener) : AdapterRecyclerView<Das
         itemView.txtSpeakersName.text = speakers.joinToString(", ")
 
         itemView.layoutRoot.setOnClickListener {
-            this.listener.onSelected(position,element!!.id())
+            this.listener.onSelected(position,element!!.id().toInt())
         }
     }
 

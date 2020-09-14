@@ -2,124 +2,139 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="163dp">
+        android:layout_height="200dp">
 
         <ImageView
             android:id="@+id/imgBanner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimary" />
+            android:background="@color/colorPrimary"
+            android:scaleType="centerCrop" />
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
     </RelativeLayout>
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/layoutRoot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/txtTitle"
-            style="@style/Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="نام سخنران"
-            android:textColor="@color/color_title_gray" />
-
-        <TextView
-            android:id="@+id/txtSpeakersName"
-            style="@style/Subtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="توضیحات کوتاه در مورد سخرانی"
-            android:textColor="@color/color_title_gray" />
+        android:visibility="invisible">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <ImageView
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/txtTitle"
+                style="@style/Title"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:textColor="@color/color_title_gray" />
+
+            <TextView
+                android:id="@+id/txtSpeakersName"
+                style="@style/Subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/color_title_gray" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/Subtitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/description"
-                    android:textColor="@color/color_title_gray" />
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/colorPrimary" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TitleDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/description"
+                        android:textColor="@color/color_title_gray" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimary" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
-        <TextView
-            android:id="@+id/txtDescription"
-            style="@style/Subtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="توضیحات کامل در مورد سخنرانی"
-            android:textColor="@color/color_title_gray" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/txtDescription"
+                style="@style/SubtitleDark"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="10dp"
+                android:textColor="@color/color_title_gray" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/Subtitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/related"
-                    android:textColor="@color/color_title_gray" />
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/colorPrimary" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TitleDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/related"
+                        android:textColor="@color/color_title_gray" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimary" />
+                </LinearLayout>
+
+
             </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewRelated"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp"/>
 
 
         </LinearLayout>
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewRelated"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"/>
-
-
-    </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>
