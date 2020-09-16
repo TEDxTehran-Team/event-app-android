@@ -43,4 +43,15 @@
 
     </style>
 
+    <style name="NavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/ActiveText</item>
+        <item name="itemTextAppearanceInactive">@style/InactiveText</item>
+    </style>
+    <style name="ActiveText">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <style name="InactiveText">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
 </resources>
