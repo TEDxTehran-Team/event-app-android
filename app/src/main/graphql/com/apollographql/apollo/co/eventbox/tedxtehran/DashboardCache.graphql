@@ -23,4 +23,15 @@ query DashboardCache($organizer:Int!) {
         title
         cover
     }
+
+    featuredTalk {
+        id
+        title
+        speakers {
+            title
+        }
+        section {
+            image
+        }
+    }
 }

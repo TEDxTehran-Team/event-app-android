@@ -12,6 +12,8 @@ import androidx.navigation.fragment.findNavController
 import co.eventbox.tedxtehran.ListOnClickListener
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.gone
+import co.eventbox.tedxtehran.utilities.loadRadius
+import co.eventbox.tedxtehran.utilities.toImageURL
 import co.eventbox.tedxtehran.view.adapter.SpeakerParentAdapter
 import co.eventbox.tedxtehran.viewModel.SpeakersViewModel
 import kotlinx.android.synthetic.main.fragment_speakers.*
@@ -38,20 +40,24 @@ class SpeakersFragment : BaseFragment(),ListOnClickListener {
         this.viewModel = ViewModelProvider(this).get(SpeakersViewModel::class.java)
         val adapter = SpeakerParentAdapter(this)
 
-
-
         recyclerViewSpeakers.adapter = adapter
 
-        viewModel.speackers().observe(viewLifecycleOwner, Observer {
+        viewModel.speackers().observe(viewLifecycleOwner, Observer { either ->
 
             progressBar.gone()
-            it.fold({
+            either.fold({
                 Log.d("TAG", "Exception : ${it?.errorMessage}")
             }, { data ->
                 if (data?.talksWithEvent() != null) {
                     adapter.items = data.talksWithEvent()!!
                     adapter.notifyDataSetChanged()
                 }
+
+                this.imgFeatureTalk.loadRadius(data?.featuredTalk()?.section()?.image()?.toImageURL())
+                this.imgFeatureTalk.setOnClickListener {
+                    onSelected(0,data?.featuredTalk()?.id()!!.toInt())
+                }
+
             })
         })
 

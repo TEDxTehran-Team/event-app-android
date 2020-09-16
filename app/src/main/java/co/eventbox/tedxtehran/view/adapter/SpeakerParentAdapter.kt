@@ -61,6 +61,7 @@ class SpeakerParentAdapter(var listener: ListOnClickListener) : RecyclerView.Ada
             }
             is HeaderViewHolder -> {
                 val item = items[position]
+                
 //                itemView.imgBanner.loadRadius(item.event()?.bannerUrl()?.toImageURL())
             }
         }
