@@ -1,7 +1,7 @@
 package co.eventbox.tedxtehran.view.adapter
 
 import android.content.Context
-import co.eventbox.tedxtehran.ListOnClickListener
+import co.eventbox.tedxtehran.listener.ListOnClickListener
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.loadRadius
 import co.eventbox.tedxtehran.utilities.toImageURL

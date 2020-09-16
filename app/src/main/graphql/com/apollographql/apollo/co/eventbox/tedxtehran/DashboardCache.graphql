@@ -22,6 +22,7 @@ query DashboardCache($organizer:Int!) {
     albums {
         title
         cover
+        id
     }
 
     featuredTalk {

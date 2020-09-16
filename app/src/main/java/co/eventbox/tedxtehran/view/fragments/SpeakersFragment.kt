@@ -9,7 +9,7 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import co.eventbox.tedxtehran.ListOnClickListener
+import co.eventbox.tedxtehran.listener.ListOnClickListener
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.gone
 import co.eventbox.tedxtehran.utilities.loadRadius
@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_speakers.*
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 2019-09-26.
  */
-class SpeakersFragment : BaseFragment(),ListOnClickListener {
+class SpeakersFragment : BaseFragment(), ListOnClickListener {
 
     override fun onCreateView(
         inflater: LayoutInflater,

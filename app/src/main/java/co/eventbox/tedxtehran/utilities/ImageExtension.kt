@@ -1,6 +1,7 @@
 package co.eventbox.tedxtehran.utilities
 
 import android.widget.ImageView
+import androidx.annotation.DrawableRes
 import co.eventbox.tedxtehran.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -12,9 +13,10 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
  */
 
 
-fun ImageView.load(url: String?) {
+fun ImageView.load(url: String?,@DrawableRes placeHolder:Int = 0) {
     Glide.with(this)
         .load(url)
+        .placeholder(placeHolder)
         .into(this)
 }
 

@@ -11,24 +11,21 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import co.eventbox.tedxtehran.ListOnClickListener
+import co.eventbox.tedxtehran.listener.ListOnClickListener
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.gone
 import co.eventbox.tedxtehran.utilities.load
 import co.eventbox.tedxtehran.utilities.toImageURL
 import co.eventbox.tedxtehran.utilities.visible
-import co.eventbox.tedxtehran.view.adapter.SpeakerAdapter
 import co.eventbox.tedxtehran.view.adapter.SpeakerRelatedAdapter
 import co.eventbox.tedxtehran.viewModel.SpeakersViewModel
-import com.apollographql.apollo.co.eventbox.tedxtehran.GetTalkDetailQuery
 import kotlinx.android.synthetic.main.fragment_speaker_details.*
-import kotlinx.android.synthetic.main.row_speaker.view.*
 
 /**
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 6/18/20.
  */
-class SpeakersDetailsFragment : BaseFragment() ,ListOnClickListener{
+class SpeakersDetailsFragment : BaseFragment() , ListOnClickListener {
 
 
     override fun onCreateView(

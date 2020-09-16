@@ -5,12 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import co.eventbox.tedxtehran.ListOnClickListener
+import co.eventbox.tedxtehran.listener.ListOnClickListener
 import co.eventbox.tedxtehran.R
-import co.eventbox.tedxtehran.utilities.loadRadius
-import co.eventbox.tedxtehran.utilities.toImageURL
 import com.apollographql.apollo.co.eventbox.tedxtehran.DashboardCacheQuery
-import kotlinx.android.synthetic.main.header_row_speakers_list.view.*
 import kotlinx.android.synthetic.main.row_speaker_parent.view.*
 
 /**
