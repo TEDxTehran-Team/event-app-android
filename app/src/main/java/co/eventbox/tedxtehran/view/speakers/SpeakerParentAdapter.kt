@@ -1,4 +1,4 @@
-package co.eventbox.tedxtehran.view.adapter
+package co.eventbox.tedxtehran.view.speakers
 
 import android.view.LayoutInflater
 import android.view.View

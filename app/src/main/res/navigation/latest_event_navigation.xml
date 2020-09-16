@@ -8,6 +8,6 @@
     <fragment
         tools:layout="@layout/fragment_latest_event"
         android:id="@+id/homeFragment"
-        android:name="co.eventbox.tedxtehran.view.fragments.LatestEventFragment"
+        android:name="co.eventbox.tedxtehran.view.lastEvent.LatestEventFragment"
         android:label="HomeFragment" />
 </navigation>

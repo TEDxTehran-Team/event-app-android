@@ -8,6 +8,6 @@
     <fragment
         tools:layout="@layout/fragment_news"
         android:id="@+id/newsFragment"
-        android:name="co.eventbox.tedxtehran.view.fragments.NewsFragment"
+        android:name="co.eventbox.tedxtehran.view.news.NewsFragment"
         android:label="NewsFragment" />
 </navigation>

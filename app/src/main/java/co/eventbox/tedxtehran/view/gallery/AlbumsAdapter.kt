@@ -1,4 +1,4 @@
-package co.eventbox.tedxtehran.view.adapter
+package co.eventbox.tedxtehran.view.gallery
 
 import android.content.Context
 import co.eventbox.tedxtehran.R

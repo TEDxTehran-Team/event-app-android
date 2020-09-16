@@ -1,4 +1,4 @@
-package co.eventbox.tedxtehran.view.fragments
+package co.eventbox.tedxtehran.view.speakers
 
 import android.content.Intent
 import android.net.Uri
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -17,7 +18,6 @@ import co.eventbox.tedxtehran.utilities.gone
 import co.eventbox.tedxtehran.utilities.load
 import co.eventbox.tedxtehran.utilities.toImageURL
 import co.eventbox.tedxtehran.utilities.visible
-import co.eventbox.tedxtehran.view.adapter.SpeakerRelatedAdapter
 import co.eventbox.tedxtehran.viewModel.SpeakersViewModel
 import kotlinx.android.synthetic.main.fragment_speaker_details.*
 
@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.fragment_speaker_details.*
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 6/18/20.
  */
-class SpeakersDetailsFragment : BaseFragment() , ListOnClickListener {
+class SpeakersDetailsFragment : Fragment(), ListOnClickListener {
 
 
     override fun onCreateView(
@@ -33,20 +33,21 @@ class SpeakersDetailsFragment : BaseFragment() , ListOnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_speaker_details,container,false)
+        return inflater.inflate(R.layout.fragment_speaker_details, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val id =  arguments?.get("speaker_id") as Int
+        val id = arguments?.get("speaker_id") as Int
 
         val viewModel = ViewModelProvider(this).get(SpeakersViewModel::class.java)
 
-        this.recyclerViewRelated.layoutManager = LinearLayoutManager(this.context,LinearLayoutManager.HORIZONTAL,true)
+        this.recyclerViewRelated.layoutManager =
+            LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, true)
         val adapter = SpeakerRelatedAdapter(this)
         this.recyclerViewRelated.adapter = adapter
-        viewModel.talkDetails(id).observe(viewLifecycleOwner, Observer {either ->
+        viewModel.talkDetails(id).observe(viewLifecycleOwner, Observer { either ->
 
             this.progressBar.gone()
             this.layoutRoot.visible()
@@ -55,10 +56,10 @@ class SpeakersDetailsFragment : BaseFragment() , ListOnClickListener {
 
             either.fold({
 
-            },{
+            }, {
                 val talk = it?.talk()
                 val speakers = arrayListOf<String>()
-                talk?.speakers()?.forEach {name ->
+                talk?.speakers()?.forEach { name ->
                     speakers.add(name.title())
                 }
 
@@ -80,7 +81,8 @@ class SpeakersDetailsFragment : BaseFragment() , ListOnClickListener {
     }
 
     override fun onSelected(position: Int, id: Int) {
-        findNavController().navigate(R.id.action_speakersDetailsFragment_self,
+        findNavController().navigate(
+            R.id.action_speakersDetailsFragment_self,
             bundleOf("speaker_id" to id)
         )
     }

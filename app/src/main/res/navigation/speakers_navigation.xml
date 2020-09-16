@@ -8,7 +8,7 @@
     <fragment
         tools:layout="@layout/fragment_speakers"
         android:id="@+id/speakersFragment"
-        android:name="co.eventbox.tedxtehran.view.fragments.SpeakersFragment"
+        android:name="co.eventbox.tedxtehran.view.speakers.SpeakersFragment"
         android:label="SpeakersFragment" >
         <action
             android:id="@+id/action_speakersFragment_to_speakersDetailsFragment"
@@ -21,7 +21,7 @@
     <fragment
         tools:layout="@layout/fragment_speaker_details"
         android:id="@+id/speakersDetailsFragment"
-        android:name="co.eventbox.tedxtehran.view.fragments.SpeakersDetailsFragment"
+        android:name="co.eventbox.tedxtehran.view.speakers.SpeakersDetailsFragment"
         android:label="SpeakersDetailsFragment" >
         <argument
             android:name="speaker_id"

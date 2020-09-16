@@ -1,9 +1,9 @@
 package co.eventbox.tedxtehran.view.activities
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.setupWithNavController
-import co.eventbox.tedxtehran.view.ProfileBottomSheet
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
  * TEDxTehran | Copyrights 2019-09-06.
  */
 
-class MainActivity : BaseActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
