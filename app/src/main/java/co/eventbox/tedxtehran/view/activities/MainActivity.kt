@@ -1,9 +1,11 @@
 package co.eventbox.tedxtehran.view.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.setupWithNavController
+import co.eventbox.tedxtehran.view.about.AboutUsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -30,5 +32,9 @@ class MainActivity : AppCompatActivity() {
             R.id.fragment_container,
             intent
         )
+
+        imgInfo.setOnClickListener {
+            startActivity(Intent(this, AboutUsActivity::class.java))
+        }
     }
 }

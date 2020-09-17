@@ -36,4 +36,6 @@
     <string name="event_time">Event Time</string>
     <string name="divider">divider</string>
     <string name="map_image">Map Image</string>
+    <string name="image_about">Image About</string>
+    <string name="back_press">Back Press</string>
 </resources>

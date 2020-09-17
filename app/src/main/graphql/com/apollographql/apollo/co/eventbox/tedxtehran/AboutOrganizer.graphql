@@ -1,0 +1,9 @@
+query GetAbouts {
+    organizer {
+        abouts {
+            title
+            description
+            image
+        }
+    }
+}

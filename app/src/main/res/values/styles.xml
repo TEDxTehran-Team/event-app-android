@@ -25,6 +25,13 @@
     </style>
 
 
+    <style name="TitleHeavy" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/color_title_dark</item>
+        <item name="android:textSize">22sp</item>
+        <item name="fontFamily">@font/shabnam_bold</item>
+    </style>
+
+
     <style name="Subtitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
         <item name="android:textColor">@color/color_white</item>
         <item name="android:textSize">14sp</item>
