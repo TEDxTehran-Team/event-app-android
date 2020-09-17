@@ -33,11 +33,11 @@
 
         <TextView
             android:id="@+id/txtDescription"
-            style="@style/TitleDark"
+            style="@style/SubtitleDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:lineSpacingExtra="10dp"
+            android:lineSpacingExtra="7dp"
             android:paddingHorizontal="16dp"
             android:paddingVertical="8dp" />
 
