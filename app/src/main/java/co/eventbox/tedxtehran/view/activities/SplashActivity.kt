@@ -31,6 +31,7 @@ class SplashActivity : AppCompatActivity(), Observer<Boolean> {
 
     override fun onChanged(t: Boolean?) {
         if (t != null && t) {
+            finish()
             startActivity(Intent(this@SplashActivity, MainActivity::class.java))
         } else {
             btnTryAgain.visible()

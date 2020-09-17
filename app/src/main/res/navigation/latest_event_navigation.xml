@@ -2,12 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/latest_event_navigation"
+    android:id="@+id/home_navigation"
     app:startDestination="@id/homeFragment">
 
     <fragment
-        tools:layout="@layout/fragment_latest_event"
+        tools:layout="@layout/fragment_home"
         android:id="@+id/homeFragment"
-        android:name="co.eventbox.tedxtehran.view.lastEvent.LatestEventFragment"
+        android:name="co.eventbox.tedxtehran.view.home.HomeFragment"
         android:label="HomeFragment" />
 </navigation>

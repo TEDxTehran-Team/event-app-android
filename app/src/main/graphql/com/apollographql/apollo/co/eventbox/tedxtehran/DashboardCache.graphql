@@ -35,4 +35,24 @@ query DashboardCache($organizer:Int!) {
             image
         }
     }
+
+    organizer {
+        mainEvent {
+            id
+            title
+            bannerUrl
+            startDate
+            endDate
+            links {
+                role
+                url
+            }
+            venue {
+                title
+                adddress
+                mapLink
+                mapImageUrl
+            }
+        }
+    }
 }

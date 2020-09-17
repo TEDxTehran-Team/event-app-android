@@ -15,27 +15,35 @@
     <style name="Title" parent="TextAppearance.AppCompat.Title">
         <item name="android:textColor">@color/color_white</item>
         <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/shabnam</item>
     </style>
 
     <style name="TitleDark" parent="TextAppearance.AppCompat.Title">
         <item name="android:textColor">@color/color_title_dark</item>
         <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/shabnam</item>
     </style>
 
 
     <style name="Subtitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
         <item name="android:textColor">@color/color_white</item>
         <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/shabnam</item>
+
     </style>
 
     <style name="SubtitleDark" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
         <item name="android:textColor">@color/color_subtitle_dark</item>
         <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/shabnam</item>
+
     </style>
 
     <style name="NormalButton" parent="TextAppearance.AppCompat.Widget.Button">
         <item name="android:textColor">@color/color_white</item>
         <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/shabnam</item>
+
     </style>
 
     <style name="ProgressBar" parent="Widget.AppCompat.ProgressBar">
@@ -46,10 +54,14 @@
     <style name="NavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="itemTextAppearanceActive">@style/ActiveText</item>
         <item name="itemTextAppearanceInactive">@style/InactiveText</item>
+        <item name="fontFamily">@font/shabnam</item>
+
     </style>
+
     <style name="ActiveText">
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
+
     <style name="InactiveText">
         <item name="android:textColor">@color/colorPrimary</item>
     </style>

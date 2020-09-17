@@ -24,7 +24,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgFeatureTalk" />
+        app:layout_constraintTop_toBottomOf="@+id/imgFeatureTalk"
+        android:layout_marginBottom="@dimen/fragment_bottom_margin"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
