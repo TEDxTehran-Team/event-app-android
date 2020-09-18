@@ -55,5 +55,6 @@ class HomeFragment : Fragment() {
                 openBrowser(liveURL)
             }
         })
+
     }
 }
