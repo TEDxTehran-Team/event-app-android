@@ -1,6 +1,5 @@
 package co.eventbox.tedxtehran.respository
 
-import android.util.Log
 import co.eventbox.tedxtehran.network.Either
 import co.eventbox.tedxtehran.network.XException
 import com.apollographql.apollo.api.cache.http.HttpCachePolicy
@@ -15,19 +14,8 @@ class CacheDataRepository :
     Repository<DashboardCacheQuery.Data, DashboardCacheQuery.Variables, DashboardCacheQuery>() {
 
     suspend fun request(): Either<XException?, DashboardCacheQuery.Data?> {
-
         val operation = DashboardCacheQuery.builder().organizer(1).build()
-
-        val response = fetch(operation, HttpCachePolicy.NETWORK_ONLY)
-
-        response.fold({
-            Log.d("TAG_AG", "Error : ${it?.errorMessage} | code : ${it?.httpCode}")
-
-        }, {
-            Log.d("TAG_AG", "data : ${it?.albumByOrganizer()?.first()?.cover()}")
-        })
-
-        return response
+        return fetch(operation, HttpCachePolicy.NETWORK_ONLY)
     }
 
 

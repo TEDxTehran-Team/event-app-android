@@ -27,4 +27,16 @@
     <string name="description_gallery_cover">Gallery Cover</string>
     <string name="description_img_shadow_gallery_cover">shadow Gallery Cover</string>
     <string name="description_img_news_logo">News Logo</string>
+    <string name="get_play_video">Get Play Video</string>
+    <string name="talk_banner">Talk Banner</string>
+    <string name="feature_talk">Feature Talk</string>
+    <string name="album_large_image">Album Large Image</string>
+    <string name="main_event_banner">Main Event Banner</string>
+    <string name="live_event">پخش زنده رویداد</string>
+    <string name="event_time">Event Time</string>
+    <string name="divider">divider</string>
+    <string name="map_image">Map Image</string>
+    <string name="image_about">Image About</string>
+    <string name="back_press">Back Press</string>
+    <string name="time_scheduling">برنامه زمانی</string>
 </resources>

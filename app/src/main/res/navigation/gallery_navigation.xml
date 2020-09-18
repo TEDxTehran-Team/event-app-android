@@ -7,7 +7,33 @@
 
     <fragment
         android:id="@+id/galleryFragment"
-        android:name="co.eventbox.tedxtehran.view.fragments.GalleryFragment"
+        android:name="co.eventbox.tedxtehran.view.gallery.GalleryFragment"
         android:label="GalleryFragment"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_galleryFragment_to_galleryListFragment"
+            app:destination="@id/galleryListFragment" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_albums"
+        android:id="@+id/galleryListFragment"
+        android:name="co.eventbox.tedxtehran.view.gallery.AlbumsFragment"
+        android:label="GalleryListFragment" >
+        <argument
+            android:name="albums_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_galleryListFragment_to_photoLargeFragment"
+            app:destination="@id/photoLargeFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_photo_large"
+        android:id="@+id/photoLargeFragment"
+        android:name="co.eventbox.tedxtehran.view.gallery.PhotoLargeFragment"
+        android:label="PhotoLargeFragment" >
+        <argument
+            android:name="photo_url"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -5,6 +5,10 @@
     <color name="colorAccent">#FFFFFF</color>
     <color name="color_white">#FFFFFF</color>
     <color name="color_black">#000000</color>
+    <color name="color_yellow">#FFEB3B</color>
+    <color name="color_blue">#2196F3</color>
+    <color name="color_green">#4CAF50</color>
+    <color name="color_purple">#9C27B0</color>
     <color name="color_tint_toolbar_element">#FFFFFF</color>
     <color name="color_divider">#EEEEEE</color>
     <color name="color_gray">#8F8E94</color>

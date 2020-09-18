@@ -1,29 +1,75 @@
-query DashboardCache($organizer: Int!) {
+query DashboardCache($organizer:Int!) {
+    talksWithEvent {
+        talks {
+            id
+            title
+            speakers {
+                title
+            }
+            section {
+                image
+            }
+        }
+        event {
+            title
+        }
+    }
     newsByOrganizer(organizer: $organizer) {
         title
-        id
-        iconUrl
         description
+        iconUrl
     }
-    albumByOrganizer(organizer: $organizer) {
-        id
+    albums {
         title
         cover
+        id
     }
-    eventByOrganizer(organization: $organizer) {
+
+    featuredTalk {
         id
         title
-        bannerUrl
-        logoUrl
-    }
-    speakersByOrganizer(organizer: $organizer) {
-        title
-        imageUrl
         speakers {
             title
-            section {
-                imageUrl
+        }
+        section {
+            image
+        }
+    }
+
+    organizer {
+        mainEvent {
+            id
+            title
+            bannerUrl
+            startDate
+            endDate
+            links {
+                role
+                url
+            }
+            venue {
                 title
+                adddress
+                mapLink
+                mapImageUrl
+            }
+        }
+    }
+
+    organizer {
+        mainEvent {
+            days {
+                title
+                sessions {
+                    title
+                    startTime
+                    sections {
+                        title
+                        type
+                        startTime
+                        endTime
+                    }
+                }
             }
         }
     }

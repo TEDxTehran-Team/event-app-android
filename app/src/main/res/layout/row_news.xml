@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="16dp"
     android:layout_marginStart="16dp"
-    android:layout_marginBottom="8dp">
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="@dimen/image_gallery_radius">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +26,6 @@
             <TextView
                 android:id="@+id/txtTitle"
                 style="@style/TitleDark"
-                android:textSize="14sp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -41,9 +42,9 @@
         <TextView
             android:id="@+id/txtDesc"
             style="@style/SubtitleDark"
-            android:textSize="12sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:lineSpacingExtra="10dp"
             android:padding="8dp" />
 
 

@@ -8,6 +8,6 @@
     <fragment
         tools:layout="@layout/fragment_networking"
         android:id="@+id/networkingFragment"
-        android:name="co.eventbox.tedxtehran.view.fragments.NetworkingFragment"
+        android:name="co.eventbox.tedxtehran.view.newtworking.NetworkingFragment"
         android:label="NetworkingFragment" />
 </navigation>

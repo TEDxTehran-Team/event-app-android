@@ -9,7 +9,8 @@
         android:id="@+id/recyclerViewGallery"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginBottom="@dimen/fragment_bottom_margin"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

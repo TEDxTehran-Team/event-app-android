@@ -3,6 +3,7 @@
 
     <dimen name="icon_padding_toolbar">8dp</dimen>
     <dimen name="margin_banner_speakers">8dp</dimen>
-    <dimen name="row_gallery_height">88dp</dimen>
+    <dimen name="row_gallery_height">150dp</dimen>
     <dimen name="image_gallery_radius">10dp</dimen>
+    <dimen name="fragment_bottom_margin">58dp</dimen>
 </resources>

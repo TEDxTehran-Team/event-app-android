@@ -1,0 +1,8 @@
+query GetAlbumPhotos($id: Int!) {
+    album(id: $id) {
+        photo {
+            image
+            thumbnail
+        }
+    }
+}
