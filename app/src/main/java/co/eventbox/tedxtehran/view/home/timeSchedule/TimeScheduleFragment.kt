@@ -1,4 +1,4 @@
-package co.eventbox.tedxtehran.view.home
+package co.eventbox.tedxtehran.view.home.timeSchedule
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,9 +11,11 @@ import androidx.lifecycle.ViewModelProvider
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.*
 import co.eventbox.tedxtehran.viewModel.HomeViewModel
+import co.eventbox.tedxtehran.viewModel.TimeShelduleViewModel
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_container_home.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_time_schedule.*
 
 /**
  * Created by Farshid Roohi.
@@ -31,6 +33,16 @@ class TimeScheduleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val adapter = TimeScheduleDayAdapter()
+        this.recyclerDays.adapter = adapter
+
+        val viewModel = ViewModelProvider(this).get(TimeShelduleViewModel::class.java)
+        viewModel.days().observe(viewLifecycleOwner, Observer {
+            this.progressBar.gone()
+            adapter.loadedState(it)
+        })
+
 
     }
 }
