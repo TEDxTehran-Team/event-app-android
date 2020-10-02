@@ -61,12 +61,8 @@ query DashboardCache {
             speakers {
                 id
                 title
-                speakers {
-                    title
-                    section {
-                        imageUrl
-                    }
-                }
+                description
+                imageUrl
             }
             venue {
                 title

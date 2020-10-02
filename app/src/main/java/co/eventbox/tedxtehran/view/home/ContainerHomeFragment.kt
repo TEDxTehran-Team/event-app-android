@@ -44,7 +44,7 @@ class ContainerHomeFragment : Fragment() {
         val adapter = HomeViewPagerAdapter(this.childFragmentManager)
         viewPager.apply {
             this.adapter = adapter
-            currentItem = 1
+            currentItem = 2
             offscreenPageLimit = viewPager.size
         }
     }
