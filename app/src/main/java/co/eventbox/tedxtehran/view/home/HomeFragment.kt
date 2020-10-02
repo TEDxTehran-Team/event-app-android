@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.model.LinkType
 import co.eventbox.tedxtehran.utilities.*
@@ -72,6 +73,10 @@ class HomeFragment : Fragment() {
                 openBrowser(mainEvent?.links()?.toPair(LinkType.REGISTRATION)?.second)
             }
         })
+
+        this.layoutSponsor.setOnClickListener {
+                findNavController().navigate(R.id.action_ContainerHomeFragment_to_sponsorsFragment)
+        }
 
     }
 }

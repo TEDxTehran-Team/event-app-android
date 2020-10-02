@@ -6,8 +6,16 @@
     app:startDestination="@id/ContainerHomeFragment">
 
     <fragment
-        tools:layout="@layout/fragment_container_home"
         android:id="@+id/ContainerHomeFragment"
         android:name="co.eventbox.tedxtehran.view.home.ContainerHomeFragment"
-        android:label="ContainerHomeFragment" />
+        android:label="ContainerHomeFragment"
+        tools:layout="@layout/fragment_container_home">
+        <action
+            android:id="@+id/action_ContainerHomeFragment_to_sponsorsFragment"
+            app:destination="@id/sponsorsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sponsorsFragment"
+        android:name="co.eventbox.tedxtehran.view.home.sponsors.SponsorsFragment"
+        android:label="SponsorsFragment" />
 </navigation>
