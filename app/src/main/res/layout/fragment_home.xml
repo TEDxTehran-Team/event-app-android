@@ -26,22 +26,24 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/layoutLiveEvent"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginHorizontal="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:visibility="gone"
             app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="8dp">
 
             <LinearLayout
-                android:id="@+id/layoutLiveEvent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground"
                 android:gravity="center"
                 android:orientation="horizontal"
                 tools:ignore="UseCompoundDrawables">
 
                 <TextView
+                    android:id="@+id/txtTitleLive"
                     style="@style/Title"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -72,6 +74,88 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layoutTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|end"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:id="@+id/txtTitleTicket"
+                            style="@style/SubtitleDark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:contentDescription="@string/event_time"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_ticket"
+                            android:tint="@color/color_gray" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:alpha="0.2"
+                        android:background="@color/color_gray"
+                        android:contentDescription="@string/divider" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|end"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:id="@+id/txtTitleRegister"
+                            style="@style/SubtitleDark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:contentDescription="@string/event_time"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_baseline_insert_link"
+                            android:tint="@color/color_gray" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:alpha="0.2"
+                        android:background="@color/color_gray"
+                        android:contentDescription="@string/divider" />
+                </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"

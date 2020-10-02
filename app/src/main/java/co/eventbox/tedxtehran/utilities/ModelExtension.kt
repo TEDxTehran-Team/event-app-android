@@ -1,5 +1,6 @@
 package co.eventbox.tedxtehran.utilities
 
+import co.eventbox.tedxtehran.model.LinkType
 import com.apollographql.apollo.co.eventbox.tedxtehran.DashboardCacheQuery
 
 /**
@@ -20,8 +21,17 @@ fun DashboardCacheQuery.Section2.toTime(): String {
 
     return "${start[0]}:${start[1]} الی ${end[0]}:${end[1]}"
 }
+
 fun DashboardCacheQuery.Session.toTime(): String {
 
     val start = this.startTime().toString().split(":")
     return "${start[0]}:${start[1]}"
+}
+
+fun List<DashboardCacheQuery.Link>?.toPair(type: LinkType): Pair<String?, String?>? {
+    val item = this?.firstOrNull { item ->
+        item.role() == type.name
+    }
+        ?: return null
+    return Pair(item.title(), item.url())
 }

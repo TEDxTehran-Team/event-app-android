@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import co.eventbox.tedxtehran.R
+import co.eventbox.tedxtehran.model.LinkType
 import co.eventbox.tedxtehran.utilities.*
 import co.eventbox.tedxtehran.viewModel.HomeViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -38,21 +39,37 @@ class HomeFragment : Fragment() {
             this.txtLocationEvent.text = mainEvent?.venue()?.title()
             this.txtDateEvent.text = mainEvent?.toDate()
 
-            val liveURL = mainEvent?.links()?.first { link ->
-                link?.role() == "live"
-            }?.url()
 
             this.imgMap.setOnClickListener {
                 openBrowser(mainEvent?.venue()?.mapLink())
 
             }
 
-            if (liveURL == null) {
-                this.layoutLiveEvent.gone()
+            mainEvent?.links()?.toPair(LinkType.LIVE)?.let {
+                this.layoutLiveEvent.visible()
+                this.txtTitleLive.text = it.first
             }
-            this.layoutLiveEvent.setOnClickListener {
 
-                openBrowser(liveURL)
+            mainEvent?.links()?.toPair(LinkType.TICKET)?.let {
+                this.layoutTicket.visible()
+                this.txtTitleTicket.text = it.first
+            }
+
+            mainEvent?.links()?.toPair(LinkType.REGISTRATION)?.let {
+                this.layoutRegister.visible()
+                this.txtTitleRegister.text = it.first
+            }
+
+            this.layoutLiveEvent.setOnClickListener {
+                openBrowser(mainEvent?.links()?.toPair(LinkType.LIVE)?.second)
+            }
+
+            this.layoutTicket.setOnClickListener {
+                openBrowser(mainEvent?.links()?.toPair(LinkType.TICKET)?.second)
+            }
+
+            this.layoutRegister.setOnClickListener {
+                openBrowser(mainEvent?.links()?.toPair(LinkType.REGISTRATION)?.second)
             }
         })
 
