@@ -1,13 +1,14 @@
 package co.eventbox.tedxtehran
 
-import android.app.Application
 import android.content.Context
+import androidx.multidex.MultiDex
+import androidx.multidex.MultiDexApplication
 
 /**
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 4/17/20.
  */
-class App : Application() {
+class App : MultiDexApplication() {
 
     companion object {
         lateinit var context:Context
@@ -17,5 +18,10 @@ class App : Application() {
         super.onCreate()
         context = applicationContext
 
+    }
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(base)
     }
 }

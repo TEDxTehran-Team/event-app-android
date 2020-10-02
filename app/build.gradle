@@ -15,6 +15,7 @@ android {
         versionName "11.11"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [pushe_token: "$System.env.PUSHE_ID"]
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -42,8 +43,12 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
+    // RX
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
     // Push
-    implementation 'co.pushe.plus:base:2.0.5'
+    implementation("co.pushe.plus:base:2.2.0") {
+        exclude(group: 'co.pushe.plus', module: 'rxjava')
+    }
 
     // Lifecycle
     implementation "androidx.lifecycle:lifecycle-runtime:2.2.0"
