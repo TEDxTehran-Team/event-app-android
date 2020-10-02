@@ -1,6 +1,6 @@
 package co.eventbox.tedxtehran.network
 
-import co.eventbox.tedxtehran.utilities.App
+import co.eventbox.tedxtehran.App
 import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.api.Operation
 import com.apollographql.apollo.api.ResponseField
