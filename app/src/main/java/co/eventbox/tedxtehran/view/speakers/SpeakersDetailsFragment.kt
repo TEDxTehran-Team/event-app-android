@@ -68,7 +68,7 @@ class SpeakersDetailsFragment : Fragment(), ListOnClickListener {
                 this.imgBanner.load(talk?.section()?.image()?.toImageURL())
                 this.txtDescription.text = talk?.description()
 
-                adapter.loadedState(it?.suggestedTalk()!!)
+                adapter.loadedState(it?.suggestedTalks()!!)
 
                 this.layoutPlay.setOnClickListener {
                     val intent = Intent(Intent.ACTION_VIEW)

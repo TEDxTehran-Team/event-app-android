@@ -1,4 +1,4 @@
-query DashboardCache($organizer:Int!) {
+query DashboardCache {
     talksWithEvent {
         talks {
             id
@@ -14,7 +14,7 @@ query DashboardCache($organizer:Int!) {
             title
         }
     }
-    newsByOrganizer(organizer: $organizer) {
+    news {
         title
         description
         iconUrl
@@ -24,7 +24,6 @@ query DashboardCache($organizer:Int!) {
         cover
         id
     }
-
     featuredTalk {
         id
         title
@@ -35,7 +34,6 @@ query DashboardCache($organizer:Int!) {
             image
         }
     }
-
     organizer {
         mainEvent {
             id
@@ -47,17 +45,6 @@ query DashboardCache($organizer:Int!) {
                 role
                 url
             }
-            venue {
-                title
-                adddress
-                mapLink
-                mapImageUrl
-            }
-        }
-    }
-
-    organizer {
-        mainEvent {
             days {
                 title
                 sessions {
@@ -70,6 +57,22 @@ query DashboardCache($organizer:Int!) {
                         endTime
                     }
                 }
+            }
+            speakers {
+                id
+                title
+                speakers {
+                    title
+                    section {
+                        imageUrl
+                    }
+                }
+            }
+            venue {
+                title
+                adress
+                mapLink
+                mapImageUrl
             }
         }
     }
