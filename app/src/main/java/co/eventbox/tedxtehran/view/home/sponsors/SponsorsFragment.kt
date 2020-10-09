@@ -11,6 +11,7 @@ import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.gone
 import co.eventbox.tedxtehran.viewModel.HomeViewModel
 import co.eventbox.tedxtehran.viewModel.NewsViewModel
+import co.eventbox.tedxtehran.viewModel.SponsorsViewModel
 import kotlinx.android.synthetic.main.fragment_sponsors.*
 
 /**
@@ -30,14 +31,14 @@ class SponsorsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = SponsorAdapter()
+        val adapter = SponsorParentAdapter()
         this.recyclerViewSponsors.adapter = adapter
 
-        val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        val viewModel = ViewModelProvider(this).get(SponsorsViewModel::class.java)
 
-        viewModel.mainEvent().observe(viewLifecycleOwner, Observer {
+        viewModel.sponsors().observe(viewLifecycleOwner, {
             this.progressBar.gone()
-            adapter.loadedState(it?.sponsors())
+            adapter.loadedState(it)
         })
 
     }

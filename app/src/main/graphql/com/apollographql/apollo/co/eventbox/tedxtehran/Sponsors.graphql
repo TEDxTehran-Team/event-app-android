@@ -1,0 +1,11 @@
+query GetEventSponsors($eventID:Int!) {
+    sponsorsWithType(event: $eventID) {
+        sponsors {
+            title
+            logo
+        }
+        type {
+            title
+        }
+    }
+}

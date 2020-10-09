@@ -71,10 +71,6 @@ query DashboardCache {
                 mapLink
                 mapImageUrl
             }
-            sponsors {
-                title
-                imageUrl
-            }
         }
     }
 }
