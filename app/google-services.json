@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "107291464167",
+    "firebase_url": "https://tedx-app-290015.firebaseio.com",
+    "project_id": "tedx-app-290015",
+    "storage_bucket": "tedx-app-290015.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107291464167:android:2f8e223e27ff884b762d42",
+        "android_client_info": {
+          "package_name": "co.eventbox.tedxtehran"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107291464167-vreml3228premla93fmude7ot5ishell.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDU4ND8v6M4U19aInAFuXJjFyMuT7JmTk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107291464167-vreml3228premla93fmude7ot5ishell.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "107291464167-5vg9p9n8cpp09mi7st6lghs5itpcukn8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.talexani.xconnect"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

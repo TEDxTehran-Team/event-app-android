@@ -726,6 +726,18 @@
               "deprecationReason": null
             },
             {
+              "name": "link",
+              "description": "an external link to the sponsor's website.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "type",
               "description": "what is the type of this sponsor",
               "args": [],
@@ -1772,7 +1784,7 @@
               "deprecationReason": null
             },
             {
-              "name": "adress",
+              "name": "address",
               "description": "venue's address.",
               "args": [],
               "type": {

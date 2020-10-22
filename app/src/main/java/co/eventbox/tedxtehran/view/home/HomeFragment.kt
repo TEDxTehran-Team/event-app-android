@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
         viewModel.mainEvent().observe(viewLifecycleOwner, Observer { mainEvent ->
             this.imgBanner.loadRadius(mainEvent?.bannerUrl()?.toImageURL())
             this.imgMap.loadRadius(mainEvent?.venue()?.mapImageUrl().toImageURL())
-            this.txtAddressEvent.text = mainEvent?.venue()?.adress()
+            this.txtAddressEvent.text = mainEvent?.venue()?.address()
             this.txtLocationEvent.text = mainEvent?.venue()?.title()
             this.txtDateEvent.text = mainEvent?.toDate()
 
