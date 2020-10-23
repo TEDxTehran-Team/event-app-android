@@ -5,7 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'com.apollographql.apollo'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'io.sentry.android.gradle'
-apply from : rootProject.file("gradle/Keys.gradle")
+apply from : rootProject.file("Keys.gradle")
 
 android {
     compileSdkVersion 29
