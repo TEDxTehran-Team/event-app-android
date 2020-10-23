@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.apollographql.apollo'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'io.sentry.android.gradle'
+apply from : rootProject.file("gradle/Keys.gradle")
 
 android {
     compileSdkVersion 29
@@ -15,7 +17,7 @@ android {
         versionCode 1111
         versionName "11.11"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        manifestPlaceholders = [pushe_token: "$System.env.PUSHE_ID"]
+        manifestPlaceholders = [pushe_token: keys.pushe_token, sentry_dsn: keys.sentry_dsn]
         multiDexEnabled true
     }
     buildTypes {
@@ -74,6 +76,7 @@ dependencies {
     implementation "com.apollographql.apollo:apollo-android-support:2.2.2"
     implementation "com.apollographql.apollo:apollo-coroutines-support:2.2.2"
 
+    implementation 'io.sentry:sentry-android:3.1.0'
 
     // Dagger2
     implementation("com.google.dagger:dagger:2.27")

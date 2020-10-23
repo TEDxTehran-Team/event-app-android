@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
             R.id.fragment_container,
             intent
         )
-
         imgInfo.setOnClickListener {
             startActivity(Intent(this, AboutUsActivity::class.java))
         }
