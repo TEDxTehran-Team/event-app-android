@@ -34,7 +34,7 @@ class MainEventSpeakersFragment : Fragment() {
         this.recyclerViewSpeakers.adapter = adapter
 
         val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        viewModel.mainEvent().observe(viewLifecycleOwner, Observer {
+        viewModel.mainEvent().observe(viewLifecycleOwner, {
             this.progressBar.gone()
             adapter.loadedState(it.speakers())
         })

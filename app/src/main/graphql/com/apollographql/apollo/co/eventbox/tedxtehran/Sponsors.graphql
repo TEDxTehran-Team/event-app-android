@@ -3,6 +3,7 @@ query GetEventSponsors($eventID:Int!) {
         sponsors {
             title
             logo
+            link
         }
         type {
             title

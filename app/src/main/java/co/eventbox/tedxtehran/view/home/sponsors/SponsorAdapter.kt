@@ -3,6 +3,7 @@ package co.eventbox.tedxtehran.view.home.sponsors
 import android.content.Context
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.load
+import co.eventbox.tedxtehran.utilities.openBrowser
 import co.eventbox.tedxtehran.utilities.toImageURL
 import com.apollographql.apollo.co.eventbox.tedxtehran.GetEventSponsorsQuery
 import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
@@ -27,6 +28,9 @@ class SponsorAdapter : AdapterRecyclerView<GetEventSponsorsQuery.Sponsor>(
         val itemView = viewHolder.itemView
         itemView.imgSponsor.load(element?.logo()?.toImageURL())
         itemView.txtTitle.text = element?.title()
+        itemView.layoutRoot.setOnClickListener {
+            itemView.context.openBrowser(element?.link())
+        }
     }
 
 }

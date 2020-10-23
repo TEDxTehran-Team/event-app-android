@@ -15,7 +15,7 @@ import com.apollographql.apollo.co.eventbox.tedxtehran.GetEventSponsorsQuery
 class SponsorsRepository :
     Repository<GetEventSponsorsQuery.Data, GetEventSponsorsQuery.Variables, GetEventSponsorsQuery>() {
 
-    suspend fun request(): Either<XException?, GetEventSponsorsQuery.Data?> {
-        return fetch(GetEventSponsorsQuery.builder().eventID(1).build())
+    suspend fun request(eventID:Int): Either<XException?, GetEventSponsorsQuery.Data?> {
+        return fetch(GetEventSponsorsQuery.builder().eventID(eventID).build())
     }
 }

@@ -36,7 +36,9 @@ class SponsorsFragment : Fragment() {
 
         val viewModel = ViewModelProvider(this).get(SponsorsViewModel::class.java)
 
-        viewModel.sponsors().observe(viewLifecycleOwner, {
+        val eventID = arguments?.get("event_id") as Int
+
+        viewModel.sponsors(eventID).observe(viewLifecycleOwner, {
             this.progressBar.gone()
             adapter.loadedState(it)
         })

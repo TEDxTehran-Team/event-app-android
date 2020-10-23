@@ -1,9 +1,11 @@
 package co.eventbox.tedxtehran.view.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -33,7 +35,7 @@ class HomeFragment : Fragment() {
 
         val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        viewModel.mainEvent().observe(viewLifecycleOwner, Observer { mainEvent ->
+        viewModel.mainEvent().observe(viewLifecycleOwner, { mainEvent ->
             this.imgBanner.loadRadius(mainEvent?.bannerUrl()?.toImageURL())
             this.imgMap.loadRadius(mainEvent?.venue()?.mapImageUrl().toImageURL())
             this.txtAddressEvent.text = mainEvent?.venue()?.address()
@@ -42,7 +44,7 @@ class HomeFragment : Fragment() {
 
 
             this.imgMap.setOnClickListener {
-                openBrowser(mainEvent?.venue()?.mapLink())
+                context?.openBrowser(mainEvent?.venue()?.mapLink())
 
             }
 
@@ -62,21 +64,26 @@ class HomeFragment : Fragment() {
             }
 
             this.layoutLiveEvent.setOnClickListener {
-                openBrowser(mainEvent?.links()?.toPair(LinkType.LIVE)?.second)
+                context?.openBrowser(mainEvent?.links()?.toPair(LinkType.LIVE)?.second)
             }
 
             this.layoutTicket.setOnClickListener {
-                openBrowser(mainEvent?.links()?.toPair(LinkType.TICKET)?.second)
+                context?.openBrowser(mainEvent?.links()?.toPair(LinkType.TICKET)?.second)
             }
 
             this.layoutRegister.setOnClickListener {
-                openBrowser(mainEvent?.links()?.toPair(LinkType.REGISTRATION)?.second)
+                context?.openBrowser(mainEvent?.links()?.toPair(LinkType.REGISTRATION)?.second)
+            }
+
+            this.layoutSponsor.setOnClickListener {
+
+                findNavController().navigate(R.id.action_ContainerHomeFragment_to_sponsorsFragment,
+                    bundleOf
+                        ("event_id" to mainEvent.id().toInt()))
             }
         })
 
-        this.layoutSponsor.setOnClickListener {
-                findNavController().navigate(R.id.action_ContainerHomeFragment_to_sponsorsFragment)
-        }
+
 
     }
 }

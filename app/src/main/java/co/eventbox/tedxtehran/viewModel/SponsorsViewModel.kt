@@ -14,12 +14,12 @@ class SponsorsViewModel : BaseViewModel() {
 
     private val repository = SponsorsRepository()
 
-    fun sponsors(): LiveData<List<GetEventSponsorsQuery.SponsorsWithType>> {
+    fun sponsors(eventID:Int): LiveData<List<GetEventSponsorsQuery.SponsorsWithType>> {
 
         val values = MutableLiveData<List<GetEventSponsorsQuery.SponsorsWithType>>()
 
         launch {
-            repository.request().fold({
+            repository.request(eventID).fold({
                 values.postValue(null)
             }, {
                 values.postValue(it?.sponsorsWithType())
