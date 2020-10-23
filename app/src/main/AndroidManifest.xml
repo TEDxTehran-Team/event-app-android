@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.activities.MainActivity" />
+        <activity android:name=".view.activities.MainActivity"
+            android:launchMode="singleTask"/>
         <activity android:name=".view.about.AboutUsActivity" />
 
         <meta-data
