@@ -34,7 +34,7 @@ class MainSpeakersDetailsFragment : Fragment() {
 
         txtSpeakerName.text = getFromBundle("title")
         txtSpeakerDesc.text = getFromBundle("description")
-        imgSpeakerAvatar.load(getFromBundle("imageUrl").toImageURL())
+        imgSpeakerAvatar.load(getFromBundle("imageUrl").toImageURL(), R.drawable.placeholdertransparent)
 
 
     }

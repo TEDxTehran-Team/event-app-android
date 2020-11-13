@@ -1,7 +1,6 @@
 package co.eventbox.tedxtehran.view.home.speakers
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,9 +22,10 @@ import kotlinx.android.synthetic.main.fragment_main_speakers.*
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 2019-09-26.
  */
-class MainEventSpeakersFragment : Fragment(), ListOnClickListener {
+class MainEventSpeakersFragment() : Fragment(), ListOnClickListener {
 
-    val adapter = MainSpeakerAdapter(this)
+    lateinit var adapter: MainSpeakerAdapter
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,26 +38,27 @@ class MainEventSpeakersFragment : Fragment(), ListOnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        this.recyclerViewSpeakers.adapter = adapter
+        adapter = MainSpeakerAdapter(this)
+            this.recyclerViewSpeakers.adapter = adapter
+            val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        viewModel.mainEvent().observe(viewLifecycleOwner, {
-            this.progressBar.gone()
-            adapter.loadedState(it.speakers())
+            viewModel.mainEvent().observe(viewLifecycleOwner, {
+                this.progressBar.gone()
+                adapter.loadedState(it.speakers())
+            })
 
-        })
 
 
     }
+
 
     override fun onSelected(position: Int, id: Int) {
 
         val bundle = Bundle()
         val item = adapter.getItem(position)
-        bundle.putString("title",item?.title())
-        bundle.putString("description",item?.description())
-        bundle.putString("imageUrl",item?.imageUrl())
-
+        bundle.putString("title", item?.title())
+        bundle.putString("description", item?.description())
+        bundle.putString("imageUrl", item?.imageUrl())
 
         findNavController().navigate(
             R.id.action_ContainerHomeFragment_to_mainSpeakersDetailsFragment,
