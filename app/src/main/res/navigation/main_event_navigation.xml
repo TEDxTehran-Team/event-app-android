@@ -13,9 +13,18 @@
         <action
             android:id="@+id/action_ContainerHomeFragment_to_sponsorsFragment"
             app:destination="@id/sponsorsFragment" />
+        <action
+            android:id="@+id/action_ContainerHomeFragment_to_mainSpeakersDetailsFragment"
+            app:destination="@id/mainSpeakersDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/sponsorsFragment"
         android:name="co.eventbox.tedxtehran.view.home.sponsors.SponsorsFragment"
+        tools:layout="@layout/fragment_sponsors"
         android:label="SponsorsFragment" />
+    <fragment
+        android:id="@+id/mainSpeakersDetailsFragment"
+        android:name="co.eventbox.tedxtehran.view.home.speakers.MainSpeakersDetailsFragment"
+        tools:layout="@layout/fragment_main_speaker_details"
+        android:label="MainSpeakersDetailsFragment" />
 </navigation>
