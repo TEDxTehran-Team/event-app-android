@@ -47,6 +47,7 @@ class AlbumsFragment : Fragment(), PhotoOnClickListener {
             adapter.loadedState(it)
 
             if(it.isEmpty()) {
+                lottieAnim.visible()
                 txtEmptyState.visible()
             }
 
