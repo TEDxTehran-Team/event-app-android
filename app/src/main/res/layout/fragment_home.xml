@@ -245,6 +245,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginHorizontal="16dp"
