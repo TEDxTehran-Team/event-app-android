@@ -1,6 +1,7 @@
 package co.eventbox.tedxtehran.view.home.timeSchedule
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,7 +41,16 @@ class TimeScheduleFragment : Fragment() {
         val viewModel = ViewModelProvider(this).get(TimeShelduleViewModel::class.java)
         viewModel.days().observe(viewLifecycleOwner, Observer {
             this.progressBar.gone()
-            adapter.loadedState(it)
+            if (!it.isEmpty()) {
+                adapter.loadedState(it)
+                it.forEach {
+                    if (it.sessions().size > 0) {
+                        return@Observer
+                    }
+                }
+                lottieAnim.visibility = View.VISIBLE
+                txtEmptyState.visibility = View.VISIBLE
+            }
         })
 
 

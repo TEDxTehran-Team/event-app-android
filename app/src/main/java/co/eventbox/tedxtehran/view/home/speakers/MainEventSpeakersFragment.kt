@@ -1,6 +1,7 @@
 package co.eventbox.tedxtehran.view.home.speakers
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,14 +40,18 @@ class MainEventSpeakersFragment() : Fragment(), ListOnClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         adapter = MainSpeakerAdapter(this)
-            this.recyclerViewSpeakers.adapter = adapter
-            val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        this.recyclerViewSpeakers.adapter = adapter
+        val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-            viewModel.mainEvent().observe(viewLifecycleOwner, {
-                this.progressBar.gone()
+        viewModel.mainEvent().observe(viewLifecycleOwner, {
+            this.progressBar.gone()
+            if (!it.speakers().isEmpty()) {
                 adapter.loadedState(it.speakers())
-            })
-
+            } else {
+                lottieAnim.visibility = View.VISIBLE
+                txtEmptyState.visibility = View.VISIBLE
+            }
+        })
 
 
     }

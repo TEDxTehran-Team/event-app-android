@@ -4,6 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:lottie_rawRes="@raw/not_found"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEmptyState"
+        style="@style/TitleDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="متاسفانه محتوایی برای نمایش وجود نداره :("
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerDays"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/recyclerDays"
+        app:layout_constraintTop_toTopOf="@+id/recyclerDays" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerDays"
         android:layout_width="match_parent"
