@@ -14,10 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import co.eventbox.tedxtehran.listener.ListOnClickListener
 import co.eventbox.tedxtehran.R
-import co.eventbox.tedxtehran.utilities.gone
-import co.eventbox.tedxtehran.utilities.load
-import co.eventbox.tedxtehran.utilities.toImageURL
-import co.eventbox.tedxtehran.utilities.visible
+import co.eventbox.tedxtehran.utilities.*
 import co.eventbox.tedxtehran.viewModel.SpeakersViewModel
 import kotlinx.android.synthetic.main.fragment_speaker_details.*
 
@@ -71,9 +68,9 @@ class SpeakersDetailsFragment : Fragment(), ListOnClickListener {
                 adapter.loadedState(it?.suggestedTalks()!!)
 
                 this.layoutPlay.setOnClickListener {
-                    val intent = Intent(Intent.ACTION_VIEW)
-                    intent.data = Uri.parse(talk?.videoLink())
-                    startActivity(intent)
+                    if (!talk?.videoLink().isNullOrEmpty()){
+                        context?.openBrowser(talk?.videoLink())
+                    }
                 }
             })
         })
