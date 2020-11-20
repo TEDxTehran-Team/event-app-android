@@ -41,7 +41,7 @@ class AlbumsFragment : Fragment(), PhotoOnClickListener {
         this.recyclerViewPhotos.adapter = adapter
 
         val galleryViewModel = ViewModelProvider(this).get(GalleryViewModel::class.java)
-        galleryViewModel.photos(id).observe(viewLifecycleOwner, Observer {
+        galleryViewModel.photos(id).observe(viewLifecycleOwner,  {
 
             this.progressBar.gone()
             adapter.loadedState(it)

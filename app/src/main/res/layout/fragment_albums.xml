@@ -22,16 +22,17 @@
 
     <TextView
         android:id="@+id/txtEmptyState"
+        style="@style/TitleDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="260dp"
-        style="@style/TitleDark"
         android:gravity="center"
-        android:text="متاسفانه عکسی برای نمایش وجود نداره :("
+        android:text="@string/empty_state_albums"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnim" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPhotos"
