@@ -1,6 +1,7 @@
 package co.eventbox.tedxtehran.view.home.timeSchedule
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +16,10 @@ import co.eventbox.tedxtehran.viewModel.TimeShelduleViewModel
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_container_home.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_main_speakers.*
 import kotlinx.android.synthetic.main.fragment_time_schedule.*
+import kotlinx.android.synthetic.main.fragment_time_schedule.not_found
+import kotlinx.android.synthetic.main.fragment_time_schedule.progressBar
 
 /**
  * Created by Farshid Roohi.
@@ -40,7 +44,15 @@ class TimeScheduleFragment : Fragment() {
         val viewModel = ViewModelProvider(this).get(TimeShelduleViewModel::class.java)
         viewModel.days().observe(viewLifecycleOwner, Observer {
             this.progressBar.gone()
-            adapter.loadedState(it)
+            if (!it.isEmpty()) {
+                adapter.loadedState(it)
+                it.forEach {
+                    if (it.sessions().size > 0) {
+                        return@Observer
+                    }
+                }
+                not_found.visibility = View.VISIBLE
+            }
         })
 
 

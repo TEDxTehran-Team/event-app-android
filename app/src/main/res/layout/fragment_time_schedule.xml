@@ -4,6 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <include
+        android:id="@+id/not_found"
+        android:visibility="gone"
+        layout="@layout/include_not_found"/>
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerDays"
         android:layout_width="match_parent"

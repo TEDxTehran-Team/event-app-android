@@ -1,76 +1,82 @@
-query DashboardCache($organizer:Int!) {
-    talksWithEvent {
-        talks {
-            id
-            title
-            speakers {
-                title
-            }
-            section {
-                image
-            }
-        }
-        event {
-            title
-        }
+query DashboardCache {
+  talksWithEvent {
+    talks {
+      id
+      title
+      speakers {
+        title
+      }
+      section {
+        image
+      }
     }
-    newsByOrganizer(organizer: $organizer) {
+    event {
+      title
+    }
+  }
+  news {
+    title
+    description
+    iconUrl
+    extraLink
+  }
+  albums {
+    title
+    cover
+    id
+  }
+  featuredTalk {
+    id
+    title
+    speakers {
+      title
+    }
+    section {
+      image
+    }
+  }
+  organizer {
+    mainEvent {
+      id
+      title
+      bannerUrl
+      startDate
+      endDate
+      links {
+        role
+        url
+        title
+      }
+      days {
+        title
+        sessions {
+          title
+          startTime
+          sections {
+            title
+            type
+            startTime
+            endTime
+          }
+        }
+      }
+      speakers {
+        id
         title
         description
-        iconUrl
-    }
-    albums {
+        imageUrl
+      }
+      venue {
         title
-        cover
-        id
-    }
-
-    featuredTalk {
-        id
+        address
+        mapLink
+        mapImageUrl
+      }
+      sponsors {
         title
-        speakers {
-            title
-        }
-        section {
-            image
-        }
+        imageUrl
+        link
+      }
     }
-
-    organizer {
-        mainEvent {
-            id
-            title
-            bannerUrl
-            startDate
-            endDate
-            links {
-                role
-                url
-            }
-            venue {
-                title
-                adddress
-                mapLink
-                mapImageUrl
-            }
-        }
-    }
-
-    organizer {
-        mainEvent {
-            days {
-                title
-                sessions {
-                    title
-                    startTime
-                    sections {
-                        title
-                        type
-                        startTime
-                        endTime
-                    }
-                }
-            }
-        }
-    }
+  }
 }

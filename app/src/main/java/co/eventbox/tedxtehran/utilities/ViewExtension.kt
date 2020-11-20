@@ -1,5 +1,6 @@
 package co.eventbox.tedxtehran.utilities
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.view.View
@@ -17,7 +18,7 @@ fun View.visible() {
     this.visibility = View.VISIBLE
 }
 
-fun Fragment.openBrowser(url:String?){
+fun Context.openBrowser(url:String?){
     val intent = Intent(Intent.ACTION_VIEW)
     intent.data = Uri.parse(url)
     startActivity(intent)

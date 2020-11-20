@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val navigations = listOf(
-            R.navigation.latest_event_navigation,
+            R.navigation.main_event_navigation,
             R.navigation.speakers_navigation,
             R.navigation.gallery_navigation,
             R.navigation.news_navigation
@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
             R.id.fragment_container,
             intent
         )
-
         imgInfo.setOnClickListener {
             startActivity(Intent(this, AboutUsActivity::class.java))
         }

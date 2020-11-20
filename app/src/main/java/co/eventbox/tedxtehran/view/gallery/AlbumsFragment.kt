@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.listener.PhotoOnClickListener
 import co.eventbox.tedxtehran.utilities.gone
+import co.eventbox.tedxtehran.utilities.visible
 import co.eventbox.tedxtehran.viewModel.GalleryViewModel
 import kotlinx.android.synthetic.main.fragment_albums.*
 
@@ -40,10 +41,15 @@ class AlbumsFragment : Fragment(), PhotoOnClickListener {
         this.recyclerViewPhotos.adapter = adapter
 
         val galleryViewModel = ViewModelProvider(this).get(GalleryViewModel::class.java)
-        galleryViewModel.photos(id).observe(viewLifecycleOwner, Observer {
+        galleryViewModel.photos(id).observe(viewLifecycleOwner,  {
 
             this.progressBar.gone()
             adapter.loadedState(it)
+
+            if(it.isEmpty()) {
+                lottieAnim.visible()
+                txtEmptyState.visible()
+            }
 
         })
 

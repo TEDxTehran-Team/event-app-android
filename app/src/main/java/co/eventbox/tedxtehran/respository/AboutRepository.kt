@@ -16,7 +16,6 @@ class AboutRepository :
 
     suspend fun request(): Either<XException?, GetAboutsQuery.Data?> {
         val operation = GetAboutsQuery.builder().build()
-
         return fetch(operation)
     }
 }

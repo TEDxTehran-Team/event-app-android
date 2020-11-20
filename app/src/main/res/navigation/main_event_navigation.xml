@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/ContainerHomeFragment">
+
+    <fragment
+        android:id="@+id/ContainerHomeFragment"
+        android:name="co.eventbox.tedxtehran.view.home.ContainerHomeFragment"
+        android:label="ContainerHomeFragment"
+        tools:layout="@layout/fragment_container_home">
+        <action
+            android:id="@+id/action_ContainerHomeFragment_to_sponsorsFragment"
+            app:destination="@id/sponsorsFragment" />
+        <action
+            android:id="@+id/action_ContainerHomeFragment_to_mainSpeakersDetailsFragment"
+            app:destination="@id/mainSpeakersDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sponsorsFragment"
+        android:name="co.eventbox.tedxtehran.view.home.sponsors.SponsorsFragment"
+        tools:layout="@layout/fragment_sponsors"
+        android:label="SponsorsFragment" />
+    <fragment
+        android:id="@+id/mainSpeakersDetailsFragment"
+        android:name="co.eventbox.tedxtehran.view.home.speakers.MainSpeakersDetailsFragment"
+        tools:layout="@layout/fragment_main_speaker_details"
+        android:label="MainSpeakersDetailsFragment" />
+</navigation>

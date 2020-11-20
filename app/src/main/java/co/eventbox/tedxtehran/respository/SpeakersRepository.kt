@@ -10,12 +10,12 @@ import com.apollographql.apollo.co.eventbox.tedxtehran.DashboardCacheQuery
  * TEDxTehran | Copyrights 7/24/20.
  */
 class SpeakersRepository :
-    Repository<DashboardCacheQuery.Data, DashboardCacheQuery.Variables, DashboardCacheQuery>() {
+    Repository<DashboardCacheQuery.Data, Operation.Variables, DashboardCacheQuery>() {
 
 
     suspend fun fetch(): Either<XException?, DashboardCacheQuery.Data?> {
 
-        val operation = DashboardCacheQuery.builder().organizer(1).build()
+        val operation = DashboardCacheQuery.builder().build()
 
         return fetch(operation)
 

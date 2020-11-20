@@ -1,6 +1,7 @@
 package co.eventbox.tedxtehran.view.home.timeSchedule
 
 import android.content.Context
+import android.util.Log
 import co.eventbox.tedxtehran.R
 import com.apollographql.apollo.co.eventbox.tedxtehran.DashboardCacheQuery
 import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
@@ -26,7 +27,9 @@ class TimeScheduleDayAdapter : AdapterRecyclerView<DashboardCacheQuery.Day>(
         element: DashboardCacheQuery.Day?
     ) {
         val itemView = viewHolder.itemView
-        itemView.txtTitle.text = element?.title()
+
+        if (element?.sessions()!!.size > 0)
+            itemView.txtTitle.text = element?.title()
 
         val adapter = TimeScheduleSessionAdapter()
         adapter.loadedState(element?.sessions())

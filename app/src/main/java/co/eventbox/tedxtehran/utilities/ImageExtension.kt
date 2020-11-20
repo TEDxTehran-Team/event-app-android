@@ -26,6 +26,7 @@ fun ImageView.loadRadius(url: String?, radius: Int = R.dimen.image_gallery_radiu
 
     Glide.with(this)
         .load(url)
+        .placeholder(R.drawable.placeholdertransparent)
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .transform(
             CenterCrop(),

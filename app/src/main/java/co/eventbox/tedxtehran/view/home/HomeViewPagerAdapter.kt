@@ -3,6 +3,7 @@ package co.eventbox.tedxtehran.view.home
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import co.eventbox.tedxtehran.view.home.speakers.MainEventSpeakersFragment
 import co.eventbox.tedxtehran.view.home.timeSchedule.TimeScheduleFragment
 
 /**
@@ -12,6 +13,7 @@ import co.eventbox.tedxtehran.view.home.timeSchedule.TimeScheduleFragment
 class HomeViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     private val fragments = mutableListOf(
+        MainEventSpeakersFragment(),
         TimeScheduleFragment(),
         HomeFragment()
     )

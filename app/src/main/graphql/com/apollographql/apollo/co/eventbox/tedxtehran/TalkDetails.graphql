@@ -12,7 +12,7 @@ query GetTalkDetail($id: Int!) {
             image
         }
     }
-    suggestedTalk(talk: $id) {
+    suggestedTalks(talk: $id) {
         id
         title
         speakers {
