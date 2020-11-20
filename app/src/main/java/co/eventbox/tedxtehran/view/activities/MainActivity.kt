@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.setupWithNavController
 import co.eventbox.tedxtehran.view.about.AboutUsActivity
+import io.sentry.Sentry
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Sentry.captureMessage("Hello TEDx App(dashboard)")
 
         val navigations = listOf(
             R.navigation.main_event_navigation,

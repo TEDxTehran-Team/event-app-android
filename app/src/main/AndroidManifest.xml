@@ -33,6 +33,7 @@
             android:name="io.sentry.dsn"
             android:value="${sentry_dsn}" />
 
+
     </application>
 
 </manifest>

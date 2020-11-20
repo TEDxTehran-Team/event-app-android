@@ -2,16 +2,19 @@ package co.eventbox.tedxtehran.view.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import co.eventbox.tedxtehran.BuildConfig
 import co.eventbox.tedxtehran.R
 import co.eventbox.tedxtehran.utilities.gone
 import co.eventbox.tedxtehran.utilities.visible
 import co.eventbox.tedxtehran.viewModel.SplashViewModel
-import io.sentry.Sentry
 import kotlinx.android.synthetic.main.activity_splash.*
+import io.sentry.android.core.SentryAndroid
+
 
 class SplashActivity : AppCompatActivity(), Observer<Boolean> {
 
@@ -20,8 +23,9 @@ class SplashActivity : AppCompatActivity(), Observer<Boolean> {
         setContentView(R.layout.activity_splash)
         val splashViewModel = ViewModelProvider(this).get(SplashViewModel::class.java)
 
-        Sentry.captureMessage("Hello TEDx Android App")
-
+        SentryAndroid.init(this) {
+            it.dsn = BuildConfig.sentry
+        }
         splashViewModel.cacheData().observe(this, this)
 
         btnTryAgain.setOnClickListener {

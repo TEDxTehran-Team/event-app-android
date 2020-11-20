@@ -14,11 +14,12 @@ android {
         applicationId "co.eventbox.tedxtehran"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 1111
-        versionName "11.11"
+        versionCode 1112
+        versionName "11.12"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [pushe_token: keys.pushe_token, sentry_dsn: keys.sentry_dsn]
         multiDexEnabled true
+        buildConfigField("String", "sentry", keys.sentry)
     }
     buildTypes {
         release {
