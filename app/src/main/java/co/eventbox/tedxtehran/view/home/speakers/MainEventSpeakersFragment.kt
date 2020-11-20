@@ -17,6 +17,7 @@ import co.eventbox.tedxtehran.listener.ListOnClickListener
 import co.eventbox.tedxtehran.utilities.gone
 import co.eventbox.tedxtehran.viewModel.HomeViewModel
 import kotlinx.android.synthetic.main.fragment_main_speakers.*
+import kotlinx.android.synthetic.main.include_not_found.*
 
 
 /**
@@ -48,8 +49,7 @@ class MainEventSpeakersFragment() : Fragment(), ListOnClickListener {
             if (!it.speakers().isEmpty()) {
                 adapter.loadedState(it.speakers())
             } else {
-                lottieAnim.visibility = View.VISIBLE
-                txtEmptyState.visibility = View.VISIBLE
+                not_found.visibility = View.VISIBLE
             }
         })
 

@@ -16,7 +16,10 @@ import co.eventbox.tedxtehran.viewModel.TimeShelduleViewModel
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_container_home.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_main_speakers.*
 import kotlinx.android.synthetic.main.fragment_time_schedule.*
+import kotlinx.android.synthetic.main.fragment_time_schedule.not_found
+import kotlinx.android.synthetic.main.fragment_time_schedule.progressBar
 
 /**
  * Created by Farshid Roohi.
@@ -48,8 +51,7 @@ class TimeScheduleFragment : Fragment() {
                         return@Observer
                     }
                 }
-                lottieAnim.visibility = View.VISIBLE
-                txtEmptyState.visibility = View.VISIBLE
+                not_found.visibility = View.VISIBLE
             }
         })
 
