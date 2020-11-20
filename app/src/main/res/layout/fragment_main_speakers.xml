@@ -7,6 +7,11 @@
     android:paddingHorizontal="8dp"
     >
 
+    <include
+        android:id="@+id/not_found"
+        android:visibility="gone"
+        layout="@layout/include_not_found"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSpeakers"
         android:layout_width="match_parent"

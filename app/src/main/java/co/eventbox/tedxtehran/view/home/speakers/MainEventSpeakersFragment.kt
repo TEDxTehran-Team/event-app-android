@@ -1,6 +1,7 @@
 package co.eventbox.tedxtehran.view.home.speakers
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ import co.eventbox.tedxtehran.listener.ListOnClickListener
 import co.eventbox.tedxtehran.utilities.gone
 import co.eventbox.tedxtehran.viewModel.HomeViewModel
 import kotlinx.android.synthetic.main.fragment_main_speakers.*
+import kotlinx.android.synthetic.main.include_not_found.*
 
 
 /**
@@ -39,14 +41,17 @@ class MainEventSpeakersFragment() : Fragment(), ListOnClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         adapter = MainSpeakerAdapter(this)
-            this.recyclerViewSpeakers.adapter = adapter
-            val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        this.recyclerViewSpeakers.adapter = adapter
+        val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-            viewModel.mainEvent().observe(viewLifecycleOwner, {
-                this.progressBar.gone()
+        viewModel.mainEvent().observe(viewLifecycleOwner, {
+            this.progressBar.gone()
+            if (!it.speakers().isEmpty()) {
                 adapter.loadedState(it.speakers())
-            })
-
+            } else {
+                not_found.visibility = View.VISIBLE
+            }
+        })
 
 
     }

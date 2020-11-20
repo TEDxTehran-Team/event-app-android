@@ -38,7 +38,15 @@ class HomeFragment : Fragment() {
 
         viewModel.mainEvent().observe(viewLifecycleOwner, { mainEvent ->
             this.imgBanner.loadRadius(mainEvent?.bannerUrl()?.toImageURL())
-            this.imgMap.loadRadius(mainEvent?.venue()?.mapImageUrl().toImageURL())
+
+            // when map photo link is empty, set ImageView Visibility gone
+            if (!mainEvent?.venue()?.mapImageUrl().isNullOrEmpty()){
+                this.imgMap.loadRadius(mainEvent?.venue()?.mapImageUrl().toImageURL())
+            } else {
+                this.imgMap.visibility = View.GONE
+                this.cardView.visibility = View.GONE
+            }
+
             this.txtAddressEvent.text = mainEvent?.venue()?.address()
             this.txtLocationEvent.text = mainEvent?.venue()?.title()
             this.txtDateEvent.text = mainEvent?.toDate()
@@ -78,12 +86,13 @@ class HomeFragment : Fragment() {
 
             this.layoutSponsor.setOnClickListener {
 
-                findNavController().navigate(R.id.action_ContainerHomeFragment_to_sponsorsFragment,
+                findNavController().navigate(
+                    R.id.action_ContainerHomeFragment_to_sponsorsFragment,
                     bundleOf
-                        ("event_id" to mainEvent.id().toInt()))
+                        ("event_id" to mainEvent.id().toInt())
+                )
             }
         })
-
 
 
     }

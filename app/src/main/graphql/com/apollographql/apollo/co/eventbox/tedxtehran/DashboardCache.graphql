@@ -18,6 +18,7 @@ query DashboardCache {
     title
     description
     iconUrl
+    extraLink
   }
   albums {
     title
