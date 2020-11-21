@@ -29,7 +29,8 @@ class SponsorAdapter : AdapterRecyclerView<GetEventSponsorsQuery.Sponsor>(
         itemView.imgSponsor.load(element?.logo()?.toImageURL())
         itemView.txtTitle.text = element?.title()
         itemView.layoutRoot.setOnClickListener {
-            itemView.context.openBrowser(element?.link())
+            if (!element?.link().isNullOrEmpty())
+                itemView.context.openBrowser(element?.link())
         }
     }
 
