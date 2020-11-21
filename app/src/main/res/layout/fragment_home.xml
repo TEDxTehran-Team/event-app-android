@@ -197,6 +197,9 @@
                     <TextView
                         android:id="@+id/txtLocationEvent"
                         style="@style/SubtitleDark"
+                        android:paddingLeft="12dp"
+                        android:layout_marginLeft="40dp"
+                        android:maxLines="2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -227,6 +230,9 @@
                     <TextView
                         android:id="@+id/txtAddressEvent"
                         style="@style/SubtitleDark"
+                        android:paddingLeft="12dp"
+                        android:layout_marginLeft="40dp"
+                        android:maxLines="2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
