@@ -13,6 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:gravity="center_vertical"
         android:orientation="vertical"
         android:padding="8dp">
 
@@ -20,8 +21,7 @@
             android:id="@+id/txtTitle"
             style="@style/TitleDark"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:padding="3dp"
             android:singleLine="true"
@@ -32,10 +32,10 @@
             style="@style/SubtitleDark"
             android:textSize="12sp"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:maxLines="1"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:padding="3dp" />
     </LinearLayout>
 
