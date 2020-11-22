@@ -14,8 +14,8 @@ android {
         applicationId "co.eventbox.tedxtehran"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 1112
-        versionName "11.12"
+        versionCode 1113
+        versionName "11.13"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [pushe_token: keys.pushe_token, sentry_dsn: keys.sentry_dsn]
         multiDexEnabled true
