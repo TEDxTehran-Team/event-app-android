@@ -7,7 +7,7 @@ import co.eventbox.tedxtehran.utilities.loadRadius
 import co.eventbox.tedxtehran.utilities.toImageURL
 import com.apollographql.apollo.co.eventbox.tedxtehran.GetAlbumPhotosQuery
 import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
-import kotlinx.android.synthetic.main.row_albun.view.*
+import kotlinx.android.synthetic.main.row_album.view.*
 
 /**
  * Created by Farshid Roohi.
@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.row_albun.view.*
  */
 class AlbumsAdapter(var listener: PhotoOnClickListener) :
     AdapterRecyclerView<GetAlbumPhotosQuery.Photo>(
-        R.layout.row_albun,
+        R.layout.row_album,
         R.layout.row_loading,
         R.layout.row_error,
         R.id.btnErrorLoadList
