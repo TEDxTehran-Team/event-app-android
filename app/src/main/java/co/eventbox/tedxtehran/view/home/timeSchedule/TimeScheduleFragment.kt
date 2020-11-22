@@ -46,11 +46,7 @@ class TimeScheduleFragment : Fragment() {
             this.progressBar.gone()
             if (!it.isEmpty()) {
                 adapter.loadedState(it)
-                it.forEach {
-                    if (it.sessions().size > 0) {
-                        return@Observer
-                    }
-                }
+            } else {
                 not_found.visibility = View.VISIBLE
             }
         })
