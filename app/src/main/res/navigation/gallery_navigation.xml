@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/galleryFragment"
-        android:name="co.eventbox.tedxtehran.view.gallery.GalleryFragment"
+        android:name="co.eventbox.event.view.gallery.GalleryFragment"
         android:label="GalleryFragment"
         tools:layout="@layout/fragment_gallery" >
         <action
@@ -18,7 +18,7 @@
     <fragment
         tools:layout="@layout/fragment_albums"
         android:id="@+id/galleryListFragment"
-        android:name="co.eventbox.tedxtehran.view.gallery.AlbumsFragment"
+        android:name="co.eventbox.event.view.gallery.AlbumsFragment"
         android:label="GalleryListFragment" >
         <argument
             android:name="albums_id"
@@ -30,7 +30,7 @@
     <fragment
         tools:layout="@layout/fragment_photo_large"
         android:id="@+id/photoLargeFragment"
-        android:name="co.eventbox.tedxtehran.view.gallery.PhotoLargeFragment"
+        android:name="co.eventbox.event.view.gallery.PhotoLargeFragment"
         android:label="PhotoLargeFragment" >
         <argument
             android:name="photo_url"

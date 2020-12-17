@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/ContainerHomeFragment"
-        android:name="co.eventbox.tedxtehran.view.home.ContainerHomeFragment"
+        android:name="co.eventbox.event.view.home.ContainerHomeFragment"
         android:label="ContainerHomeFragment"
         tools:layout="@layout/fragment_container_home">
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/sponsorsFragment"
-        android:name="co.eventbox.tedxtehran.view.home.sponsors.SponsorsFragment"
+        android:name="co.eventbox.event.view.home.sponsors.SponsorsFragment"
         tools:layout="@layout/fragment_sponsors"
         android:label="SponsorsFragment" />
     <fragment
         android:id="@+id/mainSpeakersDetailsFragment"
-        android:name="co.eventbox.tedxtehran.view.home.speakers.MainSpeakersDetailsFragment"
+        android:name="co.eventbox.event.view.home.speakers.MainSpeakersDetailsFragment"
         tools:layout="@layout/fragment_main_speaker_details"
         android:label="MainSpeakersDetailsFragment" />
 </navigation>
