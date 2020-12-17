@@ -25,15 +25,6 @@
             android:launchMode="singleTask"/>
         <activity android:name=".view.about.AboutUsActivity" />
 
-        <meta-data
-            android:name="pushe_token"
-            android:value="${pushe_token}" />
-
-        <meta-data
-            android:name="io.sentry.dsn"
-            android:value="${sentry_dsn}" />
-
-
     </application>
 
 </manifest>
