@@ -39,7 +39,7 @@ Hello, we shared our projects in open source in **[TEDxTehran](http://tedxtehran
 - [ ] Dynamic Layout Direction LTR, RTL
 - [ ] Dark Mode
 - [ ] Dependency Injection
-- [ ] Improvement
+- [ ] Improvement Speakers Tab View(use recyclerview multi view type)
 - [x] Cache Data
 
 
