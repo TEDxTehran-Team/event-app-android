@@ -33,6 +33,12 @@ Hello, we shared our projects in open source in **[TEDxTehran](http://tedxtehran
 
 ## Goals : 
 
-- Fragment Save State in Tabs
+- [ ] Fragment Save State in Tabs
+- [ ] Convert To Splash Screen Activty to Fragment
+- [ ] English Resource String
+- [ ] Dynamic Layout Direction LTR, RTL
+- [ ] Dark Mode
+- [x] Cache Data
+
 
 ## Install App in [GooglePlay](https://play.google.com/store/apps/details?id=co.eventbox.tedxtehran&hl=en_US&gl=US)
