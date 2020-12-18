@@ -38,6 +38,8 @@ Hello, we shared our projects in open source in **[TEDxTehran](http://tedxtehran
 - [ ] English Resource String
 - [ ] Dynamic Layout Direction LTR, RTL
 - [ ] Dark Mode
+- [ ] Dependency Injection
+- [ ] Improvement
 - [x] Cache Data
 
 
