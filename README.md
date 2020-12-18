@@ -31,4 +31,8 @@ Hello, we shared our projects in open source in **[TEDxTehran](http://tedxtehran
 - Add Crash Reporter [Sentry.io](https://docs.sentry.io/platforms/android/) or [Firebase](https://firebase.google.com/docs/android/setup) ...
 - Add Push Notification [Firebase](https://firebase.google.com/docs/cloud-messaging/android/client) or ...
 
+## Goals : 
+
+- Fragment Save State in Tabs
+
 ## Install App in [GooglePlay](https://play.google.com/store/apps/details?id=co.eventbox.tedxtehran&hl=en_US&gl=US)
