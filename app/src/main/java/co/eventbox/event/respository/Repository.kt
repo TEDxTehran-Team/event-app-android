@@ -18,7 +18,7 @@ import kotlin.coroutines.CoroutineContext
  */
 abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Operation<D, D, V>> :
     CoroutineScope,
-    FetchingAsResult<O, D> {
+    ResultFetcher<O, D> {
 
 
     //fetch user token or app token identifier
@@ -87,7 +87,7 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
 }
 
 
-interface FetchingAsResult<O, D> {
+interface ResultFetcher<O, D> {
 
     /**
      * fetching from server by Apollo and return a Result<T>
