@@ -20,9 +20,9 @@ class SplashViewModel : BaseViewModel() {
             val either = cacheRepository.request()
 
             either.fold({
-                mutableLiveDataTest.postValue(false)
-            },{
                 mutableLiveDataTest.postValue(it != null)
+            },{
+                mutableLiveDataTest.postValue(false)
             })
         }
 

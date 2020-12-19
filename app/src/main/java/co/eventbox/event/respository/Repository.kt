@@ -17,7 +17,8 @@ import kotlin.coroutines.CoroutineContext
  * TEDxTehran | Copyrights 4/17/20.
  */
 abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Operation<D, D, V>> :
-    CoroutineScope {
+    CoroutineScope,
+    FetchingAsResult<O, D> {
 
 
     //fetch user token or app token identifier
@@ -30,10 +31,10 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
     }
 
 
-    suspend fun fetch(
+    override suspend fun fetch(
         operation: O,
-        httpCachePolicy: HttpCachePolicy.Policy = HttpCachePolicy.CACHE_FIRST,
-        delaySecond: Int = 0
+        httpCachePolicy: HttpCachePolicy.Policy,
+        delaySecond: Int
     ): Result<D?> {
         delay(delaySecond.toLong())
         return fetch(operation, httpCachePolicy).toResult()
@@ -82,5 +83,16 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
 
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.IO
+
+}
+
+
+interface FetchingAsResult<O, D> {
+    suspend fun fetch(
+        operation: O,
+        httpCachePolicy: HttpCachePolicy.Policy = HttpCachePolicy.CACHE_FIRST,
+        delaySecond: Int = 0
+    ): Result<D?>
+
 
 }
