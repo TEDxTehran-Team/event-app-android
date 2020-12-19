@@ -6,7 +6,7 @@ package co.eventbox.event.network
  */
 
 
-@Deprecated("Arrow pattern is Deprecated on Kotlin because koltin has provided Resualt<*>")
+@Deprecated("Arrow pattern is Deprecated on Kotlin because kotlin has provided Resualt<*>")
 sealed class Either<out L, out R> {
 
     data class Left<out L>(val left: L) : Either<L, Nothing>()

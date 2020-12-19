@@ -88,6 +88,15 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
 
 
 interface FetchingAsResult<O, D> {
+
+    /**
+     * fetching from server by Apollo and return a Result<T>
+     *
+     * @param operation  Operation of Apollo
+     * @param httpCachePolicy a flag of Http Policy
+     * @param delaySecond a time for delaying request.
+     * @return Result<D?>
+     */
     suspend fun fetch(
         operation: O,
         httpCachePolicy: HttpCachePolicy.Policy = HttpCachePolicy.CACHE_FIRST,
