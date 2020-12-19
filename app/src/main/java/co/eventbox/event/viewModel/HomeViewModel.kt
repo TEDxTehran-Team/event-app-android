@@ -21,9 +21,9 @@ class HomeViewModel : BaseViewModel() {
 
         launch {
             repository.fetch().fold({
-                data.postValue(null)
-            }, {
                 data.postValue(it?.organizer()?.mainEvent())
+            }, {
+                data.postValue(null)
             })
 
         }

@@ -14,9 +14,6 @@ class SpeakersDetailsRepository :
     Repository<GetTalkDetailQuery.Data, GetTalkDetailQuery.Variables, GetTalkDetailQuery>() {
 
 
-    suspend fun request(id: Int): Either<XException?, GetTalkDetailQuery.Data?> {
-        val operation = GetTalkDetailQuery.builder().id(id).build()
+    suspend fun request(id: Int) = GetTalkDetailQuery.builder().id(id).build().run { fetch(this) }
 
-        return fetch(operation)
-    }
 }

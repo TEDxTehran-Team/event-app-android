@@ -10,10 +10,8 @@ import com.apollographql.apollo.co.eventbox.event.GetAlbumPhotosQuery
  */
 class PhotosGalleryRepository :
     Repository<GetAlbumPhotosQuery.Data, GetAlbumPhotosQuery.Variables, GetAlbumPhotosQuery>() {
-
-    suspend fun request(id:Int): Either<XException?, GetAlbumPhotosQuery.Data?> {
-        val operation = GetAlbumPhotosQuery.builder().id(id).build()
-
-        return fetch(operation)
+    suspend fun request(id: Int) = GetAlbumPhotosQuery.builder().id(id).build().run {
+        fetch(this)
     }
+
 }

@@ -21,9 +21,9 @@ class NewsViewModel : BaseViewModel() {
 
         launch {
             galleryRepository.request().fold({
-                albums.postValue(null)
-            }, {
                 albums.postValue(it?.news())
+            }, {
+                albums.postValue(null)
             })
 
 

@@ -50,8 +50,6 @@ class SpeakersDetailsFragment : Fragment(), ListOnClickListener {
 
 
             either.fold({
-
-            }, {
                 val talk = it?.talk()
                 val speakers = arrayListOf<String>()
                 talk?.speakers()?.forEach { name ->
@@ -70,6 +68,8 @@ class SpeakersDetailsFragment : Fragment(), ListOnClickListener {
                         context?.openBrowser(talk?.videoLink())
                     }
                 }
+            }, {
+
             })
         })
 

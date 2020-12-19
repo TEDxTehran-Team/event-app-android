@@ -13,8 +13,6 @@ import com.apollographql.apollo.co.eventbox.event.GetAboutsQuery
 class AboutRepository :
     Repository<GetAboutsQuery.Data, Operation.Variables, GetAboutsQuery>() {
 
-    suspend fun request(): Either<XException?, GetAboutsQuery.Data?> {
-        val operation = GetAboutsQuery.builder().build()
-        return fetch(operation)
-    }
+    suspend fun request() = GetAboutsQuery.builder().build().run { return@run fetch(this) }
+
 }

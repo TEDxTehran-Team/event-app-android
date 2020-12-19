@@ -13,11 +13,6 @@ class SpeakersRepository :
     Repository<DashboardCacheQuery.Data, Operation.Variables, DashboardCacheQuery>() {
 
 
-    suspend fun fetch(): Either<XException?, DashboardCacheQuery.Data?> {
+    suspend fun fetch() = DashboardCacheQuery.builder().build().run { fetch(this) }
 
-        val operation = DashboardCacheQuery.builder().build()
-
-        return fetch(operation)
-
-    }
 }

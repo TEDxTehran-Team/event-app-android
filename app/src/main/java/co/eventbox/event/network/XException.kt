@@ -7,4 +7,7 @@ package co.eventbox.event.network
 class XException(
     var httpCode: Int,
     var errorMessage: String?
-)
+) : Throwable() {
+    override val message: String?
+        get() = errorMessage
+}

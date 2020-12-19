@@ -21,9 +21,9 @@ class AboutViewModel : BaseViewModel() {
 
         launch {
             repository.request().fold({
-                values.postValue(null)
-            }, {
                 values.postValue(it?.organizer()?.abouts())
+            }, {
+                values.postValue(null)
             })
 
 

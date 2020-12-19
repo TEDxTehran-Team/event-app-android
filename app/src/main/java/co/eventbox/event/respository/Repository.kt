@@ -1,9 +1,6 @@
 package co.eventbox.event.respository
 
-import co.eventbox.event.network.ApolloClientProvider
-import co.eventbox.event.network.Either
-import co.eventbox.event.network.OkHttpClientProvider
-import co.eventbox.event.network.XException
+import co.eventbox.event.network.*
 import com.apollographql.apollo.api.Mutation
 import com.apollographql.apollo.api.Operation
 import com.apollographql.apollo.api.Query
@@ -11,6 +8,7 @@ import com.apollographql.apollo.api.cache.http.HttpCachePolicy
 import com.apollographql.apollo.coroutines.toDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import java.lang.Exception
 import kotlin.coroutines.CoroutineContext
 
@@ -27,13 +25,25 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
     private val okHttpProvider = OkHttpClientProvider.provide(token)
     private val apolloClientProvider = ApolloClientProvider.provide(okHttpProvider)
 
-    fun clearCache(){
+    fun clearCache() {
         this.apolloClientProvider.clearNormalizedCache()
     }
 
+
     suspend fun fetch(
         operation: O,
-        httpCachePolicy: HttpCachePolicy.Policy = HttpCachePolicy.CACHE_FIRST
+        httpCachePolicy: HttpCachePolicy.Policy = HttpCachePolicy.CACHE_FIRST,
+        delaySecond: Int = 0
+    ): Result<D?> {
+        delay(delaySecond.toLong())
+        return fetch(operation, httpCachePolicy).toResult()
+    }
+
+
+    @Deprecated("Use fetch():Result<D?> instead of this.")
+    private suspend fun fetch(
+        operation: O,
+        httpCachePolicy: HttpCachePolicy.Policy = HttpCachePolicy.CACHE_FIRST,
     ): Either<XException?, D?> {
 
         val either: Either<XException?, D?>

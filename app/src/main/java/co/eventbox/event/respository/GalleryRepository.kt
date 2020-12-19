@@ -12,10 +12,5 @@ import com.apollographql.apollo.co.eventbox.event.DashboardCacheQuery
  */
 class GalleryRepository :
     Repository<DashboardCacheQuery.Data, Operation.Variables, DashboardCacheQuery>() {
-
-    suspend fun request(): Either<XException?, DashboardCacheQuery.Data?> {
-        val operation = DashboardCacheQuery.builder().build()
-
-        return fetch(operation)
-    }
+    suspend fun request() = DashboardCacheQuery.builder().build().run { fetch(this) }
 }
