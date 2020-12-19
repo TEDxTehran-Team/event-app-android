@@ -45,9 +45,8 @@ class SpeakersFragment : Fragment(), ListOnClickListener {
         viewModel.speackers().observe(viewLifecycleOwner, Observer { either ->
 
             progressBar.gone()
-            either.fold({
-                Log.d("TAG", "Exception : ${it?.errorMessage}")
-            }, { data ->
+            either.fold({ data ->
+
                 if (data?.talksWithEvent() != null) {
                     adapter.items = data.talksWithEvent()!!
                     adapter.notifyDataSetChanged()
@@ -60,6 +59,9 @@ class SpeakersFragment : Fragment(), ListOnClickListener {
                     onSelected(0, data?.featuredTalk()?.id()!!.toInt())
                 }
 
+
+            }, {
+                Log.d("TAG", "Exception : ${it.message}")
             })
         })
 

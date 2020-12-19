@@ -24,9 +24,9 @@ class GalleryViewModel : BaseViewModel() {
 
         launch {
             galleryRepository.request().fold({
-                albums.postValue(null)
-            }, {
                 albums.postValue(it?.albums())
+            }, {
+                albums.postValue(null)
             })
 
 
@@ -42,9 +42,9 @@ class GalleryViewModel : BaseViewModel() {
 
         launch {
             photosGalleryRepository.request(id).fold({
-                albums.postValue(null)
-            }, {
                 albums.postValue(it?.album()?.photo())
+            }, {
+                albums.postValue(null)
             })
 
 

@@ -20,9 +20,9 @@ class SponsorsViewModel : BaseViewModel() {
 
         launch {
             repository.request(eventID).fold({
-                values.postValue(null)
-            }, {
                 values.postValue(it?.sponsorsWithType())
+            }, {
+                values.postValue(null)
             })
         }
 

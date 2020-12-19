@@ -20,9 +20,9 @@ class TimeShelduleViewModel : BaseViewModel() {
 
         launch {
             repository.request().fold({
-                values.postValue(null)
-            }, {
                 values.postValue(it?.organizer()?.mainEvent()?.days())
+            }, {
+                values.postValue(null)
             })
 
 

@@ -37,7 +37,7 @@ class TimeScheduleFragment : Fragment() {
         val viewModel = ViewModelProvider(this).get(TimeShelduleViewModel::class.java)
         viewModel.days().observe(viewLifecycleOwner, Observer {
             this.progressBar.gone()
-            if (!it.isEmpty()) {
+            if (!it.isNullOrEmpty()) {
                 adapter.loadedState(it)
             } else {
                 not_found.visibility = View.VISIBLE

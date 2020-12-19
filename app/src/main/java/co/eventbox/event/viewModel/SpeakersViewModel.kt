@@ -2,8 +2,6 @@ package co.eventbox.event.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import co.eventbox.event.network.Either
-import co.eventbox.event.network.XException
 import co.eventbox.event.respository.SpeakersDetailsRepository
 import co.eventbox.event.respository.SpeakersRepository
 import com.apollographql.apollo.co.eventbox.event.DashboardCacheQuery
@@ -19,8 +17,8 @@ class SpeakersViewModel : BaseViewModel() {
     private val speakersRepository = SpeakersRepository()
     private var speakersDetailsRepository = SpeakersDetailsRepository()
 
-    fun speackers(): LiveData<Either<XException?, DashboardCacheQuery.Data?>> {
-        val liveData = MutableLiveData<Either<XException?, DashboardCacheQuery.Data?>>()
+    fun speackers(): LiveData<Result<DashboardCacheQuery.Data?>> {
+        val liveData = MutableLiveData<Result<DashboardCacheQuery.Data?>>()
 
         launch {
             val either = speakersRepository.fetch()
@@ -30,8 +28,8 @@ class SpeakersViewModel : BaseViewModel() {
 
     }
 
-    fun talkDetails(id:Int) : LiveData<Either<XException?,GetTalkDetailQuery.Data?>>{
-        val liveData = MutableLiveData<Either<XException?,GetTalkDetailQuery.Data?>>()
+    fun talkDetails(id: Int): LiveData<Result<GetTalkDetailQuery.Data?>> {
+        val liveData = MutableLiveData<Result<GetTalkDetailQuery.Data?>>()
 
         launch {
             val either = speakersDetailsRepository.request(id)
