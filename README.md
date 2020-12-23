@@ -2,6 +2,10 @@
 
 Hello, we shared our projects in open source in **[TEDxTehran](http://tedxtehran.com/en)** so that anyone who would like to participate in it and the rest of the TEDx Community in the world can use it as an open source project.
 
+## Other Open Source Projects : 
+- [Backend Core](https://github.com/TEDxTehran-Team/event_app_core)
+- [iOS](https://github.com/TEDxTehran-Team/event_app_ios)
+
 ## Requirements
 
 - Android Studio 4.0 or laster.
