@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="260dp"
         android:gravity="center"
-        android:text="@string/empty_state_albums"
+        android:text="@string/empty_state"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -41,5 +41,5 @@
     <string name="time_scheduling">Time Scheduling</string>
     <string name="sponsor">Sponsor</string>
     <string name="sponsor_logo">Sponsor Logo</string>
-    <string name="empty_state_albums">Sorry, there is no content to display :(</string>
+    <string name="empty_state">Sorry, there is no content to display :(</string>
 </resources>

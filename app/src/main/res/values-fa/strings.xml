@@ -41,5 +41,5 @@
     <string name="time_scheduling">برنامه زمانی</string>
     <string name="sponsor">حامیان</string>
     <string name="sponsor_logo">لوگو حامیان</string>
-    <string name="empty_state_albums">متاسفانه عکسی برای نمایش وجود نداره :(</string>
+    <string name="empty_state">متاسفانه محتوایی برای نمایش وجود نداره :(</string>
 </resources>
