@@ -15,7 +15,7 @@ import co.eventbox.event.listener.PhotoOnClickListener
 import co.eventbox.event.utilities.gone
 import co.eventbox.event.viewModel.GalleryViewModel
 import kotlinx.android.synthetic.main.fragment_albums.*
-import kotlinx.android.synthetic.main.fragment_albums.not_found
+import kotlinx.android.synthetic.main.fragment_albums.empty_state
 import kotlinx.android.synthetic.main.fragment_albums.progressBar
 
 /**
@@ -48,7 +48,7 @@ class AlbumsFragment : Fragment(), PhotoOnClickListener {
             adapter.loadedState(it)
 
             if(it.isEmpty()) {
-                not_found.visibility = View.VISIBLE
+                empty_state.visibility = View.VISIBLE
             }
 
         })

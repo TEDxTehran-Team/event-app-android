@@ -44,7 +44,7 @@ class MainEventSpeakersFragment() : Fragment(), ListOnClickListener {
             if (!it.speakers().isEmpty()) {
                 adapter.loadedState(it.speakers())
             } else {
-                not_found.visibility = View.VISIBLE
+                empty_state.visibility = View.VISIBLE
             }
         })
 

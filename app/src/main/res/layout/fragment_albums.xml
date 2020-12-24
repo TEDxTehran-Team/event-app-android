@@ -8,7 +8,7 @@
 
 
     <include
-      android:id="@+id/not_found"
+      android:id="@+id/empty_state"
       android:visibility="gone"
       layout="@layout/include_empty_state_album"/>
 
