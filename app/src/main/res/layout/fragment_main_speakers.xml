@@ -10,7 +10,7 @@
     <include
         android:id="@+id/not_found"
         android:visibility="gone"
-        layout="@layout/include_not_found"/>
+        layout="@layout/include_empty_state"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSpeakers"

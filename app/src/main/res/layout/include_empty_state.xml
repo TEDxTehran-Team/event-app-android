@@ -17,7 +17,7 @@
         app:layout_constraintVertical_bias="0.22"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/not_found" />
+        app:lottie_rawRes="@raw/empty_state" />
 
     <TextView
         android:id="@+id/txtEmptyState"
