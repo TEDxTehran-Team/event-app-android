@@ -1,29 +1,29 @@
 <resources>
     <string name="app_name">TEDxTehran</string>
 
-    <string name="home">خانه</string>
-    <string name="speakers">سخنران‌ها</string>
-    <string name="networking">شبکه‌سازی</string>
-    <string name="gallery">گالری</string>
-    <string name="news">اخبار</string>
+    <string name="home">Home</string>
+    <string name="speakers">Speakers</string>
+    <string name="networking">Networking</string>
+    <string name="gallery">Gallery</string>
+    <string name="news">News</string>
 
 
     <!-- BottomSheet profile -->
-    <string name="edit_profile">ویرایش پروفایل کاربری</string>
-    <string name="my_network">شبکه من</string>
-    <string name="messages">پیام‌ها</string>
-    <string name="about_us">درباره ما</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="my_network">My Network</string>
+    <string name="messages">Messages</string>
+    <string name="about_us">About Us</string>
 
 
     <!-- Content Description ImageView -->
 
-    <string name="content_description">پروفایل کاربری</string>
-    <string name="ic_launcher">ic launcher</string>
+    <string name="content_description">User Profile</string>
+    <string name="ic_launcher">Ic launcher</string>
     <string name="speakers_image">Speakers Image</string>
     <string name="banner_image">Banner Image</string>
-    <string name="description">جزئیات</string>
-    <string name="related">مرتبط ها</string>
-    <string name="try_again">تلاش مجدد</string>
+    <string name="description">Description</string>
+    <string name="related">Related</string>
+    <string name="try_again">Try Again</string>
     <string name="description_gallery_cover">Gallery Cover</string>
     <string name="description_img_shadow_gallery_cover">shadow Gallery Cover</string>
     <string name="description_img_news_logo">News Logo</string>
@@ -32,14 +32,14 @@
     <string name="feature_talk">Feature Talk</string>
     <string name="album_large_image">Album Large Image</string>
     <string name="main_event_banner">Main Event Banner</string>
-    <string name="live_event">پخش زنده رویداد</string>
+    <string name="live_event">Live event</string>
     <string name="event_time">Event Time</string>
     <string name="divider">divider</string>
     <string name="map_image">Map Image</string>
     <string name="image_about">Image About</string>
     <string name="back_press">Back Press</string>
-    <string name="time_scheduling">برنامه زمانی</string>
-    <string name="sponsor">حامیان</string>
+    <string name="time_scheduling">Time Scheduling</string>
+    <string name="sponsor">Sponsor</string>
     <string name="sponsor_logo">Sponsor Logo</string>
-    <string name="empty_state_albums">متاسفانه عکسی برای نمایش وجود نداره :(</string>
+    <string name="empty_state_albums">Sorry, there is no content to display :(</string>
 </resources>
