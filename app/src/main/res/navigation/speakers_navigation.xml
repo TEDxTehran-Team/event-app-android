@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/speakers"
-    app:startDestination="@id/speakersFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         tools:layout="@layout/fragment_speakers"
@@ -29,5 +29,17 @@
         <action
             android:id="@+id/action_speakersDetailsFragment_self"
             app:destination="@id/speakersDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="co.eventbox.event.view.SplashFragment"
+        tools:layout="@layout/fragment_splash"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_speakersFragment"
+            app:destination="@id/speakersFragment"
+            app:popUpTo="@id/splashFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
     </fragment>
 </navigation>

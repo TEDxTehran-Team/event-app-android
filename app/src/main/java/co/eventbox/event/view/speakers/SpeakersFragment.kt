@@ -14,7 +14,9 @@ import co.eventbox.event.listener.ListOnClickListener
 import co.eventbox.event.R
 import co.eventbox.event.utilities.gone
 import co.eventbox.event.utilities.loadRadius
+import co.eventbox.event.utilities.showBottomNav
 import co.eventbox.event.utilities.toImageURL
+import co.eventbox.event.view.activities.MainActivity
 import co.eventbox.event.viewModel.SpeakersViewModel
 import kotlinx.android.synthetic.main.fragment_speakers.*
 
@@ -37,6 +39,8 @@ class SpeakersFragment : Fragment(), ListOnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        showBottomNav()
         this.viewModel = ViewModelProvider(this).get(SpeakersViewModel::class.java)
         val adapter = SpeakerParentAdapter(this)
 

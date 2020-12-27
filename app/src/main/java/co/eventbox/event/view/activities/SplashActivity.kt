@@ -10,14 +10,14 @@ import co.eventbox.event.R
 import co.eventbox.event.utilities.gone
 import co.eventbox.event.utilities.visible
 import co.eventbox.event.viewModel.SplashViewModel
-import kotlinx.android.synthetic.main.activity_splash.*
+import kotlinx.android.synthetic.main.fragment_splash.*
 
 
 class SplashActivity : AppCompatActivity(), Observer<Boolean> {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.fragment_splash)
         val splashViewModel = ViewModelProvider(this).get(SplashViewModel::class.java)
 
         splashViewModel.cacheData().observe(this, this)
@@ -38,6 +38,8 @@ class SplashActivity : AppCompatActivity(), Observer<Boolean> {
             progressBar.gone()
         }
     }
+
+
 
 
 }

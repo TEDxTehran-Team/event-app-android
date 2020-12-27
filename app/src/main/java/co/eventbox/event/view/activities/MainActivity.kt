@@ -4,9 +4,12 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import co.eventbox.event.R
+import co.eventbox.event.utilities.gone
 import co.eventbox.event.utilities.setupWithNavController
+import co.eventbox.event.utilities.visible
 import co.eventbox.event.view.about.AboutUsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -42,6 +45,22 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    fun showBottomNav() {
+        bottomNavigation.visible()
+    }
+
+    fun hideBottomNav() {
+        bottomNavigation.gone()
+    }
+
+    fun hideAppBar() {
+        appBar.gone()
+    }
+
+    fun showAppBar() {
+        appBar.visible()
     }
 
     fun locate(locate: String) {
