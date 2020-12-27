@@ -15,8 +15,7 @@ class OAuthInterceptor(private val token: String) : Interceptor {
         request = request.newBuilder()
             .addHeader("Accept", "application/json")
             .addHeader("Content-Type", "application/json")
-//            .addHeader("User-Agent", "")
-            .addHeader("Authorization", token)
+            .addHeader("Application-Token", token)
             .build()
 
         val response = chain.proceed(request)
