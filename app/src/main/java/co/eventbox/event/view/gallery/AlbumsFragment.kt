@@ -7,14 +7,16 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import co.eventbox.event.R
 import co.eventbox.event.listener.PhotoOnClickListener
 import co.eventbox.event.utilities.gone
-import co.eventbox.event.utilities.visible
 import co.eventbox.event.viewModel.GalleryViewModel
 import kotlinx.android.synthetic.main.fragment_albums.*
+import kotlinx.android.synthetic.main.fragment_albums.empty_state
+import kotlinx.android.synthetic.main.fragment_albums.progressBar
 
 /**
  * Created by Farshid Roohi.
@@ -46,8 +48,7 @@ class AlbumsFragment : Fragment(), PhotoOnClickListener {
             adapter.loadedState(it)
 
             if(it.isEmpty()) {
-                lottieAnim.visible()
-                txtEmptyState.visible()
+                empty_state.visibility = View.VISIBLE
             }
 
         })

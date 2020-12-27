@@ -11,7 +11,7 @@ import co.eventbox.event.R
 import co.eventbox.event.utilities.*
 import co.eventbox.event.viewModel.TimeShelduleViewModel
 import kotlinx.android.synthetic.main.fragment_time_schedule.*
-import kotlinx.android.synthetic.main.fragment_time_schedule.not_found
+import kotlinx.android.synthetic.main.fragment_time_schedule.empty_state
 import kotlinx.android.synthetic.main.fragment_time_schedule.progressBar
 
 /**
@@ -40,7 +40,7 @@ class TimeScheduleFragment : Fragment() {
             if (!it.isNullOrEmpty()) {
                 adapter.loadedState(it)
             } else {
-                not_found.visibility = View.VISIBLE
+                empty_state.visibility = View.VISIBLE
             }
         })
 

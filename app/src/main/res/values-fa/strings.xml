@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">تداکس تهران</string>
+
+    <string name="current_event">رویداد اخیر</string>
+    <string name="speakers">سخنران‌ها</string>
+    <string name="networking">شبکه‌سازی</string>
+    <string name="gallery">گالری</string>
+    <string name="news">اخبار</string>
+
+
+    <!-- BottomSheet profile -->
+    <string name="edit_profile">ویرایش پروفایل کاربری</string>
+    <string name="my_network">شبکه من</string>
+    <string name="messages">پیام‌ها</string>
+    <string name="about_us">درباره ما</string>
+
+
+    <!-- Content Description ImageView -->
+
+    <string name="content_description">پروفایل کاربری</string>
+    <string name="ic_launcher">آیکون اجرا</string>
+    <string name="speakers_image">عکس سخنرانان</string>
+    <string name="banner_image">عکس بنر</string>
+    <string name="description">جزئیات</string>
+    <string name="related">مرتبط ها</string>
+    <string name="try_again">تلاش مجدد</string>
+    <string name="description_gallery_cover">کاور گالری</string>
+    <string name="description_img_shadow_gallery_cover">سایه کاور گالری</string>
+    <string name="description_img_news_logo">لوگو خبرها</string>
+    <string name="get_play_video">اجرای ویدئو</string>
+    <string name="talk_banner">بنر سخنرانی</string>
+    <string name="feature_talk">بنر سخنرانی آینده</string>
+    <string name="album_large_image">عکس آلبوم</string>
+    <string name="main_event_banner">بنر رویداد</string>
+    <string name="live_event">پخش زنده رویداد</string>
+    <string name="event_time">زمان رویداد</string>
+    <string name="divider">تقسیم کننده</string>
+    <string name="map_image">عکس نقشه</string>
+    <string name="image_about">عکس درباره ما</string>
+    <string name="back_press">برگشت</string>
+    <string name="time_scheduling">برنامه زمانی</string>
+    <string name="sponsor">حامیان</string>
+    <string name="sponsor_logo">لوگو حامیان</string>
+    <string name="empty_state">متاسفانه محتوایی برای نمایش وجود نداره :(</string>
+</resources>

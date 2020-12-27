@@ -17,7 +17,7 @@
         app:layout_constraintVertical_bias="0.22"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/not_found" />
+        app:lottie_rawRes="@raw/empty_state" />
 
     <TextView
         android:id="@+id/txtEmptyState"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="متاسفانه محتوایی برای نمایش وجود نداره :("
+        android:text="@string/empty_state"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -6,33 +6,11 @@
     android:orientation="vertical">
 
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnim"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:lottie_rawRes="@raw/empty_state"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtEmptyState"
-        style="@style/TitleDark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="260dp"
-        android:gravity="center"
-        android:text="@string/empty_state_albums"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lottieAnim" />
+    <include
+      android:id="@+id/empty_state"
+      android:visibility="gone"
+      layout="@layout/include_empty_state_album"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPhotos"
