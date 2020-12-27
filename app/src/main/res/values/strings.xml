@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TEDxTehran</string>
 
-    <string name="home">Home</string>
+    <string name="current_event">current event</string>
     <string name="speakers">Speakers</string>
     <string name="networking">Networking</string>
     <string name="gallery">Gallery</string>

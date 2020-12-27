@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">تداکس تهران</string>
 
-    <string name="home">خانه</string>
+    <string name="current_event">رویداد اخیر</string>
     <string name="speakers">سخنران‌ها</string>
     <string name="networking">شبکه‌سازی</string>
     <string name="gallery">گالری</string>

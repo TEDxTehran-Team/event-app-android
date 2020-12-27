@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/home_navigation"
-        android:icon="@drawable/ic_baseline_home"
-        android:title="@string/home" />
+
     <item
         android:id="@+id/speakers"
         android:icon="@drawable/ic_baseline_video_library"
         android:title="@string/speakers" />
+
+    <item
+      android:id="@+id/event"
+      android:icon="@drawable/ic_baseline_home"
+      android:title="@string/current_event" />
 
     <item
         android:id="@+id/gallery"
