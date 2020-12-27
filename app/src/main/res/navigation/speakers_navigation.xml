@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="co.eventbox.event.view.SplashFragment"
+        android:name="co.eventbox.event.view.splash.SplashFragment"
         tools:layout="@layout/fragment_splash"
         android:label="SplashFragment" >
         <action

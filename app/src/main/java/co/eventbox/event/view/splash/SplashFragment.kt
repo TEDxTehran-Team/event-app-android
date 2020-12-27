@@ -1,4 +1,4 @@
-package co.eventbox.event.view
+package co.eventbox.event.view.splash
 
 import android.os.Bundle
 import android.view.LayoutInflater
