@@ -39,7 +39,7 @@ Hello, we shared our projects in open source in **[TEDxTehran](http://tedxtehran
 
 - [ ] Fragment Save State in Tabs
 - [ ] Convert To Splash Screen Activty to Fragment
-- [ ] English Resource String
+- [x] English Resource String
 - [ ] Dynamic Layout Direction LTR, RTL
 - [ ] Dark Mode
 - [ ] Dependency Injection
