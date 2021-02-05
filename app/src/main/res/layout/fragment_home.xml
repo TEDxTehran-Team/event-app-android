@@ -169,9 +169,9 @@
                         style="@style/SubtitleDark"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:maxLines="2"
                         android:layout_marginStart="40dp"
-                        android:paddingStart="12dp"/>
+                        android:maxLines="2"
+                        android:paddingStart="12dp" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -202,8 +202,8 @@
                         style="@style/SubtitleDark"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:maxLines="2"
                         android:layout_marginStart="40dp"
+                        android:maxLines="2"
                         android:paddingStart="12dp" />
 
                     <ImageView
@@ -235,8 +235,8 @@
                         style="@style/SubtitleDark"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:maxLines="2"
                         android:layout_marginStart="40dp"
+                        android:maxLines="2"
                         android:paddingStart="12dp" />
 
                     <ImageView
