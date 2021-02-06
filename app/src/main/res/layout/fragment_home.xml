@@ -168,7 +168,10 @@
                         android:id="@+id/txtDateEvent"
                         style="@style/SubtitleDark"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:maxLines="2"
+                        android:paddingStart="12dp" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -197,11 +200,11 @@
                     <TextView
                         android:id="@+id/txtLocationEvent"
                         style="@style/SubtitleDark"
-                        android:paddingLeft="12dp"
-                        android:layout_marginLeft="40dp"
-                        android:maxLines="2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:maxLines="2"
+                        android:paddingStart="12dp" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -230,11 +233,11 @@
                     <TextView
                         android:id="@+id/txtAddressEvent"
                         style="@style/SubtitleDark"
-                        android:paddingLeft="12dp"
-                        android:layout_marginLeft="40dp"
-                        android:maxLines="2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:maxLines="2"
+                        android:paddingStart="12dp" />
 
                     <ImageView
                         android:layout_width="40dp"

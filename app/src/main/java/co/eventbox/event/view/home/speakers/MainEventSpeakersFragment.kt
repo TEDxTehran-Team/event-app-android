@@ -1,5 +1,6 @@
 package co.eventbox.event.view.home.speakers
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
