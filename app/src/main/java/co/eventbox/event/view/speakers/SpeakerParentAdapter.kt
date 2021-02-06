@@ -51,15 +51,10 @@ class SpeakerParentAdapter(var listener: ListOnClickListener) :
                 itemView.txtTitle.text = item.event()?.title()
                 val adapterSpeakers = SpeakerAdapter(this.listener)
                 itemView.recyclerViewChild.adapter = adapterSpeakers
-
-                // set recyclerView direction
-
-                var reverseLayout = if (Config.direction.toBool()) true else false
-
                 itemView.recyclerViewChild.layoutManager = LinearLayoutManager(
                     holder.itemView.context,
                     LinearLayoutManager.HORIZONTAL,
-                    reverseLayout
+                    false
                 )
                 adapterSpeakers.loadedState(item.talks())
 
