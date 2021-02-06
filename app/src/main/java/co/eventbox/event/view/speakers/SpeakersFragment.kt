@@ -1,5 +1,6 @@
 package co.eventbox.event.view.speakers
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,7 +17,10 @@ import co.eventbox.event.utilities.gone
 import co.eventbox.event.utilities.loadRadius
 import co.eventbox.event.utilities.toImageURL
 import co.eventbox.event.viewModel.SpeakersViewModel
+import kotlinx.android.synthetic.main.fragment_main_speakers.*
 import kotlinx.android.synthetic.main.fragment_speakers.*
+import kotlinx.android.synthetic.main.fragment_speakers.progressBar
+import kotlinx.android.synthetic.main.fragment_speakers.recyclerViewSpeakers
 
 /**
  * Created by Farshid Roohi.
@@ -41,7 +45,6 @@ class SpeakersFragment : Fragment(), ListOnClickListener {
         val adapter = SpeakerParentAdapter(this)
 
         recyclerViewSpeakers.adapter = adapter
-
         viewModel.speackers().observe(viewLifecycleOwner, Observer { either ->
 
             progressBar.gone()
