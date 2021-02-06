@@ -5,8 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import co.eventbox.event.Config
 import co.eventbox.event.listener.ListOnClickListener
 import co.eventbox.event.R
+import co.eventbox.event.utilities.toBool
 import com.apollographql.apollo.co.eventbox.event.DashboardCacheQuery
 import kotlinx.android.synthetic.main.row_speaker_parent.view.*
 
@@ -15,7 +17,8 @@ import kotlinx.android.synthetic.main.row_speaker_parent.view.*
  * TEDxTehran | Copyrights 6/18/20.
  */
 
-class SpeakerParentAdapter(var listener: ListOnClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class SpeakerParentAdapter(var listener: ListOnClickListener) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val ITEM_VIEW_TYPE_HEADER = 0
     private val ITEM_VIEW_TYPE_ROW = 1
@@ -48,17 +51,22 @@ class SpeakerParentAdapter(var listener: ListOnClickListener) : RecyclerView.Ada
                 itemView.txtTitle.text = item.event()?.title()
                 val adapterSpeakers = SpeakerAdapter(this.listener)
                 itemView.recyclerViewChild.adapter = adapterSpeakers
+
+                // set recyclerView direction
+
+                var reverseLayout = if (Config.direction.toBool()) true else false
+
                 itemView.recyclerViewChild.layoutManager = LinearLayoutManager(
                     holder.itemView.context,
                     LinearLayoutManager.HORIZONTAL,
-                    true
+                    reverseLayout
                 )
                 adapterSpeakers.loadedState(item.talks())
 
             }
             is HeaderViewHolder -> {
                 val item = items[position]
-                
+
 //                itemView.imgBanner.loadRadius(item.event()?.bannerUrl()?.toImageURL())
             }
         }
