@@ -1,19 +1,12 @@
 package co.eventbox.event.view.activities
 
 import android.content.Intent
-import android.content.res.Configuration
-import android.content.res.Resources
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import co.eventbox.event.Config
 import co.eventbox.event.R
 import co.eventbox.event.utilities.setupWithNavController
 import co.eventbox.event.view.about.AboutUsActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 
 
 /**
@@ -21,7 +14,7 @@ import java.util.*
  * TEDxTehran | Copyrights 2019-09-06.
  */
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,18 +40,6 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
-      fun locate(locate: String) {
-      val locale = Locale(locate)
-      Locale.setDefault(locale)
-      val resources: Resources = resources
-      val configuration: Configuration = resources.getConfiguration()
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-          configuration.setLayoutDirection(locale)
-      }
-      configuration.locale = locale
-      resources.updateConfiguration(configuration, resources.getDisplayMetrics())
-  }
 
 
 }
