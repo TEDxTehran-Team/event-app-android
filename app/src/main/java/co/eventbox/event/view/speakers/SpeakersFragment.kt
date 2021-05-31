@@ -63,8 +63,6 @@ class SpeakersFragment : Fragment(), ListOnClickListener {
                 this.imgFeatureTalk.setOnClickListener {
                     onSelected(0, data?.featuredTalk()?.id()!!.toInt())
                 }
-
-
             }, {
                 Log.d("TAG", "Exception : ${it.message}")
             })
