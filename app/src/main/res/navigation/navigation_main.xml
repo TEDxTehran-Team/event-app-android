@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/speakersFragment">
+
+
+    <fragment
+        android:id="@+id/ContainerHomeFragment"
+        android:name="co.eventbox.event.view.home.ContainerHomeFragment"
+        android:label="ContainerHomeFragment"
+        tools:layout="@layout/fragment_container_home">
+        <action
+            android:id="@+id/action_ContainerHomeFragment_to_sponsorsFragment"
+            app:destination="@id/sponsorsFragment" />
+        <action
+            android:id="@+id/action_ContainerHomeFragment_to_mainSpeakersDetailsFragment"
+            app:destination="@id/mainSpeakersDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sponsorsFragment"
+        android:name="co.eventbox.event.view.home.sponsors.SponsorsFragment"
+        tools:layout="@layout/fragment_sponsors"
+        android:label="SponsorsFragment" />
+    <fragment
+        android:id="@+id/mainSpeakersDetailsFragment"
+        android:name="co.eventbox.event.view.home.speakers.MainSpeakersDetailsFragment"
+        tools:layout="@layout/fragment_main_speaker_details"
+        android:label="MainSpeakersDetailsFragment" />
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="co.eventbox.event.view.gallery.GalleryFragment"
+        android:label="GalleryFragment"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_galleryFragment_to_galleryListFragment"
+            app:destination="@id/galleryListFragment" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_albums"
+        android:id="@+id/galleryListFragment"
+        android:name="co.eventbox.event.view.gallery.AlbumsFragment"
+        android:label="GalleryListFragment" >
+        <argument
+            android:name="albums_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_galleryListFragment_to_photoLargeFragment"
+            app:destination="@id/photoLargeFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_photo_large"
+        android:id="@+id/photoLargeFragment"
+        android:name="co.eventbox.event.view.gallery.PhotoLargeFragment"
+        android:label="PhotoLargeFragment" >
+        <argument
+            android:name="photo_url"
+            app:argType="string" />
+    </fragment>
+
+
+    <fragment
+        tools:layout="@layout/fragment_news"
+        android:id="@+id/newsFragment"
+        android:name="co.eventbox.event.view.news.NewsFragment"
+        android:label="NewsFragment" />
+
+    <fragment
+        tools:layout="@layout/fragment_speakers"
+        android:id="@+id/speakersFragment"
+        android:name="co.eventbox.event.view.speakers.SpeakersFragment"
+        android:label="SpeakersFragment" >
+        <action
+            android:id="@+id/action_speakersFragment_to_speakersDetailsFragment"
+            app:destination="@id/speakersDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+
+
+    <fragment
+        tools:layout="@layout/fragment_speaker_details"
+        android:id="@+id/speakersDetailsFragment"
+        android:name="co.eventbox.event.view.speakers.SpeakersDetailsFragment"
+        android:label="SpeakersDetailsFragment" >
+        <argument
+            android:name="speaker_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_speakersDetailsFragment_self"
+            app:destination="@id/speakersDetailsFragment" />
+    </fragment>
+
+</navigation>
