@@ -3,15 +3,12 @@ package co.eventbox.event.view.speakers
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
 import co.eventbox.event.R
 import co.eventbox.event.listener.ListOnClickListener
 import co.eventbox.event.utilities.gone
@@ -33,7 +30,6 @@ class SpeakersFragment : Fragment(), ListOnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_speakers, container, false)
-
     }
 
     lateinit var viewModel: SpeakersViewModel
@@ -77,6 +73,4 @@ class SpeakersFragment : Fragment(), ListOnClickListener {
             bundleOf("speaker_id" to id)
         )
     }
-
-
 }
