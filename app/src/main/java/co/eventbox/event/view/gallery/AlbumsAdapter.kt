@@ -6,8 +6,9 @@ import co.eventbox.event.listener.PhotoOnClickListener
 import co.eventbox.event.utilities.loadRadius
 import co.eventbox.event.utilities.toImageURL
 import com.apollographql.apollo.co.eventbox.event.GetAlbumPhotosQuery
-import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
 import kotlinx.android.synthetic.main.row_album.view.*
+import co.eventbox.event.view.AdapterRecyclerView
+
 
 /**
  * Created by Farshid Roohi.

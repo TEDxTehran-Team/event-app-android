@@ -5,8 +5,8 @@ import co.eventbox.event.R
 import co.eventbox.event.listener.NewsOnClickListener
 import co.eventbox.event.utilities.load
 import co.eventbox.event.utilities.toImageURL
+import co.eventbox.event.view.AdapterRecyclerView
 import com.apollographql.apollo.co.eventbox.event.DashboardCacheQuery
-import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
 import kotlinx.android.synthetic.main.row_news.view.*
 import kotlinx.android.synthetic.main.row_news.view.txtTitle
 
