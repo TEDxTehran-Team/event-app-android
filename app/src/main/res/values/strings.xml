@@ -42,8 +42,17 @@
     <string name="sponsor">Sponsor</string>
     <string name="sponsor_logo">Sponsor Logo</string>
     <string name="empty_state">Sorry, there is no content to display :(</string>
+
+
     <string name="networking_welcome">Welcome to TEDxTehran Networking Section</string>
     <string name="networking_register">enter your phone and wait for code</string>
     <string name="get_code">get verify code</string>
     <string name="phone_number">phone number</string>
+
+    <string name="verify_code">enter verify code</string>
+    <string name="register">register</string>
+    <string name="authentication">authentication</string>
+    <string name="auth_text">wait to receive code</string>
+
+
 </resources>

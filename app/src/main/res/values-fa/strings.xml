@@ -42,9 +42,18 @@
     <string name="sponsor">حامیان</string>
     <string name="sponsor_logo">لوگو حامیان</string>
     <string name="empty_state">متاسفانه محتوایی برای نمایش وجود نداره :(</string>
+
+
     <string name="networking_welcome"> به بخش شبکه سازی اپلیکیشن تداکس تعران خوش اومدید!</string>
     <string name="networking_register">برای استفاده از این بخش نیاز به ثبت نام شما هست. کافیه شماره همراه خود را وارد کنید و منتظر دریافت کد تایید از سمت ما باشید</string>
     <string name="get_code">دریافت کد تایید</string>
     <string name="phone_number">شماره تلفن</string>
+
+    <string name="verify_code">کد تایید را وارد کنید</string>
+    <string name="register">ثبت نام</string>
+
+    <string name="authentication">اعتبارسنجی</string>
+    <string name="auth_text">تا چند ثانیه دیگر کد تایید به شماره ی شما ارسال می شود، لطفا منتظر بمانید.</string>
+
 
 </resources>
