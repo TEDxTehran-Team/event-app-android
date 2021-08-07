@@ -10,4 +10,17 @@
         android:id="@+id/networkingFragment"
         android:name="co.eventbox.event.view.newtworking.NetworkingFragment"
         android:label="NetworkingFragment" />
+
+    <fragment
+        tools:layout="@layout/fragment_register"
+        android:id="@+id/registerFragment"
+        android:name="co.eventbox.event.view.newtworking.auth.RegisterFragment"
+        android:label="RegisterFragment" />
+
+    <fragment
+        tools:layout="@layout/fragment_verify"
+        android:id="@+id/verifyFragment"
+        android:name="co.eventbox.event.view.newtworking.auth.VerifyFragment"
+        android:label="VerifyFragment" />
+
 </navigation>

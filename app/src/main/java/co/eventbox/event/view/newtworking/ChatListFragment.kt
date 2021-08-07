@@ -1,4 +1,4 @@
-package co.eventbox.event.view.newtworking.auth
+package co.eventbox.event.view.newtworking
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,14 +12,14 @@ import co.eventbox.event.R
  * TEDxTehran | Copyrights 2021/08.
  */
 
-class VerifyFragment : Fragment() {
+class ChatListFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_verify, container, false)
+        return inflater.inflate(R.layout.fragment_chatlist, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
