@@ -1,4 +1,4 @@
-package co.eventbox.event.view.newtworking
+package co.eventbox.event.view.newtworking.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
