@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import co.eventbox.event.R
 import co.eventbox.event.utilities.MTab
-import kotlinx.android.synthetic.main.fragment_networking.*
+import co.eventbox.event.view.newtworking.chat.ChatListFragment
+import co.eventbox.event.view.newtworking.profile.ProfileFragment
 
 /**
  * Created by Mahdi Darvishi.
@@ -15,6 +16,8 @@ import kotlinx.android.synthetic.main.fragment_networking.*
  */
 
 class NetworkingFragment : Fragment() {
+
+    lateinit var tabView: MTab
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,9 +30,9 @@ class NetworkingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val makeTab = MTab(requireActivity(), R.id.tabNetworking, R.id.viewPagerNetworking)
-        makeTab.add(ProfileFragment().javaClass, "پروفایل شما")
-        makeTab.add(ChatListFragment().javaClass, "لیست چت ها")
+        tabView = MTab(requireActivity(), childFragmentManager, R.id.tabNetworking, R.id.viewPagerNetworking)
+        tabView.add(ProfileFragment().javaClass, "پروفایل شما")
+        tabView.add(ChatListFragment().javaClass, "لیست چت ها")
 
 
     }
