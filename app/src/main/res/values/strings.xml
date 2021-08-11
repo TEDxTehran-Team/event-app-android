@@ -44,6 +44,7 @@
     <string name="empty_state">Sorry, there is no content to display :(</string>
 
 
+    <!--Networking-->
     <string name="networking_welcome">Welcome to TEDxTehran Networking Section</string>
     <string name="networking_register">enter your phone and wait for code</string>
     <string name="get_code">get verify code</string>
@@ -53,6 +54,19 @@
     <string name="register">register</string>
     <string name="authentication">authentication</string>
     <string name="auth_text">wait to receive code</string>
+
+    <string name="profile_tab">Profile</string>
+    <string name="chats_tab">Chats</string>
+
+    <!--profile-->
+    <string name="job_title">Job</string>
+    <string name="universiry">University</string>
+    <string name="interested">Interested</string>
+    <string name="my_story">My Story</string>
+    <string name="full_name">FullName</string>
+    <string name="email">email</string>
+
+
 
 
 </resources>

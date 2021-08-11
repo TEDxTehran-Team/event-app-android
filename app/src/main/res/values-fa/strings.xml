@@ -55,5 +55,16 @@
     <string name="authentication">اعتبارسنجی</string>
     <string name="auth_text">تا چند ثانیه دیگر کد تایید به شماره ی شما ارسال می شود، لطفا منتظر بمانید.</string>
 
+    <string name="profile_tab">پروفایل شما</string>
+    <string name="chats_tab">لیست چت ها</string>
+
+
+    <!--profile-->
+    <string name="job_title">عنوان شغلی</string>
+    <string name="universiry">رشته ی تحصیلی</string>
+    <string name="interested">علاقه مندی ها</string>
+    <string name="my_story">داستان من</string>
+    <string name="full_name">نام و نام خانوادگی</string>
+    <string name="email">ایمیل</string>
 
 </resources>
