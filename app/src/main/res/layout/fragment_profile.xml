@@ -2,12 +2,12 @@
 
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -20,7 +20,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:src="@color/colorPrimary"/>
 
 
         <ImageView
@@ -33,7 +33,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:src="@drawable/ic_tedxtehran"/>
 
         <TextView
             android:id="@+id/txtProfileName"
@@ -57,15 +57,15 @@
             app:layout_constraintTop_toBottomOf="@+id/txtProfileName">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/txtProfileInterested"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="interested"
+                android:text="@string/interested"
                 android:textSize="16sp" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvProfileFavorites"
+                android:id="@+id/rvProfileInterested"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Job"
+                android:text="@string/job_title"
                 android:textColor="@color/dark2"
                 android:textSize="16sp" />
 
@@ -89,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="university"
+                android:text="@string/universiry"
                 android:textColor="@color/dark2"
                 android:textSize="16sp" />
 
@@ -97,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="my story"
+                android:text="@string/my_story"
                 android:textColor="@color/dark2"
                 android:textSize="16sp" />
 
@@ -131,7 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="4dp"
-                    android:text="@string/verify_code"
+                    android:text="@string/phone_number"
                     android:textColor="@color/dark2" />
 
                 <View
@@ -148,7 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="4dp"
-                    android:text="@string/verify_code"
+                    android:text="@string/email"
                     android:textColor="@color/dark2" />
             </LinearLayout>
         </LinearLayout>
@@ -159,9 +159,11 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_marginHorizontal="32dp"
-            android:background="@drawable/red_rectangle"
-            android:text="@string/get_code"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="56dp"
+            android:background="@drawable/red_rectangle"
+            android:text="@string/edit_profile"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout"
             app:layout_constraintStart_toStartOf="@+id/linearLayout"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
