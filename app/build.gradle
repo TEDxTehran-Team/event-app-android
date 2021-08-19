@@ -37,12 +37,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.core:core-ktx:1.5.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.recyclerview:recyclerview:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
     // Lifecycle
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
@@ -60,9 +59,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.6.2"
 
     // Apollo Client
-    implementation "com.apollographql.apollo:apollo-runtime:2.5.2"
-    implementation "com.apollographql.apollo:apollo-android-support:2.5.2"
-    implementation "com.apollographql.apollo:apollo-coroutines-support:2.5.2"
+    implementation "com.apollographql.apollo:apollo-runtime:2.5.9"
+    implementation "com.apollographql.apollo:apollo-android-support:2.5.9"
+    implementation "com.apollographql.apollo:apollo-coroutines-support:2.5.9"
 
 //    implementation 'ir.farshid_roohi:customAdapterRecycleView:2.0.1'
 
@@ -72,7 +71,7 @@ dependencies {
     implementation "com.airbnb.android:lottie:3.5.0"
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test:runner:1.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 }
