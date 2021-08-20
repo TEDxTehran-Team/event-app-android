@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import co.eventbox.event.Config
 import co.eventbox.event.R
 import co.eventbox.event.utilities.gone
 import co.eventbox.event.utilities.visible
@@ -19,7 +20,8 @@ class SplashActivity : BaseActivity(), Observer<Boolean> {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        locate(Locale.getDefault().getLanguage())
+        Config.language = Locale.getDefault().getLanguage()
+        locate(Config.language)
         setContentView(R.layout.activity_splash)
         val splashViewModel = ViewModelProvider(this).get(SplashViewModel::class.java)
 
