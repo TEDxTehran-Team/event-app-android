@@ -22,6 +22,11 @@ open class BaseActivity: AppCompatActivity() {
             configuration.setLayoutDirection(locale)
         }
         configuration.locale = locale
+        if (locate.equals("en")){
+            Config.token = "56fe1591-c5c1-4113-aba3-73fca1f5aacd"
+        } else if(locate.equals("fa")){
+            Config.token = "7b9c5f16-0882-4334-a828-e67ce8ccf201"
+        }
         resources.updateConfiguration(configuration, resources.getDisplayMetrics())
     }
 }
