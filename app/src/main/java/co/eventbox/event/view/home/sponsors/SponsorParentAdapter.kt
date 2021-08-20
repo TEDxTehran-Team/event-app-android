@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.recyclerview.widget.LinearLayoutManager
 import co.eventbox.event.R
 import com.apollographql.apollo.co.eventbox.event.GetEventSponsorsQuery
-import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
+import co.eventbox.event.view.AdapterRecyclerView
 import kotlinx.android.synthetic.main.row_sponsor_parent.view.*
 
 /**
@@ -32,7 +32,8 @@ class SponsorParentAdapter : AdapterRecyclerView<GetEventSponsorsQuery.SponsorsW
         val adapter = SponsorAdapter()
         adapter.loadedState(element?.sponsors())
         itemView.recyclerSponsors.adapter = adapter
-        itemView.recyclerSponsors.layoutManager = LinearLayoutManager(itemView.context,LinearLayoutManager.HORIZONTAL,false)
+        itemView.recyclerSponsors.layoutManager =
+            LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false)
 
     }
 }

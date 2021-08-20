@@ -2,10 +2,13 @@ package co.eventbox.event.view.activities
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import co.eventbox.event.Config
 import co.eventbox.event.R
-import co.eventbox.event.utilities.setupWithNavController
 import co.eventbox.event.view.about.AboutUsActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -16,30 +19,27 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
+    //    private val tabManager: TabManager by lazy { TabManager(this) }
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         locate(Config.language)
         setContentView(R.layout.activity_main)
 
-        val navigations = listOf(
-            R.navigation.speakers_navigation,
-            R.navigation.current_event_navigation,
-            R.navigation.gallery_navigation,
-            R.navigation.news_navigation
-        )
+        val navHostFragment = supportFragmentManager.findFragmentById(
+            R.id.nav_host_container
+        ) as NavHostFragment
+        navController = navHostFragment.navController
 
-        bottomNavigation.setupWithNavController(
-            navigations,
-            supportFragmentManager,
-            R.id.fragment_container,
-            intent
-        )
+        // Setup the bottom navigation view with navController
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        bottomNavigationView.setupWithNavController(navController)
+
         imgInfo.setOnClickListener {
             startActivity(Intent(this, AboutUsActivity::class.java))
         }
 
 
     }
-
-
 }

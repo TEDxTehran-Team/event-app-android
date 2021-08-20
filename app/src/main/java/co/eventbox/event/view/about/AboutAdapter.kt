@@ -4,8 +4,8 @@ import android.content.Context
 import co.eventbox.event.R
 import co.eventbox.event.utilities.loadRadius
 import co.eventbox.event.utilities.toImageURL
+import co.eventbox.event.view.AdapterRecyclerView
 import com.apollographql.apollo.co.eventbox.event.GetAboutsQuery
-import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
 import kotlinx.android.synthetic.main.row_about.view.*
 import kotlinx.android.synthetic.main.row_gallery.view.txtTitle
 

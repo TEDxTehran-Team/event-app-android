@@ -4,8 +4,8 @@ import android.content.Context
 import co.eventbox.event.R
 import co.eventbox.event.utilities.toTime
 import com.apollographql.apollo.co.eventbox.event.DashboardCacheQuery
-import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
 import kotlinx.android.synthetic.main.row_time_schedule_session.view.*
+import co.eventbox.event.view.AdapterRecyclerView
 
 /**
  * Created by Farshid Roohi.

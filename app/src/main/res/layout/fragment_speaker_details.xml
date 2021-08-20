@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:descendantFocusability="blocksDescendants"
-    android:paddingBottom="@dimen/fragment_bottom_margin">
+    android:descendantFocusability="blocksDescendants">
 
 
     <RelativeLayout

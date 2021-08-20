@@ -6,8 +6,8 @@
     app:startDestination="@id/speakersFragment">
 
     <fragment
-        tools:layout="@layout/fragment_speakers"
         android:id="@+id/speakersFragment"
+        tools:layout="@layout/fragment_speakers"
         android:name="co.eventbox.event.view.speakers.SpeakersFragment"
         android:label="SpeakersFragment" >
         <action

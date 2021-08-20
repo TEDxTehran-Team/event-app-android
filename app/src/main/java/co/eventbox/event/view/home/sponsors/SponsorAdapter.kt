@@ -6,8 +6,9 @@ import co.eventbox.event.utilities.load
 import co.eventbox.event.utilities.openBrowser
 import co.eventbox.event.utilities.toImageURL
 import com.apollographql.apollo.co.eventbox.event.GetEventSponsorsQuery
-import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
 import kotlinx.android.synthetic.main.row_sponsor.view.*
+import co.eventbox.event.view.AdapterRecyclerView
+
 
 /**
  * Created by Farshid Roohi.

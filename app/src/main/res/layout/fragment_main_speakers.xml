@@ -17,8 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:paddingHorizontal="8dp"
-        android:layout_marginBottom="@dimen/fragment_bottom_margin"/>
+        android:paddingHorizontal="8dp"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
