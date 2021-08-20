@@ -6,12 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
-import androidx.core.view.ViewCompat
-import androidx.core.view.ViewCompat.LAYOUT_DIRECTION_RTL
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
+import co.eventbox.event.Config
 import co.eventbox.event.R
 import co.eventbox.event.model.LinkType
 import co.eventbox.event.utilities.*
@@ -41,7 +40,7 @@ class HomeFragment : Fragment() {
             this.imgBanner.loadRadius(mainEvent?.bannerUrl()?.toImageURL())
 
             // when map photo link is empty, set ImageView Visibility gone
-            if (!mainEvent?.venue()?.mapImageUrl().isNullOrEmpty()){
+            if (!mainEvent?.venue()?.mapImageUrl().isNullOrEmpty()) {
                 this.imgMap.loadRadius(mainEvent?.venue()?.mapImageUrl().toImageURL())
             } else {
                 this.imgMap.visibility = View.GONE
@@ -50,7 +49,14 @@ class HomeFragment : Fragment() {
 
             this.txtAddressEvent.text = mainEvent?.venue()?.address()
             this.txtLocationEvent.text = mainEvent?.venue()?.title()
-            this.txtDateEvent.text = mainEvent?.toDate()
+
+            if (Config.language.equals(Constants.ENGLISH))
+                this.txtDateEvent.text = mainEvent?.toEnglishDate()
+
+            if (Config.language.equals(Constants.PERSIAN))
+                this.txtDateEvent.text = mainEvent?.toPersianDate()
+
+            Log.i("TAG", "onViewCreated: ${mainEvent?.startDate()}")
 
 
             this.imgMap.setOnClickListener {
