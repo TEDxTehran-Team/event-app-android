@@ -2,20 +2,26 @@ package co.eventbox.event.utilities
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.IdRes
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 
-class CustomTabView(activity: FragmentActivity, fragmentManager: FragmentManager, @IdRes tabLayoutId: Int, @IdRes viewPagerId: Int) {
 
-    /* custom and simple tablayout class
-    *  write by mahdidrv.ir
-    * */
+/* custom and simple tablayout class
+*  write by mahdidrv.ir
+* */
+
+
+class CustomTabView(
+    activity: FragmentActivity,
+    fragmentManager: FragmentManager,
+    @IdRes tabLayoutId: Int,
+    @IdRes viewPagerId: Int
+) {
+
 
     private val tabLayout: TabLayout
     private val viewPager: ViewPager
@@ -33,7 +39,7 @@ class CustomTabView(activity: FragmentActivity, fragmentManager: FragmentManager
     }
 
     fun add(fragmentClass: Class<out Fragment>, title: String?, @DrawableRes iconId: Int) {
-        var item = Item(fragmentClass, title!!, iconId)
+        val item = Item(fragmentClass, title!!, iconId)
         adapter.set(item)
         adapter.notifyDataSetChanged()
 
@@ -61,7 +67,7 @@ class CustomTabView(activity: FragmentActivity, fragmentManager: FragmentManager
 
     class Adapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
-        val items = ArrayList<Item>()
+        private val items = ArrayList<Item>()
 
         fun set(item: Item) {
             items.add(item)
@@ -72,7 +78,7 @@ class CustomTabView(activity: FragmentActivity, fragmentManager: FragmentManager
         }
 
         override fun getItem(position: Int): Fragment {
-            return items.get(position).fragment
+            return items[position].fragment
         }
 
         override fun getCount(): Int {
@@ -80,19 +86,15 @@ class CustomTabView(activity: FragmentActivity, fragmentManager: FragmentManager
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
-            return items.get(position).title
+            return items[position].title
         }
 
 
     }
 
     class Item(fragmentClass: Class<out Fragment>, var title: String, iconId: Int) {
-        var fragment: Fragment
+        var fragment: Fragment = fragmentClass.newInstance()
         var icon: Int = iconId
-
-        init {
-            this.fragment = fragmentClass.newInstance()
-        }
 
     }
 
