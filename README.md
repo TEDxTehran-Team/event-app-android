@@ -39,8 +39,8 @@ Hello, we shared our projects in open source in **[TEDxTehran](http://tedxtehran
 
 - [ ] Fragment Save State in Tabs
 - [ ] Convert To Splash Screen Activty to Fragment
-- [ ] English Resource String
-- [ ] Dynamic Layout Direction LTR, RTL
+- [x] English Resource String
+- [x] Dynamic Layout Direction LTR, RTL
 - [ ] Dark Mode
 - [ ] Dependency Injection
 - [ ] Improvement Speakers Tab View(use recyclerview multi view type)

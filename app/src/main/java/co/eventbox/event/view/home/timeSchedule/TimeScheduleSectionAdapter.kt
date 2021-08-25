@@ -7,8 +7,8 @@ import co.eventbox.event.R
 import co.eventbox.event.utilities.toTime
 import com.apollographql.apollo.co.eventbox.event.DashboardCacheQuery
 import com.apollographql.apollo.co.eventbox.event.type.SectionType
-import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
 import kotlinx.android.synthetic.main.row_time_schedule_section.view.*
+import co.eventbox.event.view.AdapterRecyclerView
 
 /**
  * Created by Farshid Roohi.

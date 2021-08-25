@@ -25,6 +25,13 @@
             android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/description_img_news_logo"
+                android:padding="8dp" />
+
             <TextView
                 android:id="@+id/txtTitle"
                 style="@style/TitleDark"
@@ -33,12 +40,6 @@
                 android:layout_weight="1"
                 android:padding="3dp" />
 
-            <ImageView
-                android:id="@+id/imgLogo"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:contentDescription="@string/description_img_news_logo"
-                android:padding="8dp" />
         </LinearLayout>
 
         <TextView

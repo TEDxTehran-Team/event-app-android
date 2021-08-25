@@ -5,8 +5,8 @@ import co.eventbox.event.listener.ListOnClickListener
 import co.eventbox.event.R
 import co.eventbox.event.utilities.loadRadius
 import co.eventbox.event.utilities.toImageURL
+import co.eventbox.event.view.AdapterRecyclerView
 import com.apollographql.apollo.co.eventbox.event.GetTalkDetailQuery
-import ir.farshid_roohi.customadapterrecycleview.AdapterRecyclerView
 import kotlinx.android.synthetic.main.row_speaker.view.*
 
 /**

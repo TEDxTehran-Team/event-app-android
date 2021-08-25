@@ -18,7 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:contentDescription="@string/image_about"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerInside"
+            android:padding="10dp"/>
 
         <TextView
             android:id="@+id/txtTitle"

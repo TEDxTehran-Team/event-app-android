@@ -1,15 +1,15 @@
 package co.eventbox.event.view.speakers
 
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import co.eventbox.event.Config
 import co.eventbox.event.listener.ListOnClickListener
 import co.eventbox.event.R
-import co.eventbox.event.utilities.toBool
 import com.apollographql.apollo.co.eventbox.event.DashboardCacheQuery
+import kotlinx.android.synthetic.main.fragment_speakers.*
 import kotlinx.android.synthetic.main.row_speaker_parent.view.*
 
 /**
@@ -56,6 +56,7 @@ class SpeakerParentAdapter(var listener: ListOnClickListener) :
                     LinearLayoutManager.HORIZONTAL,
                     false
                 )
+
                 adapterSpeakers.loadedState(item.talks())
 
             }
