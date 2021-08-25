@@ -1,10 +1,13 @@
 package co.eventbox.event
 
 import android.view.View
+import co.eventbox.event.utilities.Constants
 
 
 object Config {
+
     const val direction = View.LAYOUT_DIRECTION_LTR
-    const val language = "en"
-    const val token = "56fe1591-c5c1-4113-aba3-73fca1f5aacd" // English Data Token
+    var language = Constants.ENGLISH
+    var token = Constants.ENGLISH_TOKEN
+
 }

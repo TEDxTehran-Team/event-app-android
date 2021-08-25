@@ -17,4 +17,12 @@
     <color name="color_subtitle_dark">#8F8E94</color>
 
     <color name="color_shadow_cover">#28000000</color>
+
+
+    <color name="dark0">#1C1C28</color>
+    <color name="dark1">#28293D</color>
+    <color name="dark2">#555770</color>
+    <color name="dark3">#8F90A6</color>
+    <color name="dark4">#C7C9D9</color>
+
 </resources>

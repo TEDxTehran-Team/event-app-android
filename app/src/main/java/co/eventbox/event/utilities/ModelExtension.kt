@@ -8,9 +8,15 @@ import com.apollographql.apollo.co.eventbox.event.DashboardCacheQuery
  * TEDxTehran | Copyrights 9/17/20.
  */
 
-fun DashboardCacheQuery.MainEvent.toDate(): String {
+fun DashboardCacheQuery.MainEvent.toPersianDate(): String {
     return "${this.startDate()?.toString().toPersianDate()} تا ${
         this.endDate()?.toString().toPersianDate()
+    }"
+}
+
+fun DashboardCacheQuery.MainEvent.toEnglishDate(): String {
+    return "${this.startDate()?.toString()?.substringBefore("T")} to ${
+        this.endDate()?.toString()?.substringBefore("T")
     }"
 }
 

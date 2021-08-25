@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/networking"
+    app:startDestination="@id/networkingFragment">
+
+    <fragment
+        tools:layout="@layout/fragment_networking"
+        android:id="@+id/networkingFragment"
+        android:name="co.eventbox.event.view.newtworking.NetworkingFragment"
+        android:label="NetworkingFragment">
+        <action
+            android:id="@+id/action_networkingFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_register"
+        android:id="@+id/registerFragment"
+        android:name="co.eventbox.event.view.newtworking.auth.RegisterFragment"
+        android:label="RegisterFragment" />
+
+    <fragment
+        tools:layout="@layout/fragment_verify"
+        android:id="@+id/verifyFragment"
+        android:name="co.eventbox.event.view.newtworking.auth.VerifyFragment"
+        android:label="VerifyFragment" />
+
+    <fragment
+        tools:layout="@layout/fragment_profile"
+        android:id="@+id/profileFragment"
+        android:name="co.eventbox.event.view.newtworking.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_edit_profile"
+        android:id="@+id/editProfileFragment"
+        android:name="co.eventbox.event.view.newtworking.profile.EditProfileFragment"
+        android:label="EditProfileFragment" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_networkingFragment"
+            app:destination="@id/networkingFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="your name" />
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+</navigation>

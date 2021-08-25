@@ -21,7 +21,6 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
     CoroutineScope,
     ResultFetcher<O, D> {
 
-
     private val okHttpProvider = OkHttpClientProvider.provide(Config.token)
     private val apolloClientProvider = ApolloClientProvider.provide(okHttpProvider)
 
