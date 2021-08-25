@@ -78,11 +78,6 @@
                 android:layout_marginTop="32dp"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -101,6 +96,12 @@
                         android:layout_height="1dp"
                         android:background="@color/colorPrimary" />
                 </LinearLayout>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
             </LinearLayout>
 
             <TextView
@@ -117,11 +118,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -141,12 +137,16 @@
                         android:layout_height="1dp"
                         android:background="@color/colorPrimary" />
                 </LinearLayout>
-
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
 
             <androidx.recyclerview.widget.RecyclerView
+                android:layout_gravity="start"
                 android:id="@+id/recyclerViewRelated"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
