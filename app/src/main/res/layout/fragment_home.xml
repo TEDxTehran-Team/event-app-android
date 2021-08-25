@@ -160,18 +160,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center|end"
                     android:orientation="horizontal"
+                    android:gravity="center_vertical"
                     android:paddingVertical="8dp">
-
-                    <TextView
-                        android:id="@+id/txtDateEvent"
-                        style="@style/SubtitleDark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:maxLines="2"
-                        android:paddingStart="12dp" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -181,6 +172,14 @@
                         android:src="@drawable/ic_baseline_access_time_24"
                         android:tint="@color/color_gray" />
 
+                    <TextView
+                        android:id="@+id/txtDateEvent"
+                        style="@style/SubtitleDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:paddingStart="8dp"/>
+
                 </LinearLayout>
 
                 <ImageView
@@ -193,18 +192,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center|end"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingVertical="8dp">
-
-                    <TextView
-                        android:id="@+id/txtLocationEvent"
-                        style="@style/SubtitleDark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:maxLines="2"
-                        android:paddingStart="12dp" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -214,6 +204,14 @@
                         android:src="@drawable/ic_baseline_location_on_24"
                         android:tint="@color/color_gray" />
 
+                    <TextView
+                        android:id="@+id/txtLocationEvent"
+                        style="@style/SubtitleDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:paddingStart="8dp"/>
+
                 </LinearLayout>
 
                 <ImageView
@@ -226,18 +224,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center|end"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingVertical="8dp">
-
-                    <TextView
-                        android:id="@+id/txtAddressEvent"
-                        style="@style/SubtitleDark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:maxLines="2"
-                        android:paddingStart="12dp" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -246,6 +235,14 @@
                         android:padding="8dp"
                         android:src="@drawable/ic_baseline_directions_24"
                         android:tint="@color/color_gray" />
+
+                    <TextView
+                        android:id="@+id/txtAddressEvent"
+                        style="@style/SubtitleDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:paddingStart="8dp"/>
 
                 </LinearLayout>
 

@@ -9,6 +9,13 @@
     android:layout_marginVertical="8dp">
 
 
+
+    <ImageView
+        android:id="@+id/img_speaker"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/speakers_image" />
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -40,11 +47,6 @@
     </LinearLayout>
 
 
-    <ImageView
-        android:id="@+id/img_speaker"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/speakers_image" />
 
 
 </LinearLayout>
