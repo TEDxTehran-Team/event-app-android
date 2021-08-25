@@ -58,13 +58,11 @@ class EditProfileFragment : Fragment() {
             user.university = university
             user.job = job
 
-            Log.i("test", "editprofile: $user")
             viewModel._user.value = user
 
             findNavController().navigate(R.id.action_editProfileFragment_to_networkingFragment)
 
         }
-        viewModel.log()
 
 
     }

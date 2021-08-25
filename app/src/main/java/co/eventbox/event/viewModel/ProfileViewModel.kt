@@ -17,17 +17,11 @@ class ProfileViewModel : BaseViewModel() {
 
 
     init {
-        Log.i("test", "hi in viewmodel: ")
     }
     val _user = MutableLiveData<User>()
 
     fun setUser(user: User) {
-        Log.i("test", "setUser:$user ")
         _user.postValue(user)
-    }
-
-    fun log() {
-        Log.i("test", "log in VM ${_user.value} ")
     }
 
 }

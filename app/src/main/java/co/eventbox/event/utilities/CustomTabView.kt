@@ -11,7 +11,7 @@ import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 
-class MTab(activity: FragmentActivity, fragmentManager: FragmentManager, @IdRes tabLayoutId: Int, @IdRes viewPagerId: Int) {
+class CustomTabView(activity: FragmentActivity, fragmentManager: FragmentManager, @IdRes tabLayoutId: Int, @IdRes viewPagerId: Int) {
 
     /* custom and simple tablayout class
     *  write by mahdidrv.ir

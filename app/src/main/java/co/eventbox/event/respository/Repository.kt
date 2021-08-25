@@ -21,9 +21,6 @@ abstract class Repository<D : Operation.Data, V : Operation.Variables, O : Opera
     CoroutineScope,
     ResultFetcher<O, D> {
 
-
-    private val token1 = "56fe1591-c5c1-4113-aba3-73fca1f5aacd" // English Data Token
-    private val token = "7b9c5f16-0882-4334-a828-e67ce8ccf201" // Farsi Data Token
     private val okHttpProvider = OkHttpClientProvider.provide(Config.token)
     private val apolloClientProvider = ApolloClientProvider.provide(okHttpProvider)
 

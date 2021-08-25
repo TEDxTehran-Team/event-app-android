@@ -26,8 +26,7 @@ class MainActivity : BaseActivity() {
             R.navigation.speakers_navigation,
             R.navigation.current_event_navigation,
             R.navigation.gallery_navigation,
-            R.navigation.news_navigation,
-            R.navigation.networking_navigation
+            R.navigation.news_navigation
         )
 
         bottomNavigation.setupWithNavController(

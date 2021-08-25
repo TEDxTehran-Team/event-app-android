@@ -21,17 +21,11 @@
         android:id="@+id/news"
         android:icon="@drawable/ic_baseline_library_books"
         android:title="@string/news" />
-
+<!--
     <item
         android:id="@+id/networking"
         android:icon="@drawable/ic_networking"
         android:title="@string/networking" />
-
-
-<!--    <item-->
-<!--        android:id="@+id/networking"-->
-<!--        android:icon="@drawable/ic_networking"-->
-<!--        android:title="@string/networking" />-->
-
+    -->
 
 </menu>

@@ -39,11 +39,8 @@ class ProfileFragment : Fragment() {
         val viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel::class.java)
 
         viewModel._user.observe(viewLifecycleOwner, {
-                Log.i("test", "profile: null")
 
             if (it != null) {
-                Log.i("test", "profile: ${it}")
-                Log.i("test", "profile: ${it.name}")
 
                 with(it) {
                     txtProfileName.text = name
@@ -56,8 +53,6 @@ class ProfileFragment : Fragment() {
                 }
             }
         })
-
-        viewModel.log()
 
         btnRegisterCode.setOnClickListener {
             findNavController().navigate(R.id.action_networkingFragment_to_editProfileFragment)
