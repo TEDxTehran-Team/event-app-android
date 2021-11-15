@@ -37,12 +37,12 @@ Hello, we shared our projects in open source in **[TEDxTehran](http://tedxtehran
 
 ## Goals : 
 
-- [ ] Fragment Save State in Tabs
+- [x] Fragment Save State in Tabs
 - [ ] Convert To Splash Screen Activty to Fragment
 - [x] English Resource String
 - [x] Dynamic Layout Direction LTR, RTL
 - [ ] Dark Mode
-- [ ] Dependency Injection
+- [x] Dependency Injection
 - [ ] Improvement Speakers Tab View(use recyclerview multi view type)
 - [x] Cache Data
 
