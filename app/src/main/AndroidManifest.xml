@@ -13,7 +13,9 @@
         android:theme="@style/AppTheme"
         tools:targetApi="q">
 
-        <activity android:name="co.eventbox.event.view.activities.SplashActivity">
+        <activity
+            android:name="co.eventbox.event.view.activities.SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +23,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="co.eventbox.event.view.activities.MainActivity"
-            android:launchMode="singleTask"/>
-        <activity android:name="co.eventbox.event.view.about.AboutUsActivity" />
+        <activity
+            android:name="co.eventbox.event.view.activities.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="co.eventbox.event.view.about.AboutUsActivity"
+            android:exported="true" />
 
     </application>
 
