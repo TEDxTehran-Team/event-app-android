@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import co.eventbox.event.R
 import co.eventbox.event.view.about.AboutUsActivity

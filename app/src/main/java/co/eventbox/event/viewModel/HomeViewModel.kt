@@ -14,20 +14,22 @@ class HomeViewModel : BaseViewModel() {
 
     private val repository = HomeRepository()
 
-    fun mainEvent(): LiveData<DashboardCacheQuery.MainEvent> {
+    private val mainEventMutableLiveData = MutableLiveData<DashboardCacheQuery.MainEvent?>()
+    val mainEventLiveData: LiveData<DashboardCacheQuery.MainEvent?> = mainEventMutableLiveData
 
-        val data = MutableLiveData<DashboardCacheQuery.MainEvent>()
 
+    init {
+        mainEvent()
+    }
 
+    fun mainEvent() {
         launch {
             repository.fetch().fold({
-                data.postValue(it?.organizer()?.mainEvent())
+                mainEventMutableLiveData.postValue(it?.organizer()?.mainEvent())
             }, {
-                data.postValue(null)
+                mainEventMutableLiveData.postValue(null)
             })
 
         }
-
-        return data
     }
 }

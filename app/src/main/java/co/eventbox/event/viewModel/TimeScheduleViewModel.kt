@@ -10,24 +10,26 @@ import kotlinx.coroutines.launch
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 4/17/20.
  */
-class TimeShelduleViewModel : BaseViewModel() {
+class TimeScheduleViewModel : BaseViewModel() {
 
     private val repository = TimeScheduleRepository()
 
-    fun days(): LiveData<List<DashboardCacheQuery.Day>> {
+    private val daysMutableLiveData = MutableLiveData<List<DashboardCacheQuery.Day>?>()
+    val daysLiveData: LiveData<List<DashboardCacheQuery.Day>?> = daysMutableLiveData
 
-        val values = MutableLiveData<List<DashboardCacheQuery.Day>>()
+    init {
+        days()
+    }
+
+    fun days() {
 
         launch {
             repository.request().fold({
-                values.postValue(it?.organizer()?.mainEvent()?.days())
+                daysMutableLiveData.postValue(it?.organizer()?.mainEvent()?.days())
             }, {
-                values.postValue(null)
+                daysMutableLiveData.postValue(null)
             })
-
-
         }
 
-        return values
     }
 }

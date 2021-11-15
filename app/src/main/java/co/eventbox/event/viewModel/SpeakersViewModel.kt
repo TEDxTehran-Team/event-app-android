@@ -17,15 +17,18 @@ class SpeakersViewModel : BaseViewModel() {
     private val speakersRepository = SpeakersRepository()
     private var speakersDetailsRepository = SpeakersDetailsRepository()
 
-    fun speackers(): LiveData<Result<DashboardCacheQuery.Data?>> {
-        val liveData = MutableLiveData<Result<DashboardCacheQuery.Data?>>()
+    private var _speakers = MutableLiveData<Result<DashboardCacheQuery.Data?>>()
+    var speakers: LiveData<Result<DashboardCacheQuery.Data?>> = _speakers
 
+    init {
+        speakers()
+    }
+
+    fun speakers() {
         launch {
             val either = speakersRepository.fetch()
-            liveData.postValue(either)
+            _speakers.postValue(either)
         }
-        return liveData
-
     }
 
     fun talkDetails(id: Int): LiveData<Result<GetTalkDetailQuery.Data?>> {

@@ -64,6 +64,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.0-beta02'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-native-mt'
 
+    // Koin
+    implementation "io.insert-koin:koin-android:3.1.3"
+    implementation "io.insert-koin:koin-core:3.1.3"
+
     // Http
     implementation "com.squareup.retrofit2:retrofit:2.6.2"
     implementation "com.google.code.gson:gson:2.8.6"
@@ -77,8 +81,7 @@ dependencies {
 
 //    implementation 'io.github.farshidroohi:customAdapterRecycleView:2.0.2'
 
-    implementation("com.github.bumptech.glide:glide:4.12.0")
-    kapt("com.github.bumptech.glide:compiler:4.11.0")
+    implementation("io.coil-kt:coil:1.4.0")
 
     implementation "com.airbnb.android:lottie:3.5.0"
 

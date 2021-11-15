@@ -1,5 +1,6 @@
 package co.eventbox.event.view.speakers
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import co.eventbox.event.utilities.loadRadius
 import co.eventbox.event.utilities.toImageURL
 import co.eventbox.event.viewModel.SpeakersViewModel
 import kotlinx.android.synthetic.main.fragment_speakers.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 /**
@@ -23,6 +25,8 @@ import kotlinx.android.synthetic.main.fragment_speakers.*
  * TEDxTehran | Copyrights 2019-09-26.
  */
 class SpeakersFragment : Fragment(), ListOnClickListener {
+    
+    private val speakersViewModel: SpeakersViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,18 +36,15 @@ class SpeakersFragment : Fragment(), ListOnClickListener {
         return inflater.inflate(R.layout.fragment_speakers, container, false)
     }
 
-    lateinit var viewModel: SpeakersViewModel
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        this.viewModel = ViewModelProvider(this).get(SpeakersViewModel::class.java)
         val adapter = SpeakerParentAdapter(this)
 
         recyclerViewSpeakers.isNestedScrollingEnabled = false
 
         recyclerViewSpeakers.adapter = adapter
-        viewModel.speackers().observe(viewLifecycleOwner, { either ->
+        this.speakersViewModel.speakers.observe(viewLifecycleOwner, { either ->
 
             progressBar.gone()
             either.fold({ data ->
