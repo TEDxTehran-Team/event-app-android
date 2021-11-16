@@ -34,8 +34,8 @@
                     android:contentDescription="@string/content_description"
                     android:padding="@dimen/icon_padding_toolbar"
                     android:src="@drawable/ic_profile"
-                    android:tint="@color/color_tint_toolbar_element"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"
+                    app:tint="@color/color_tint_toolbar_element" />
 
 
                 <TextView

@@ -4,25 +4,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import co.eventbox.event.R
 import co.eventbox.event.listener.PhotoOnClickListener
 import co.eventbox.event.utilities.gone
-import co.eventbox.event.viewModel.GalleryViewModel
+import co.eventbox.event.viewModel.PhotosViewModel
 import kotlinx.android.synthetic.main.fragment_albums.*
-import kotlinx.android.synthetic.main.fragment_albums.empty_state
-import kotlinx.android.synthetic.main.fragment_albums.progressBar
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 2019-09-26.
  */
 class AlbumsFragment : Fragment(), PhotoOnClickListener {
+
+    private val photosViewModel: PhotosViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,13 +42,17 @@ class AlbumsFragment : Fragment(), PhotoOnClickListener {
         this.recyclerViewPhotos.layoutManager = GridLayoutManager(this.context, 3)
         this.recyclerViewPhotos.adapter = adapter
 
-        val galleryViewModel = ViewModelProvider(this).get(GalleryViewModel::class.java)
-        galleryViewModel.photos(id).observe(viewLifecycleOwner,  {
+        photosViewModel.photos(id)
+        photosViewModel.photosLiveData.observe(viewLifecycleOwner, {
+
+            if (adapter.itemCount != 0){
+                return@observe
+            }
 
             this.progressBar.gone()
             adapter.loadedState(it)
 
-            if(it.isEmpty()) {
+            if (it?.isNullOrEmpty() == true) {
                 empty_state.visibility = View.VISIBLE
             }
 

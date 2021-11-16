@@ -1,21 +1,15 @@
 package co.eventbox.event.view.newtworking.profile
 
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import co.eventbox.event.R
 import co.eventbox.event.model.User
 import co.eventbox.event.viewModel.ProfileViewModel
-import co.eventbox.event.viewModel.SpeakersViewModel
 import kotlinx.android.synthetic.main.fragment_edit_profile.*
 
 /**
@@ -37,8 +31,7 @@ class EditProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        val viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel::class.java)
+        val viewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
 
         btnEditProfileSave.setOnClickListener {
             val story = txtEditProfileStory.text.toString()
@@ -49,11 +42,11 @@ class EditProfileFragment : Fragment() {
             val university = txtEditProfileUniversity.text.toString()
             val job = txtEditProfileJob.text.toString()
 
-            var user = User.toUser()
-            user.story =story
-            user.phone =phone
+            val user = User.toUser()
+            user.story = story
+            user.phone = phone
             user.interested = interested
-            user.email =email
+            user.email = email
             user.name = name
             user.university = university
             user.job = job

@@ -12,30 +12,13 @@ import kotlinx.coroutines.launch
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 4/17/20.
  */
-class GalleryViewModel : BaseViewModel() {
+class PhotosViewModel : BaseViewModel() {
 
     private val galleryRepository = GalleryRepository()
     private val photosGalleryRepository = PhotosGalleryRepository()
 
-    private var _albumsMutableLiveData = MutableLiveData<List<DashboardCacheQuery.Album>?>()
-    var albumsLiveData: LiveData<List<DashboardCacheQuery.Album>?> = _albumsMutableLiveData
-
     private var _photosMutableLiveData = MutableLiveData<List<GetAlbumPhotosQuery.Photo>?>()
     var photosLiveData: LiveData<List<GetAlbumPhotosQuery.Photo>?> = _photosMutableLiveData
-
-    init {
-        albums()
-    }
-
-    fun albums() {
-        launch {
-            galleryRepository.request().fold({
-                _albumsMutableLiveData.postValue(it?.albums())
-            }, {
-                _albumsMutableLiveData.postValue(null)
-            })
-        }
-    }
 
     fun photos(id: Int) {
         launch {

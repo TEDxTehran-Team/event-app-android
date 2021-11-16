@@ -1,19 +1,15 @@
 package co.eventbox.event.view.newtworking.profile
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import co.eventbox.event.R
 import co.eventbox.event.viewModel.ProfileViewModel
-import kotlinx.android.synthetic.main.fragment_edit_profile.*
 import kotlinx.android.synthetic.main.fragment_profile.*
-import javax.security.auth.login.LoginException
 
 /**
  * Created by Mahdi Darvishi.
@@ -35,8 +31,7 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-
-        val viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel::class.java)
+        val viewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
 
         viewModel._user.observe(viewLifecycleOwner, {
 

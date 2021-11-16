@@ -11,12 +11,15 @@ import co.eventbox.event.R
 import co.eventbox.event.utilities.gone
 import co.eventbox.event.viewModel.SponsorsViewModel
 import kotlinx.android.synthetic.main.fragment_sponsors.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * Created by Farshid Roohi.
  * TEDxTehran | Copyrights 2019-09-26.
  */
 class SponsorsFragment : Fragment() {
+
+    private val viewModel: SponsorsViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,8 +34,6 @@ class SponsorsFragment : Fragment() {
 
         val adapter = SponsorParentAdapter()
         this.recyclerViewSponsors.adapter = adapter
-
-        val viewModel = ViewModelProvider(this).get(SponsorsViewModel::class.java)
 
         val eventID = arguments?.get("event_id") as Int
 

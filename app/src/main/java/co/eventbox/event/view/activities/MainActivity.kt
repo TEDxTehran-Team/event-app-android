@@ -2,16 +2,14 @@ package co.eventbox.event.view.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
-import co.eventbox.event.Config
 import co.eventbox.event.R
 import co.eventbox.event.view.about.AboutUsActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 
 
 /**

@@ -6,12 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import co.eventbox.event.listener.ListOnClickListener
 import co.eventbox.event.R
+import co.eventbox.event.listener.ListOnClickListener
 import co.eventbox.event.utilities.*
 import co.eventbox.event.viewModel.SpeakersViewModel
 import kotlinx.android.synthetic.main.fragment_speaker_details.*
@@ -22,6 +21,8 @@ import kotlinx.android.synthetic.main.fragment_speaker_details.*
  */
 class SpeakersDetailsFragment : Fragment(), ListOnClickListener {
 
+
+    private val speakersViewModel: SpeakersViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,13 +37,11 @@ class SpeakersDetailsFragment : Fragment(), ListOnClickListener {
 
         val id = arguments?.get("speaker_id") as Int
 
-        val viewModel = ViewModelProvider(this).get(SpeakersViewModel::class.java)
-
         this.recyclerViewRelated.layoutManager =
             LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, true)
         val adapter = SpeakerRelatedAdapter(this)
         this.recyclerViewRelated.adapter = adapter
-        viewModel.talkDetails(id).observe(viewLifecycleOwner, Observer { either ->
+        this.speakersViewModel.talkDetails(id).observe(viewLifecycleOwner, { either ->
 
             this.progressBar.gone()
             this.layoutRoot.visible()
@@ -64,7 +63,7 @@ class SpeakersDetailsFragment : Fragment(), ListOnClickListener {
                 adapter.loadedState(it?.suggestedTalks()!!)
 
                 this.layoutPlay.setOnClickListener {
-                    if (!talk?.videoLink().isNullOrEmpty()){
+                    if (!talk?.videoLink().isNullOrEmpty()) {
                         context?.openBrowser(talk?.videoLink())
                     }
                 }

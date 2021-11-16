@@ -2,11 +2,9 @@ package co.eventbox.event.utilities
 
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
-import co.eventbox.event.R
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import coil.load
+import coil.request.CachePolicy
+import coil.transform.RoundedCornersTransformation
 
 /**
  * Created by Farshid Roohi.
@@ -15,22 +13,17 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
 
 fun ImageView.load(url: String?, @DrawableRes placeHolder: Int = 0) {
-    Glide.with(this)
-        .load(url)
-        .diskCacheStrategy(DiskCacheStrategy.ALL)
-        .placeholder(placeHolder)
-        .into(this)
+    this.load(url) {
+        placeholder(placeHolder)
+        error(placeHolder)
+        diskCachePolicy(CachePolicy.ENABLED)
+    }
 }
 
-fun ImageView.loadRadius(url: String?, radius: Int = R.dimen.image_gallery_radius) {
+fun ImageView.loadRadius(url: String?) {
 
-    Glide.with(this)
-        .load(url)
-        .placeholder(R.drawable.placeholdertransparent)
-        .diskCacheStrategy(DiskCacheStrategy.ALL)
-        .transform(
-            CenterCrop(),
-            RoundedCorners(this.context.resources.getDimensionPixelOffset(radius))
-        )
-        .into(this)
+    this.load(url) {
+        diskCachePolicy(CachePolicy.ENABLED)
+        transformations(RoundedCornersTransformation(10f))
+    }
 }
